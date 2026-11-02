@@ -15,7 +15,7 @@ export default function OpenPositions() {
             <h1 className="font-sans text-[16px] font-bold uppercase tracking-[0.2em] sm:tracking-[0.35em] text-primary leading-none pt-0.5">Open Positions</h1>
           </div>
           <p className="font-academic text-slate-700 leading-relaxed text-[13px] md:pl-[60px]">
-            원자 수준 소재 모델링과 AI·데이터 기반 소재 연구를 함께할 대학원생과 학부연구생의 지원 문의를 환영합니다.
+            원자 수준 소재 모델링과 AI·데이터 기반 소재 연구를 함께할 대학원생과 2027년 동계 인턴을 모집하고 있습니다.
             관심 연구 주제와 진학 계획을 알려주시면 연구실 참여에 대해 상담하실 수 있습니다.
           </p>
         </header>
@@ -23,6 +23,7 @@ export default function OpenPositions() {
         <section aria-labelledby="graduate-heading" className="mb-8">
           <div className="flex items-center gap-4 mb-4">
             <h2 id="graduate-heading" className="text-[13px] font-bold text-primary shrink-0">대학원생 모집</h2>
+            <span className="text-[11px] font-medium text-tertiary bg-slate-50 px-2 py-1 rounded-sm whitespace-nowrap">모집 중</span>
             <div className="h-px grow bg-slate-200" aria-hidden="true" />
           </div>
           <div className="grid md:grid-cols-12 gap-2 md:gap-4">
@@ -31,7 +32,7 @@ export default function OpenPositions() {
               <span className="block text-[12px] font-medium mt-1">M.S. / Integrated M.S.–Ph.D. / Ph.D.</span>
             </h3>
             <div className="md:col-span-9 space-y-2 text-[13px] text-slate-700 font-academic leading-relaxed">
-              <p>2027학년도 입학을 희망하는 석사·석박사통합·박사과정 지원자의 사전 문의를 환영합니다. 지원 가능 과정과 모집 인원은 이메일로 상담해 주세요.</p>
+              <p>2027학년도 석사·석박사통합·박사과정 대학원생을 모집하고 있습니다. 지원 가능 과정과 모집 인원은 이메일로 상담해 주세요.</p>
               <p>재료공학·물리·화학·화학공학·컴퓨터과학 등 관련 전공자를 대상으로 하며, Python 프로그래밍과 원자 수준 소재 모델링에 관심 있는 학생을 환영합니다.</p>
               <p>Materials Modeling, MLIP, Materials Data Science 및 자동화 계산을 통해 반도체 소재의 결함·계면, 전기화학 소재와 Ionic Conductors의 구조–물성 관계를 연구합니다.</p>
             </div>
@@ -61,15 +62,16 @@ export default function OpenPositions() {
         <section aria-labelledby="internship-heading" className="mb-8">
           <div className="flex items-center gap-4 mb-4">
             <h2 id="internship-heading" className="text-[13px] font-bold text-primary shrink-0">동계 인턴 프로그램</h2>
+            <span className="text-[11px] font-medium text-tertiary bg-slate-50 px-2 py-1 rounded-sm whitespace-nowrap">모집 중</span>
             <div className="h-px grow bg-slate-200" aria-hidden="true" />
           </div>
           <div className="grid md:grid-cols-12 gap-3 md:gap-4">
             <div className="md:col-span-3">
               <h3 className="font-sans font-extrabold text-sm text-primary leading-snug">Winter Internship<span className="block text-[12px] font-medium mt-1">2027년 1월 · 4주</span></h3>
-              <span className="inline-block mt-2 text-[11px] font-medium text-tertiary bg-slate-50 px-2 py-1 rounded-sm">{applicationStatus(winterInternship)}</span>
+              <span className="inline-block mt-2 text-[11px] font-medium text-tertiary bg-slate-50 px-2 py-1 rounded-sm">공식 신청: {applicationStatus(winterInternship)}</span>
             </div>
             <div className="md:col-span-9 space-y-4 text-[13px] text-slate-700 font-academic leading-relaxed">
-              <p>DGIST 대학원 동계 인턴 프로그램은 방학 중 연구실의 실제 연구에 참여하며 대학원 생활을 경험하는 프로그램입니다. 우리 연구실은 2027년 동계 인턴 참여연구실로 등록되어 있습니다.</p>
+              <p>DGIST 대학원 동계 인턴 프로그램은 방학 중 연구실의 실제 연구에 참여하며 대학원 생활을 경험하는 프로그램입니다. 우리 연구실은 2027년 동계 인턴 참여연구실로 등록되어 있으며, 인턴 지원자를 모집하고 있습니다.</p>
               <dl className="grid grid-cols-[5.25rem_1fr] gap-x-3 gap-y-2">
                 <dt className="font-medium text-primary">신청 기간</dt><dd>{winterInternship.period} <span className="text-[12px]">(한국시간)</span></dd>
                 <dt className="font-medium text-primary">활동 기간</dt><dd><time dateTime="2027-01-04">2027. 1. 4.(월)</time> – <time dateTime="2027-01-29">1. 29.(금)</time></dd>
