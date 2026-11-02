@@ -29,17 +29,16 @@ export default function Alumni() {
     <div className="py-10 max-w-4xl mx-auto px-8">
       <Link 
         to="/people" 
-        className="inline-flex items-center gap-2 text-slate-600 hover:text-primary font-sans text-[10px] font-bold uppercase tracking-widest transition-colors mb-6"
+        className="inline-flex items-center gap-2 text-slate-600 hover:text-primary font-sans text-xs font-bold uppercase tracking-normal transition-colors mb-6"
       >
         <ChevronLeft size={14} /> Back to People
       </Link>
 
       <header className="mb-10">
         <div className="flex items-center gap-3 mb-6">
-          <span className="h-px w-12 bg-primary" />
-          <h1 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Alumni</h1>
+          <h1 className="page-title">Alumni</h1>
         </div>
-        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-[13px] font-light opacity-90 pl-[60px]">
+        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-sm font-normal">
           Celebrating the achievements and career paths of our former group members.
         </p>
       </header>
@@ -54,12 +53,12 @@ export default function Alumni() {
             className="p-3 bg-white border border-slate-100 grid grid-cols-1 md:grid-cols-12 group hover:border-slate-200 transition-all gap-2 rounded-sm items-center"
           >
             <div className="md:col-span-7">
-              <h3 className="font-sans font-bold text-primary text-sm leading-tight">{alumni.name}</h3>
-              <p className="font-academic text-[11px] text-slate-600 font-medium">{alumni.role}</p>
+              <h3 className="font-sans font-bold text-primary text-base leading-tight">{alumni.name}</h3>
+              <p className="font-academic text-xs text-slate-600 font-medium">{alumni.role}</p>
             </div>
             <div className="md:col-span-5">
               {alumni.next && (
-                <p className="font-academic text-[11px] text-tertiary italic font-medium">{alumni.next}</p>
+                <p className="font-academic text-xs text-tertiary font-medium">{alumni.next}</p>
               )}
             </div>
           </motion.div>

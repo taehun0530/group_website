@@ -14,85 +14,6 @@ export default function Home() {
   };
   return (
     <div className="relative overflow-hidden bg-white">
-      {/* Background Decorative Elements - zig zag arrangement (Synced with Research Page) */}
-      {/* 1. Top Right - Neural Network */}
-      <div className="absolute -right-24 top-10 opacity-[0.10] pointer-events-none select-none w-[500px] h-[500px] z-[5]">
-        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-primary transform rotate-12">
-          <g opacity="0.8">
-            <circle cx="140" cy="60" r="3" fill="currentColor" />
-            <circle cx="140" cy="100" r="3" fill="currentColor" />
-            <circle cx="140" cy="140" r="3" fill="currentColor" />
-            <circle cx="80" cy="40" r="3" fill="currentColor" />
-            <circle cx="80" cy="80" r="3" fill="currentColor" />
-            <circle cx="80" cy="120" r="3" fill="currentColor" />
-            <circle cx="80" cy="160" r="3" fill="currentColor" />
-            {[60, 100, 140].map(y1 => [40, 80, 120, 160].map(y2 => (
-              <line key={`n1-${y1}-${y2}`} x1="140" y1={y1} x2="80" y2={y2} stroke="currentColor" strokeWidth="0.8" opacity="0.4" />
-            )))}
-          </g>
-        </svg>
-      </div>
-
-      {/* 2. Middle Left - Quantum Mechanics */}
-      <div className="absolute -left-32 top-[18%] opacity-[0.10] pointer-events-none select-none w-[600px] h-[600px] z-[5]">
-        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-primary transform -rotate-12">
-          <circle cx="100" cy="100" r="4" fill="currentColor" className="animate-pulse" />
-          <ellipse cx="100" cy="100" rx="90" ry="30" stroke="currentColor" strokeWidth="0.3" transform="rotate(0 100 100)" />
-          <ellipse cx="100" cy="100" rx="90" ry="30" stroke="currentColor" strokeWidth="0.3" transform="rotate(60 100 100)" />
-          <ellipse cx="100" cy="100" rx="90" ry="30" stroke="currentColor" strokeWidth="0.3" transform="rotate(120 100 100)" />
-        </svg>
-      </div>
-
-      {/* 3. Middle Right - Atomic/Materials */}
-      <div className="absolute -right-32 top-[35%] opacity-[0.10] pointer-events-none select-none w-[550px] h-[550px] z-[5]">
-        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-primary transform rotate-45">
-          <rect x="80" y="80" width="40" height="40" stroke="currentColor" strokeWidth="0.5" fill="none" />
-          <circle cx="80" cy="80" r="3" fill="currentColor" />
-          <circle cx="120" cy="80" r="3" fill="currentColor" />
-          <circle cx="80" cy="120" r="3" fill="currentColor" />
-          <circle cx="120" cy="120" r="3" fill="currentColor" />
-        </svg>
-      </div>
-
-      {/* 4. Lower Left - Neural Network (Flipped) */}
-      <div className="absolute -left-24 top-[55%] opacity-[0.10] pointer-events-none select-none w-[500px] h-[500px] z-[5]">
-        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-primary transform -rotate-12 scale-x-[-1]">
-          <g opacity="0.8">
-            <circle cx="140" cy="60" r="3" fill="currentColor" />
-            <circle cx="140" cy="100" r="3" fill="currentColor" />
-            <circle cx="140" cy="140" r="3" fill="currentColor" />
-            <circle cx="80" cy="40" r="3" fill="currentColor" />
-            <circle cx="80" cy="80" r="3" fill="currentColor" />
-            <circle cx="80" cy="120" r="3" fill="currentColor" />
-            <circle cx="80" cy="160" r="3" fill="currentColor" />
-            {[60, 100, 140].map(y1 => [40, 80, 120, 160].map(y2 => (
-              <line key={`n2-${y1}-${y2}`} x1="140" y1={y1} x2="80" y2={y2} stroke="currentColor" strokeWidth="0.8" opacity="0.4" />
-            )))}
-          </g>
-        </svg>
-      </div>
-
-      {/* 5. Lower Right - Quantum Mechanics */}
-      <div className="absolute -right-32 top-[75%] opacity-[0.10] pointer-events-none select-none w-[600px] h-[600px] z-[5]">
-        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-primary transform rotate-12">
-          <circle cx="100" cy="100" r="4" fill="currentColor" className="animate-pulse" />
-          <ellipse cx="100" cy="100" rx="90" ry="30" stroke="currentColor" strokeWidth="0.3" transform="rotate(0 100 100)" />
-          <ellipse cx="100" cy="100" rx="90" ry="30" stroke="currentColor" strokeWidth="0.3" transform="rotate(60 100 100)" />
-          <ellipse cx="100" cy="100" rx="90" ry="30" stroke="currentColor" strokeWidth="0.3" transform="rotate(120 100 100)" />
-        </svg>
-      </div>
-
-      {/* 6. Bottom Left - Atomic/Materials */}
-      <div className="absolute -left-32 bottom-20 opacity-[0.10] pointer-events-none select-none w-[550px] h-[550px] z-[5]">
-        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-primary transform -rotate-45">
-          <rect x="80" y="80" width="40" height="40" stroke="currentColor" strokeWidth="0.5" fill="none" />
-          <circle cx="80" cy="80" r="3" fill="currentColor" />
-          <circle cx="120" cy="80" r="3" fill="currentColor" />
-          <circle cx="80" cy="120" r="3" fill="currentColor" />
-          <circle cx="120" cy="120" r="3" fill="currentColor" />
-        </svg>
-      </div>
-
       {/* Hero Section */}
       <section className="relative z-10 min-h-[35vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-100">
@@ -112,25 +33,25 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="max-w-2xl space-y-3"
           >
-            <h1 className="font-sans text-2xl md:text-3xl font-extrabold text-white leading-tight tracking-tighter drop-shadow-md">
-              Materials Modeling and Machine Learning for <br className="hidden md:block" /><span className="text-accent-blue drop-shadow-sm">Structure–Property Relationships</span>
+            <h1 className="font-sans text-2xl md:text-3xl font-extrabold text-white leading-tight tracking-tighter">
+              Materials Modeling and Machine Learning for <br className="hidden md:block" /><span className="text-accent-blue">Structure–Property Relationships</span>
             </h1>
             <div className="flex flex-wrap items-center gap-2 md:gap-3 pt-4">
-              <div className="flex items-center gap-2 px-3 py-1.5 bg-white/10 border border-white/20 rounded-full text-white backdrop-blur-sm shadow-sm">
+              <div className="flex items-center gap-2 text-white">
                 <Server size={14} className="text-accent-blue" />
-                <span className="font-sans text-[10px] font-bold uppercase tracking-widest pt-0.5">Computation</span>
+                <span className="font-sans text-xs font-bold tracking-normal pt-0.5">Computation</span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 bg-white/10 border border-white/20 rounded-full text-white backdrop-blur-sm shadow-sm">
+              <div className="flex items-center gap-2 text-white">
                 <Atom size={14} className="text-accent-blue" />
-                <span className="font-sans text-[10px] font-bold uppercase tracking-widest pt-0.5">Materials Modeling</span>
+                <span className="font-sans text-xs font-bold tracking-normal pt-0.5">Materials Modeling</span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 bg-white/10 border border-white/20 rounded-full text-white backdrop-blur-sm shadow-sm">
+              <div className="flex items-center gap-2 text-white">
                 <Brain size={14} className="text-accent-blue" />
-                <span className="font-sans text-[10px] font-bold uppercase tracking-widest pt-0.5">Machine Learning</span>
+                <span className="font-sans text-xs font-bold tracking-normal pt-0.5">Machine Learning</span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-2 bg-white/10 border border-white/20 rounded-full text-white backdrop-blur-sm shadow-sm">
+              <div className="flex items-center gap-2 text-white">
                 <Activity size={14} className="text-accent-blue" />
-                <span className="font-sans text-[9px] font-bold uppercase tracking-widest leading-tight pt-0.5">Structure–Property<br/>Relationships</span>
+                <span className="font-sans text-xs font-bold tracking-normal leading-tight pt-0.5">Structure–Property<br/>Relationships</span>
               </div>
             </div>
           </motion.div>
@@ -149,21 +70,20 @@ export default function Home() {
           >
             {/* Small Label */}
             <div className="flex items-center gap-3 mb-6">
-              <span className="h-px w-12 bg-primary" />
-              <span className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Group Introduction</span>
+              <h2 className="section-title">Group Introduction</h2>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start mb-10">
               {/* Left Section: English Text (ratio 4/10) */}
-              <div className="lg:col-span-5 space-y-6">
+              <div className="lg:col-span-5 space-y-4">
                 <div className="relative">
-                  <p className="text-sm md:text-base font-light text-slate-800 font-academic leading-relaxed text-left tracking-tight">
-                    Led by <span className="font-bold text-primary border-b-2 border-accent-blue/30 pb-0.5">Professor Taehun Lee</span> in the Department of Energy Science and Engineering at Daegu Gyeongbuk Institute of Science & Technology (DGIST), our research combines <span className="font-medium text-slate-900 italic">computational materials science</span>, quantum-mechanical simulations, and machine learning to understand and design functional materials.
+                  <p className="text-sm font-normal text-slate-800 font-academic leading-relaxed text-left">
+                    Led by <span className="font-semibold text-primary">Professor Taehun Lee</span> in the Department of Energy Science and Engineering at Daegu Gyeongbuk Institute of Science & Technology (DGIST), our research combines computational materials science, quantum-mechanical simulations, and machine learning to understand and design functional materials.
                   </p>
+                  <p className="mt-3 font-academic text-sm font-semibold text-primary leading-relaxed">Joint appointment · Department of Semiconductor Engineering, DGIST</p>
                 </div>
-                <div className="pt-4 flex gap-4">
-                  <div className="h-full w-px bg-slate-100 shrink-0" />
-                  <p className="text-[13px] md:text-sm font-light text-slate-600 font-academic leading-relaxed text-left">
+                <div>
+                  <p className="text-sm font-normal text-slate-600 font-academic leading-relaxed text-left">
                     We focus on how atomic-scale structures, defects, interfaces, and chemical environments govern materials properties under realistic operating conditions. By integrating density functional theory (DFT), molecular dynamics, machine-learned interatomic potentials, and automated workflows, we aim to establish design principles for advanced energy and electronic materials.
                   </p>
                 </div>
@@ -186,7 +106,7 @@ export default function Home() {
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div className="bg-primary/60 text-white px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest backdrop-blur-sm">
+                    <div className="bg-primary/60 text-white px-3 py-1.5 rounded-full text-xs font-bold tracking-normal backdrop-blur-sm">
                       Click to Enlarge
                     </div>
                   </div>
@@ -195,11 +115,11 @@ export default function Home() {
             </div>
 
             {/* Bottom Section: Full Width Korean Text (Matching Research Overview format) */}
-            <div className="mt-8 space-y-4 pl-3 border-l-2 border-accent-blue/30 opacity-80">
-              <p className="text-[13px] text-slate-600 font-academic leading-relaxed italic text-left break-keep">
-                본 연구실(지도 교수: DGIST 에너지공학과 이태훈)은 계산재료과학, 양자역학 기반 시뮬레이션, 머신러닝을 결합하여 기능성 소재를 이해하고 설계합니다. 우리는 원자 수준의 구조, 결함, 계면이 소재 물성에 어떻게 영향을 주는지 연구합니다.
+            <div className="mt-6 space-y-3" lang="ko">
+              <p className="text-sm text-slate-600 font-academic leading-relaxed text-left break-keep">
+                본 연구실은 DGIST 에너지공학과 이태훈 교수가 이끌며, 이 교수는 <span className="font-semibold text-primary">반도체공학과 겸임교수</span>로도 재직하고 있습니다. 계산재료과학, 양자역학 기반 시뮬레이션, 머신러닝을 결합하여 기능성 소재를 이해하고 설계하며, 원자 수준의 구조, 결함, 계면이 소재 물성에 어떻게 영향을 주는지 연구합니다.
               </p>
-              <p className="text-[13px] text-slate-600 font-academic leading-relaxed italic text-left break-keep">
+              <p className="text-sm text-slate-600 font-academic leading-relaxed text-left break-keep">
                 DFT, 분자동역학, MLIP, 자동화 계산 워크플로우를 통합하여 차세대 에너지 및 전자 소재의 설계 원리를 확립하는 것을 목표로 합니다.
               </p>
             </div>
@@ -216,13 +136,12 @@ export default function Home() {
       <section className="relative z-10 py-10 bg-transparent">
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex items-center gap-3 mb-6">
-            <span className="h-px w-12 bg-primary" />
-            <h2 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Research Overview</h2>
+            <h2 className="section-title">Research Overview</h2>
           </div>
           
           <div className="flex flex-col gap-8">
             <div className="space-y-4">
-              <p className="text-sm font-light text-slate-700 font-academic leading-relaxed text-left">
+              <p className="text-sm font-normal text-slate-700 font-academic leading-relaxed text-left">
                 We combine computational materials science and machine learning to understand, predict, and design the structure, stability, reactivity, and performance of functional materials at the atomic scale under realistic operating conditions.
               </p>
             </div>
@@ -240,7 +159,7 @@ export default function Home() {
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="bg-primary/60 text-white px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest backdrop-blur-sm">
+                  <div className="bg-primary/60 text-white px-3 py-1.5 rounded-full text-xs font-bold tracking-normal backdrop-blur-sm">
                     Click to Enlarge
                   </div>
                 </div>
@@ -249,18 +168,18 @@ export default function Home() {
             
             <div className="space-y-6">
               <div className="space-y-4">
-                <p className="text-sm font-light text-slate-700 font-academic leading-relaxed text-left">
+                <p className="text-sm font-normal text-slate-700 font-academic leading-relaxed text-left">
                   Building on physics-based modeling with density functional theory (DFT), we integrate machine-learned interatomic potentials (MLIPs), automated computational workflows, data-driven screening, and generative models to investigate complex surfaces, interfaces, defects, amorphous structures, and their structure–property relationships.
                 </p>
-                <p className="text-sm font-light text-slate-700 font-academic leading-relaxed text-left">
+                <p className="text-sm font-normal text-slate-700 font-academic leading-relaxed text-left">
                   Our primary materials of interest include photoelectrochemical and electrocatalytic oxides, high-k dielectric oxides, and their nanostructured and disordered forms.
                 </p>
               </div>
-              <div className="space-y-4 pl-3 border-l-2 border-accent-blue/30 opacity-80">
-                <p className="text-[13px] text-slate-600 font-academic leading-relaxed italic text-left break-keep">
+              <div className="space-y-4" lang="ko">
+                <p className="text-sm text-slate-600 font-academic leading-relaxed text-left break-keep">
                   우리는 계산재료과학과 머신러닝을 결합하여, 실제 환경에서 기능성 재료의 구조, 안정성, 반응성, 성능을 원자 수준에서 이해하고 예측하며 설계합니다. 밀도범함수이론(DFT)에 기반한 물리 모델링을 바탕으로, 우리는 machine-learned interatomic potentials (MLIPs), 자동화 계산 워크플로, 데이터 기반 스크리닝, 생성 모델을 통합하여 복잡한 표면, 계면, 결함, 비정질 구조를 탐구하고, 그 구조–물성 관계를 연구합니다.
                 </p>
-                <p className="text-[13px] text-slate-600 font-academic leading-relaxed italic text-left break-keep">
+                <p className="text-sm text-slate-600 font-academic leading-relaxed text-left break-keep">
                   주요 관심 소재는 광전기화학 및 전기촉매 산화물, high-k 유전체 산화물, 그리고 이들의 나노구조 및 무질서 구조체입니다.
                 </p>
               </div>
@@ -279,29 +198,28 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-8">
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-8">
-              <span className="h-px w-12 bg-primary" />
-              <h2 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Research Themes</h2>
+              <h2 className="section-title">Research Themes</h2>
             </div>
             <div className="w-full space-y-3">
-              <div className="text-sm text-slate-700 font-academic font-light leading-relaxed text-left">
+              <div className="text-sm text-slate-700 font-academic font-normal leading-relaxed text-left">
                 <p className="mb-2">Our research spans three interconnected themes:</p>
                 <ul className="space-y-1.5 pl-2">
                   <li className="flex items-start gap-2">
                     <span className="text-slate-500 font-medium">(1)</span>
-                    <span className="flex-1 opacity-90">identifying active motifs in realistic complex structures,</span>
+                    <span className="flex-1">identifying active motifs in realistic complex structures,</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-slate-500 font-medium">(2)</span>
-                    <span className="flex-1 opacity-90">understanding the stability and reactivity of surfaces and interfaces under operating conditions, and</span>
+                    <span className="flex-1">understanding the stability and reactivity of surfaces and interfaces under operating conditions, and</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-slate-500 font-medium">(3)</span>
-                    <span className="flex-1 opacity-90">establishing data-driven design rules for property prediction and inverse design.</span>
+                    <span className="flex-1">establishing data-driven design rules for property prediction and inverse design.</span>
                   </li>
                 </ul>
               </div>
-              <div className="pl-3 border-l-2 border-accent-blue/30 opacity-80">
-                <div className="text-[13px] text-slate-600 font-academic leading-relaxed italic text-left break-keep">
+              <div lang="ko">
+                <div className="text-sm text-slate-600 font-academic leading-relaxed text-left break-keep">
                   <p className="mb-1.5">본 연구실은 세 가지 주제를 포괄합니다. 전산재료과학 및 머신러닝 기반 모델링을 통해</p>
                   <ul className="space-y-1.5 pl-2">
                     <li className="flex items-start gap-2">
@@ -348,7 +266,7 @@ export default function Home() {
                     
                     {/* Hover Overlay */}
                     <div className="absolute top-0 left-0 w-full p-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-y-1 group-hover:translate-y-0 flex items-center justify-between z-10">
-                      <span className="font-sans text-[9px] font-bold tracking-widest text-primary uppercase bg-white/70 backdrop-blur-sm px-2 py-1 rounded-sm">Explore Theme</span>
+                      <span className="font-sans text-xs font-bold tracking-normal text-primary bg-white/70 backdrop-blur-sm px-2 py-1 rounded-sm">Explore Theme</span>
                       <div className="bg-white/70 backdrop-blur-sm p-1.5 rounded-sm">
                         <ArrowRight size={10} className="text-primary" />
                       </div>
@@ -359,7 +277,7 @@ export default function Home() {
                       <div className="w-7 h-7 shrink-0 bg-primary/5 flex items-center justify-center text-primary rounded-full group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                         {theme.icon}
                       </div>
-                      <h3 className="font-sans text-[11px] md:text-xs font-bold text-primary leading-tight text-left">
+                      <h3 className="font-sans text-sm font-semibold text-primary leading-snug text-left">
                         {theme.title}
                       </h3>
                     </div>
@@ -379,14 +297,13 @@ export default function Home() {
       {/* Materials Systems */}
       <section className="relative z-10 py-10 bg-transparent">
         <div className="max-w-7xl mx-auto px-8">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex flex-wrap items-baseline justify-between gap-3 mb-6">
             <div className="flex items-center gap-3">
-              <span className="h-px w-12 bg-primary" />
-              <h2 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Materials Systems of Interest</h2>
+              <h2 className="section-title">Materials Systems of Interest</h2>
             </div>
             <Link 
               to="/materials-systems" 
-              className="text-primary font-sans text-[10px] font-bold uppercase tracking-widest hover:text-tertiary transition-all border-b-2 border-primary/20 pb-0.5"
+              className="text-primary font-sans text-xs font-bold tracking-normal hover:text-tertiary transition-all border-b-2 border-primary/20 pb-0.5"
             >
               Explore All →
             </Link>
@@ -434,11 +351,11 @@ export default function Home() {
                   <div className="text-primary mt-0.5 flex-shrink-0 scale-100 group-hover:scale-110 transition-transform">
                     {item.icon}
                   </div>
-                  <h4 className="font-sans font-bold text-primary text-sm leading-tight group-hover:text-tertiary transition-colors">
+                  <h4 className="font-sans font-semibold text-primary text-base leading-snug group-hover:text-tertiary transition-colors">
                     {item.title}
                   </h4>
                 </div>
-                <p className="text-xs text-slate-700 font-academic leading-relaxed">
+                <p className="text-sm text-slate-700 font-academic leading-relaxed">
                   {item.desc}
                 </p>
               </Link>
@@ -457,15 +374,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-8">
           <div className="mb-6">
             <div className="flex items-center gap-3 mb-3">
-              <span className="h-px w-12 bg-primary" />
-              <h2 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Method</h2>
+              <h2 className="section-title">Method</h2>
             </div>
             <div className="w-full space-y-3">
-              <p className="text-sm font-light text-slate-700 font-academic leading-relaxed text-left">
+              <p className="text-sm font-normal text-slate-700 font-academic leading-relaxed text-left">
                 We combine automated DFT-based workflows, data-driven machine learning, and machine-learned interatomic potentials to analyze materials across multiple scales. We further employ advanced sampling, global optimization, and realistic interface modeling under constant-potential conditions, explicit electrolytes, and electric-field effects to predict structure formation and understand materials properties under operating environments.
               </p>
-              <div className="pl-3 border-l-2 border-accent-blue/30 opacity-80">
-                <p className="text-[13px] text-slate-600 font-academic leading-relaxed italic text-left break-keep">
+              <div lang="ko">
+                <p className="text-sm text-slate-600 font-academic leading-relaxed text-left break-keep">
                   우리 연구실은 DFT 기반의 자동화 계산, 데이터 기반 머신러닝, 그리고 machine-learned interatomic potentials를 결합하여 다양한 스케일에서 소재의 구조와 물성을 분석합니다. 나아가 고도화된 샘플링 및 전역 최적화 기법과 함께 constant-potential, explicit electrolyte, electric-field effects를 반영한 현실적 계면 모델링을 통해 실제 환경에서 소재의 구조 형성, 안정성, 반응성을 연구합니다.
                 </p>
               </div>
@@ -490,13 +406,13 @@ export default function Home() {
                           <div className="text-sky-500 mt-0.5 shrink-0 bg-sky-50/50 p-1 rounded-sm">
                             {method.icon}
                           </div>
-                          <h4 className="font-sans font-bold text-primary text-sm leading-tight pt-0.5">
+                          <h4 className="font-sans font-semibold text-primary text-base leading-snug pt-0.5">
                             {method.title}
                           </h4>
                         </div>
                         <ul className="space-y-1 pl-6">
                           {method.bullets.map((b, idx) => (
-                            <li key={idx} className="flex items-start gap-2 text-xs text-slate-700 font-academic leading-relaxed text-left">
+                            <li key={idx} className="flex items-start gap-2 text-sm text-slate-700 font-academic leading-relaxed text-left">
                               <div className="w-[3px] h-[3px] rounded-full bg-sky-200 mt-[7px] shrink-0"></div>
                               <span>{b}</span>
                             </li>
@@ -523,7 +439,7 @@ export default function Home() {
           <div className="shrink-0">
             <Link 
               to="/open-positions" 
-              className="inline-block bg-white text-primary font-sans font-bold text-xs tracking-widest uppercase px-8 py-3 hover:bg-tertiary hover:text-white transition-all shadow-lg"
+              className="inline-block bg-white text-primary font-sans font-bold text-xs tracking-normal px-8 py-3 hover:bg-tertiary hover:text-white transition-all shadow-lg"
             >
               Contact Us
             </Link>

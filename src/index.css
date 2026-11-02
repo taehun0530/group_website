@@ -4,6 +4,7 @@
 @theme {
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-academic: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+  --leading-relaxed: 1.65;
   
   --color-primary: #003559; /* Deep Navy */
   --color-secondary: #061a40; /* Midnight Blue */
@@ -29,6 +30,20 @@
   h1 { @apply text-2xl md:text-3xl; }
   h2 { @apply text-xl; }
   h3 { @apply text-lg; }
+}
+
+@layer components {
+  .page-title {
+    @apply font-sans text-[22px] font-bold leading-[1.3] tracking-normal text-primary;
+  }
+
+  .section-title {
+    @apply font-sans text-lg font-bold leading-snug tracking-normal text-primary;
+  }
+
+  .text-meta {
+    @apply text-xs leading-normal tracking-normal;
+  }
 }
 
 .glass-nav {

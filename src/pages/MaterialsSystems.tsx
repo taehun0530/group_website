@@ -79,19 +79,18 @@ export default function MaterialsSystems() {
     <div className="py-10 max-w-7xl mx-auto px-8">
       <Link 
         to="/" 
-        className="inline-flex items-center gap-2 text-slate-600 hover:text-primary font-sans text-[10px] font-bold uppercase tracking-widest transition-colors mb-8"
+        className="inline-flex items-center gap-2 text-slate-600 hover:text-primary font-sans text-xs font-bold uppercase tracking-normal transition-colors mb-8"
       >
         <ChevronLeft size={14} /> Back to Home
       </Link>
 
       <header className="mb-10">
         <div className="flex items-center gap-3 mb-6">
-          <span className="h-px w-12 bg-primary" />
-          <h1 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">
+          <h1 className="page-title">
             Materials Systems of Interest
           </h1>
         </div>
-        <div className="mt-4 font-academic text-sm font-light text-slate-700 max-w-3xl leading-relaxed pl-[60px]">
+        <div className="mt-4 font-academic text-sm font-normal text-slate-700 max-w-3xl leading-relaxed">
           Exploring the frontiers of functional materials through advanced atomistic modeling and data-driven insights.
         </div>
       </header>
@@ -109,12 +108,12 @@ export default function MaterialsSystems() {
           >
             <div className={i % 2 === 1 ? 'md:order-2' : ''}>
               <div className="mb-4">
-                <span className="text-[10px] font-bold text-primary uppercase tracking-widest">SUB-SYSTEM {String(i + 1).padStart(2, '0')}</span>
-                <h2 className="font-sans text-xl md:text-2xl font-extrabold text-primary tracking-tighter mt-1 mb-4 leading-tight">
+                <span className="text-xs font-bold text-primary uppercase tracking-normal">SUB-SYSTEM {String(i + 1).padStart(2, '0')}</span>
+                <h2 className="section-title mt-1 mb-4">
                   <FormattedText text={system.title} />
                 </h2>
               </div>
-              <p className="font-academic text-sm font-light text-slate-700 leading-relaxed">
+              <p className="font-academic text-sm font-normal text-slate-700 leading-relaxed">
                 <FormattedText text={system.content} />
               </p>
             </div>
@@ -130,7 +129,7 @@ export default function MaterialsSystems() {
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/5">
-                  <div className="bg-primary/60 text-white px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest backdrop-blur-sm">
+                  <div className="bg-primary/60 text-white px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-normal backdrop-blur-sm">
                     Click to Enlarge
                   </div>
                 </div>

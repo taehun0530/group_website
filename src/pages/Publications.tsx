@@ -41,15 +41,14 @@ export default function Publications() {
     <div className="py-10 max-w-7xl mx-auto px-8">
       <header className="mb-10">
         <div className="flex items-center gap-3 mb-6">
-          <span className="h-px w-12 bg-primary" />
-          <h1 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Publications</h1>
+          <h1 className="page-title">Publications</h1>
         </div>
-        <div className="flex flex-col gap-2 mt-4 ml-[60px]">
+        <div className="flex flex-col gap-2 mt-4">
           <a 
             href="https://scholar.google.com/citations?user=E4QBWfAAAAAJ&hl=en" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-tertiary font-sans text-[10px] font-bold uppercase tracking-[0.15em] hover:text-primary transition-colors border-b border-tertiary/20 pb-0.5 w-fit"
+            className="inline-flex items-center gap-2 text-tertiary font-sans text-xs font-bold uppercase tracking-normal hover:text-primary transition-colors border-b border-tertiary/20 pb-0.5 w-fit"
           >
             Google Scholar Profile <ArrowUpRight size={12} />
           </a>
@@ -67,11 +66,7 @@ export default function Publications() {
                   type="button"
                   aria-pressed={activeYear === year}
                   onClick={() => setActiveYear(year)}
-                  className={`font-sans text-xs font-bold px-4 py-1.5 rounded-full transition-all tracking-widest uppercase ${
-                    activeYear === year 
-                      ? 'bg-primary text-white shadow-md' 
-                      : 'text-slate-700 hover:bg-slate-50'
-                  }`}
+                  className={`font-sans text-xs font-bold px-4 py-1.5 rounded-full transition-all tracking-normal uppercase ${ activeYear === year ? 'bg-primary text-white shadow-md' : 'text-slate-700 hover:bg-slate-50' }`}
                 >
                   {year}
                 </button>
@@ -82,7 +77,7 @@ export default function Publications() {
       </section>
 
       <div className="max-w-7xl mx-auto px-8 mb-4">
-        <div className="flex items-center justify-start gap-4 text-slate-500 font-academic text-[12px] whitespace-nowrap">
+        <div className="flex items-center justify-start gap-4 text-slate-500 font-academic text-xs whitespace-nowrap">
           <span># Corresponding author</span>
           <span>† First author</span>
         </div>
@@ -100,10 +95,9 @@ export default function Publications() {
             {Object.keys(groupedPubs).sort((a, b) => b.localeCompare(a)).map(year => (
               <section key={year} className="relative">
                 <div className="flex items-baseline gap-4 mb-5">
-                  <h2 className="font-sans font-extrabold text-slate-300 select-none text-3xl leading-none">
-                    {year} <span className="text-xs font-bold text-slate-200 ml-1">({groupedPubs[year].length})</span>
+                  <h2 className="section-title">
+                    {year} <span className="text-xs font-normal text-slate-500 ml-1">({groupedPubs[year].length})</span>
                   </h2>
-                  <div className="h-[1px] grow bg-slate-200" />
                 </div>
                 
                 <div className="space-y-2">
@@ -113,14 +107,14 @@ export default function Publications() {
                       whileHover={{ x: 5 }}
                       className="group py-3 border-b border-slate-50 hover:bg-slate-50/50 px-5 -mx-5 transition-all"
                     >
-                      <h3 className="text-primary font-sans font-extrabold text-sm mb-1 leading-snug group-hover:text-tertiary transition-colors">
+                      <h3 className="text-primary font-sans font-bold text-base mb-1 leading-snug group-hover:text-tertiary transition-colors">
                         {formatTitle(pub.title)}
                       </h3>
-                      <p className="text-slate-600 font-academic text-[13px] mb-1 leading-relaxed">
+                      <p className="text-slate-600 font-academic text-sm mb-1 leading-relaxed">
                         {formatAuthors(pub.authors)}
                       </p>
                       <div className="flex flex-wrap items-center gap-5">
-                        <p className="text-slate-700 font-academic text-[13px] italic">
+                        <p className="text-slate-700 font-academic text-sm italic">
                           <JournalCitation citation={pub.journal} />
                           {pub.if ? <>{' '}<strong>IF = {pub.if}</strong></> : null}
                         </p>
@@ -128,14 +122,14 @@ export default function Publications() {
                           href={pub.doi} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="text-tertiary text-xs font-bold uppercase tracking-widest hover:underline flex items-center gap-1.5"
+                          className="text-tertiary text-xs font-bold uppercase tracking-normal hover:underline flex items-center gap-1.5"
                         >
                           <LinkIcon size={12} />
                           DOI Link
                         </a>
                       </div>
                       {pub.status === 'article-in-press' ? (
-                        <p className="text-slate-500 font-academic text-[12px] mt-1 leading-relaxed">Published online · Article in Press · Volume and issue pending</p>
+                        <p className="text-slate-500 font-academic text-xs mt-1 leading-relaxed">Published online · Article in Press · Volume and issue pending</p>
                       ) : null}
                     </motion.div>
                   ))}

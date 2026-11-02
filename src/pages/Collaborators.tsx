@@ -14,17 +14,16 @@ export default function Collaborators() {
     <div className="py-10 max-w-4xl mx-auto px-8">
       <Link 
         to="/people" 
-        className="inline-flex items-center gap-2 text-slate-600 hover:text-primary font-sans text-[10px] font-bold uppercase tracking-widest transition-colors mb-6"
+        className="inline-flex items-center gap-2 text-slate-600 hover:text-primary font-sans text-xs font-bold uppercase tracking-normal transition-colors mb-6"
       >
         <ChevronLeft size={14} /> Back to People
       </Link>
 
       <header className="mb-10">
         <div className="flex items-center gap-3 mb-6">
-          <span className="h-px w-12 bg-primary" />
-          <h1 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Current Collaborators</h1>
+          <h1 className="page-title">Current Collaborators</h1>
         </div>
-        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-[13px] font-light opacity-90 pl-[60px]">
+        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-sm font-normal">
           Active partnerships with leading researchers and institutions worldwide, driving multidisciplinary breakthroughs in materials science.
         </p>
       </header>
@@ -33,10 +32,9 @@ export default function Collaborators() {
         {groups.map((group, groupIdx) => (
           <section key={groupIdx}>
             <div className="flex items-center gap-4 mb-6">
-              <h2 className="text-[10px] font-bold uppercase tracking-widest text-primary shrink-0">
+              <h2 className="section-title">
                 {group.title}
               </h2>
-              <div className="h-px grow bg-slate-200" />
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -48,8 +46,8 @@ export default function Collaborators() {
                   transition={{ delay: (groupIdx * group.members.length + i) * 0.05 }}
                   className="p-4 bg-white border border-slate-100 hover:border-slate-200 hover:shadow-sm transition-all rounded-sm"
                 >
-                  <h3 className="font-sans font-bold text-primary text-sm mb-1">{collab.name}</h3>
-                  <p className="font-academic text-[11px] text-slate-700 italic leading-relaxed">{collab.role}</p>
+                  <h3 className="font-sans font-bold text-primary text-base mb-1">{collab.name}</h3>
+                  <p className="font-academic text-xs text-slate-700 leading-relaxed">{collab.role}</p>
                 </motion.div>
               ))}
             </div>

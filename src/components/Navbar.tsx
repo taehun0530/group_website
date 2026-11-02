@@ -29,7 +29,7 @@ export default function Navbar() {
             <Link
               key={link.path}
               to={link.path}
-              className={`font-sans text-[11px] font-bold uppercase tracking-widest transition-colors pb-1 border-b-2 ${
+              className={`font-sans text-[13px] font-semibold tracking-normal transition-colors pb-1 border-b-2 ${
                 location.pathname === link.path
                   ? 'text-primary border-primary'
                   : 'text-slate-700 border-transparent hover:text-primary'
@@ -41,7 +41,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Toggle */}
-        <button className="lg:hidden text-primary" onClick={() => setIsOpen(!isOpen)}>
+        <button type="button" aria-label={isOpen ? 'Close navigation' : 'Open navigation'} aria-expanded={isOpen} aria-controls="mobile-navigation" className="lg:hidden text-primary" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -50,6 +50,7 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-navigation"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -60,7 +61,7 @@ export default function Navbar() {
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className={`block font-sans text-sm font-bold uppercase tracking-widest ${
+                className={`block font-sans text-sm font-semibold tracking-normal ${
                   location.pathname === link.path ? 'text-primary' : 'text-slate-700'
                 }`}
               >

@@ -25,12 +25,11 @@ export default function People() {
       {/* Header Section */}
       <header className="mb-10 pb-8 border-b border-slate-200">
         <div className="flex items-center gap-3 mb-6">
-          <span className="h-px w-12 bg-primary" />
-          <h1 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">
+          <h1 className="page-title">
             People
           </h1>
         </div>
-        <p className="font-academic text-slate-700 leading-relaxed text-[13px] font-light opacity-90">
+        <p className="font-academic text-slate-700 leading-relaxed text-sm font-normal">
           Our group consists of motivated researchers dedicated to understanding and designing functional materials at the atomic scale.
         </p>
       </header>
@@ -38,11 +37,10 @@ export default function People() {
       {/* PI Section */}
       <section className="mb-10">
         <div className="flex items-center gap-3 mb-8">
-          <span className="h-px w-10 bg-primary" />
-          <h2 className="font-sans text-[13px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Principal Investigator</h2>
+          <h2 className="section-title">Principal Investigator</h2>
         </div>
         <div className="flex flex-col md:flex-row gap-8 items-start">
-          <div className="w-full md:w-[28.5%] lg:w-[25.5%] sticky top-24">
+          <div className="w-full md:w-[28.5%] lg:w-[25.5%] md:sticky md:top-24">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -59,16 +57,21 @@ export default function People() {
           
           <div className="w-full md:flex-1">
             <header className="mb-4">
-              <p className="font-sans text-xs font-bold text-tertiary uppercase tracking-widest mb-1">Assistant Professor</p>
+              <p className="font-sans text-xs font-bold text-tertiary tracking-normal mb-1">Assistant Professor</p>
               <h3 className="font-sans text-xl font-extrabold text-primary tracking-tighter mb-1">
                 Taehun Lee <span className="text-base text-slate-500 font-medium ml-2">이태훈</span>
               </h3>
-              <div className="flex items-center gap-3 text-slate-500">
+              <p className="font-academic text-sm text-slate-700 leading-relaxed">Department of Energy Science and Engineering, DGIST</p>
+              <p className="font-academic text-sm font-semibold text-primary leading-relaxed mt-1 mb-3">
+                Joint appointment · Department of Semiconductor Engineering, DGIST
+                <span lang="ko" className="block text-xs font-medium text-slate-600">반도체공학과 겸임교수</span>
+              </p>
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-slate-600">
                 <a href="mailto:taehun.lee@dgist.ac.kr" className="flex items-center gap-1.5 hover:text-tertiary transition-colors">
                   <Mail size={12} className="text-primary" />
                   <span className="font-academic text-sm">taehun.lee@dgist.ac.kr</span>
                 </a>
-                <span className="text-slate-500 text-xs">|</span>
+                <span className="hidden sm:inline text-slate-500 text-xs" aria-hidden="true">|</span>
                 <a href="https://scholar.google.com/citations?user=E4QBWfAAAAAJ&hl=en" target="_blank" className="flex items-center gap-1.5 hover:text-tertiary transition-colors">
                   <GraduationCap size={12} className="text-primary" />
                   <span className="font-academic text-sm">Google Scholar</span>
@@ -77,15 +80,15 @@ export default function People() {
             </header>
             
             <div className="space-y-5">
-              <p className="font-academic text-sm leading-relaxed text-slate-600 font-light">
-                Taehun Lee is an Assistant Professor in the Department of Energy Science and Engineering at DGIST. His group develops machine-learning-guided atomistic modeling tools to understand and design functional materials under realistic conditions, with interests spanning interfaces, defects, transport, and data-driven materials design.
+              <p className="font-academic text-sm leading-relaxed text-slate-600 font-normal">
+                Taehun Lee is an Assistant Professor in the Department of Energy Science and Engineering at DGIST, with a joint appointment in the Department of Semiconductor Engineering. His group develops machine-learning-guided atomistic modeling tools to understand and design functional materials under realistic conditions, with interests spanning interfaces, defects, transport, and data-driven materials design.
               </p>
               
               <div>
-                <h4 className="font-sans text-[10px] font-bold text-primary uppercase tracking-widest mb-2 border-l-4 border-primary pl-2">Research Interests</h4>
+                <h4 className="font-sans text-sm font-semibold text-primary tracking-normal mb-2">Research Interests</h4>
                 <div className="flex flex-wrap gap-1.5">
                   {['DFT & ab initio MD', 'Machine-learning Potentials', 'Materials-Property Prediction', 'Electrochemical Interfaces'].map((tag) => (
-                    <span key={tag} className={`px-2 py-0.5 border rounded-full text-[10px] font-bold uppercase tracking-widest ${getTagColor(tag)}`}>
+                    <span key={tag} className={`px-2 py-0.5 border rounded-full text-xs font-bold tracking-normal ${getTagColor(tag)}`}>
                       {tag}
                     </span>
                   ))}
@@ -94,7 +97,7 @@ export default function People() {
               
               <Link 
                 to="/profile/taehun-lee"
-                className="inline-flex items-center gap-3 text-primary font-sans text-[10px] font-bold uppercase tracking-widest hover:text-tertiary transition-all border-b-2 border-primary/20 pb-0.5"
+                className="inline-flex items-center gap-3 text-primary font-sans text-xs font-bold tracking-normal hover:text-tertiary transition-all border-b-2 border-primary/20 pb-0.5"
               >
                 Open Profile →
               </Link>
@@ -108,11 +111,10 @@ export default function People() {
       {/* Researchers */}
       <section className="mb-10">
         <div className="flex items-center gap-3 mb-8">
-          <span className="h-px w-10 bg-primary" />
-          <h2 className="font-sans text-[13px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Researchers</h2>
+          <h2 className="section-title">Researchers</h2>
         </div>
         <div className="py-6 px-6 bg-surface-container-low rounded-sm text-center border-2 border-dashed border-slate-200">
-          <p className="font-academic text-slate-500 italic text-sm">
+          <p className="font-academic text-slate-500 text-sm">
             Positions are available now. 
             Please check our <Link to="/open-positions" className="text-primary font-bold hover:text-tertiary transition-colors underline underline-offset-4">Open Positions</Link> page for more details.
           </p>
@@ -122,8 +124,7 @@ export default function People() {
       {/* Graduate Students */}
       <section className="mb-10">
         <div className="flex items-center gap-3 mb-8">
-          <span className="h-px w-10 bg-primary" />
-          <h2 className="font-sans text-[13px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Graduate Students</h2>
+          <h2 className="section-title">Graduate Students</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
@@ -155,21 +156,21 @@ export default function People() {
                 <User size={80} strokeWidth={1.5} className="group-hover:text-slate-400 transition-colors duration-300" />
               </div>
               <div className="p-4 flex flex-col flex-grow">
-                <h3 className="font-sans text-sm font-extrabold text-primary mb-2">
+                <h3 className="font-sans text-base font-bold text-primary mb-2">
                   {student.name} <span className="text-[12px] text-slate-600 font-medium ml-1">{student.ko}</span>
                 </h3>
                 <div className="mb-3 flex flex-col gap-0.5">
-                  <span className="font-sans text-[11px] font-bold text-tertiary">{student.role}</span>
-                  {(student as any).period && <span className="font-sans text-[9px] font-medium text-slate-400">{ (student as any).period }</span>}
+                  <span className="font-sans text-xs font-bold text-tertiary">{student.role}</span>
+                  {(student as any).period && <span className="font-sans text-xs font-medium text-slate-400">{ (student as any).period }</span>}
                 </div>
                 <div className="flex flex-wrap gap-1 mb-4">
                   {student.tags.map(tag => (
-                    <span key={tag} className={`px-1.5 py-0.5 border rounded-full text-[7.5px] font-bold uppercase tracking-widest ${getTagColor(tag)}`}>
+                    <span key={tag} className={`px-1.5 py-0.5 border rounded-full text-xs font-bold tracking-normal ${getTagColor(tag)}`}>
                       {tag}
                     </span>
                   ))}
                 </div>
-                <button className="mt-auto flex items-center gap-2 text-primary font-sans text-[8px] font-bold uppercase tracking-widest hover:text-tertiary transition-all">
+                <button className="mt-auto flex items-center gap-2 text-primary font-sans text-xs font-bold tracking-normal hover:text-tertiary transition-all">
                   Open profile →
                 </button>
               </div>
@@ -181,8 +182,7 @@ export default function People() {
       {/* Undergraduate Interns */}
       <section className="mb-10">
         <div className="flex items-center gap-3 mb-8">
-          <span className="h-px w-10 bg-primary" />
-          <h2 className="font-sans text-[13px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Undergraduate Interns</h2>
+          <h2 className="section-title">Undergraduate Interns</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
@@ -212,19 +212,19 @@ export default function People() {
                 <User size={80} strokeWidth={1.5} className="group-hover:text-slate-400 transition-colors duration-300" />
               </div>
               <div className="p-4 flex flex-col flex-grow">
-                <h3 className="font-sans text-sm font-extrabold text-primary mb-1">
+                <h3 className="font-sans text-base font-bold text-primary mb-1">
                   {student.name ? <>{student.name} <span className="text-[12px] text-slate-600 font-medium ml-1">{student.ko}</span></> : <span lang="ko">{student.ko}</span>}
                 </h3>
-                <p className="font-sans text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">
+                <p className="font-sans text-xs font-bold text-slate-500 tracking-normal mb-2">
                   {student.affiliation}
                 </p>
                 <div className="flex flex-wrap items-baseline gap-1.5 mb-3">
-                  <span className="font-sans text-[11px] font-bold text-tertiary">{student.role}</span>
-                  {(student as any).period && <span className="font-sans text-[10px] font-medium text-slate-400">{ (student as any).period }</span>}
+                  <span className="font-sans text-xs font-bold text-tertiary">{student.role}</span>
+                  {(student as any).period && <span className="font-sans text-xs font-medium text-slate-400">{ (student as any).period }</span>}
                 </div>
                 <div className="flex flex-wrap gap-1">
                   {student.tags.map(tag => (
-                    <span key={tag} className={`px-1.5 py-0.5 border rounded-full text-[7.5px] font-bold uppercase tracking-widest ${getTagColor(tag)}`}>
+                    <span key={tag} className={`px-1.5 py-0.5 border rounded-full text-xs font-bold tracking-normal ${getTagColor(tag)}`}>
                       {tag}
                     </span>
                   ))}
@@ -239,8 +239,8 @@ export default function People() {
               <UserPlus size={16} className="text-tertiary" />
             </div>
             <h3 className="font-sans text-sm font-extrabold text-primary mb-1">Join Our Team</h3>
-            <p className="font-academic text-xs text-slate-700 mb-3 leading-relaxed">We are looking for motivated students interested in atomistic modeling.</p>
-            <Link to="/open-positions" className="px-4 py-1.5 bg-primary text-white font-sans text-[10px] font-bold uppercase tracking-widest hover:bg-tertiary transition-colors">Apply Now</Link>
+            <p className="font-academic text-sm text-slate-700 mb-3 leading-relaxed">We are looking for motivated students interested in atomistic modeling.</p>
+            <Link to="/open-positions" className="px-4 py-1.5 bg-primary text-white font-sans text-xs font-bold tracking-normal hover:bg-tertiary transition-colors">Apply Now</Link>
           </article>
         </div>
       </section>
@@ -258,13 +258,13 @@ export default function People() {
               to={link.path}
               className="group p-5 bg-slate-50 border border-transparent hover:border-slate-200 hover:bg-white transition-all flex flex-col rounded-sm"
             >
-              <h3 className="font-sans text-ghost text-[10px] font-bold text-tertiary uppercase tracking-widest mb-2.5 transition-colors">
+              <h3 className="font-sans text-base font-bold text-tertiary tracking-normal mb-2.5 transition-colors">
                 {link.title}
               </h3>
-              <p className="font-academic text-xs text-slate-700 leading-relaxed mb-3">
+              <p className="font-academic text-sm text-slate-700 leading-relaxed mb-3">
                 {link.desc}
               </p>
-              <span className="mt-auto font-sans text-[10px] font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">
+              <span className="mt-auto font-sans text-xs font-bold tracking-normal text-slate-500 group-hover:text-primary transition-colors">
                 View List →
               </span>
             </Link>

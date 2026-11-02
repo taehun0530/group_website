@@ -14,15 +14,15 @@ export default function NewsItem() {
 
   return (
     <>
-    <PageBanner />
+    <PageBanner hideLine />
     <div className="pt-12 pb-12 max-w-3xl mx-auto px-8">
-      <Link to="/news" className="inline-flex items-center gap-2 text-slate-500 hover:text-primary font-sans text-[10px] font-bold uppercase tracking-widest transition-colors mb-6">
+      <Link to="/news" className="inline-flex items-center gap-2 text-slate-500 hover:text-primary font-sans text-xs font-bold uppercase tracking-normal transition-colors mb-6">
         <ChevronLeft size={14} aria-hidden="true" /> Back to News
       </Link>
 
       <motion.article initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
         <header className="mb-8">
-          <div className="flex flex-wrap items-center gap-4 text-[10px] font-bold uppercase tracking-widest mb-3">
+          <div className="flex flex-wrap items-center gap-4 text-xs font-bold uppercase tracking-normal mb-3">
             <span className="flex items-center gap-1.5 text-tertiary">
               <Calendar size={12} aria-hidden="true" /> {item.date.length > 4 ? <time dateTime={item.date.replace(/\./g, '-')}>{item.date.replace(/-/g, '.')}</time> : item.date}
             </span>
@@ -30,7 +30,7 @@ export default function NewsItem() {
               <Tag size={12} aria-hidden="true" /> {item.category}
             </span>
           </div>
-          <h1 className="font-sans text-2xl md:text-3xl font-extrabold text-primary tracking-tight leading-tight mb-5">
+          <h1 className="page-title mb-5">
             {formatScientificTitle(item.title)}
           </h1>
         </header>
@@ -39,23 +39,23 @@ export default function NewsItem() {
           <div className="space-y-8">
             {item.publication && (
               <section aria-labelledby="publication-details" className="p-6 bg-slate-50 border-l-4 border-primary">
-                <h4 id="publication-details" className="font-sans text-xs font-bold text-primary uppercase tracking-widest mb-4">Publication Details</h4>
+                <h4 id="publication-details" className="section-title mb-4">Publication Details</h4>
                 <dl className="grid grid-cols-1 sm:grid-cols-[100px_1fr] gap-y-3 font-academic text-sm">
-                  <dt className="text-slate-500 font-bold uppercase text-[10px]">Title</dt>
+                  <dt className="text-slate-500 font-bold uppercase text-xs">Title</dt>
                   <dd className="text-slate-600 min-w-0">{formatScientificTitle(item.publication.title)}</dd>
-                  <dt className="text-slate-500 font-bold uppercase text-[10px]">Authors</dt>
+                  <dt className="text-slate-500 font-bold uppercase text-xs">Authors</dt>
                   <dd className="text-slate-600 min-w-0">{formatAuthors(item.publication.authors)}</dd>
-                  <dt className="text-slate-500 font-bold uppercase text-[10px]">Journal</dt>
+                  <dt className="text-slate-500 font-bold uppercase text-xs">Journal</dt>
                   <dd className="text-slate-600 min-w-0"><JournalCitation citation={item.publication.journal} /></dd>
-                  {item.publication.status === 'article-in-press' && <><dt className="text-slate-500 font-bold uppercase text-[10px]">Status</dt><dd className="text-slate-600">Article in Press — final volume and issue not yet assigned.</dd></>}
-                  <dt className="text-slate-500 font-bold uppercase text-[10px]">Year</dt>
+                  {item.publication.status === 'article-in-press' && <><dt className="text-slate-500 font-bold uppercase text-xs">Status</dt><dd className="text-slate-600">Article in Press — final volume and issue not yet assigned.</dd></>}
+                  <dt className="text-slate-500 font-bold uppercase text-xs">Year</dt>
                   <dd className="text-slate-600">{item.publication.year}</dd>
-                  <dt className="text-slate-500 font-bold uppercase text-[10px]">DOI/Link</dt>
+                  <dt className="text-slate-500 font-bold uppercase text-xs">DOI/Link</dt>
                   <dd className="text-slate-600 min-w-0 break-words"><a href={item.publication.doi} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-primary">{item.publication.doi}</a></dd>
                 </dl>
               </section>
             )}
-            {item.body?.map((paragraph) => <p key={paragraph} className="font-academic text-base leading-relaxed text-slate-600">{formatScientificTitle(paragraph)}</p>)}
+            {item.body?.map((paragraph) => <p key={paragraph} className="font-academic text-sm leading-relaxed text-slate-600">{formatScientificTitle(paragraph)}</p>)}
           </div>
           {item.images?.map(renderNewsImage)}
           {item.links && (
@@ -68,10 +68,10 @@ export default function NewsItem() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-slate-100 flex justify-between items-center">
-          <Link to="/news" className="text-primary font-sans text-[10px] font-bold uppercase tracking-widest hover:text-secondary transition-colors">
+          <Link to="/news" className="text-primary font-sans text-xs font-bold uppercase tracking-normal hover:text-secondary transition-colors">
             ← Previous News
           </Link>
-          <button type="button" className="flex items-center gap-2 px-5 py-2 bg-primary text-white font-sans text-[10px] font-bold uppercase tracking-widest hover:bg-tertiary transition-colors">
+          <button type="button" className="flex items-center gap-2 px-5 py-2 bg-primary text-white font-sans text-xs font-bold uppercase tracking-normal hover:bg-tertiary transition-colors">
             Share <ExternalLink size={12} aria-hidden="true" />
           </button>
         </div>

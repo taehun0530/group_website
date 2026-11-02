@@ -23,17 +23,16 @@ export default function FormerCollaborators() {
     <div className="py-10 max-w-4xl mx-auto px-8">
       <Link 
         to="/people" 
-        className="inline-flex items-center gap-2 text-slate-600 hover:text-primary font-sans text-[10px] font-bold uppercase tracking-widest transition-colors mb-8"
+        className="inline-flex items-center gap-2 text-slate-600 hover:text-primary font-sans text-xs font-bold uppercase tracking-normal transition-colors mb-8"
       >
         <ChevronLeft size={14} /> Back to People
       </Link>
 
       <header className="mb-10">
         <div className="flex items-center gap-3 mb-6">
-          <span className="h-px w-12 bg-primary" />
-          <h1 className="font-sans text-[16px] font-bold uppercase tracking-[0.35em] text-primary leading-none pt-0.5">Former Collaborators</h1>
+          <h1 className="page-title">Former Collaborators</h1>
         </div>
-        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-[13px] font-light opacity-90 pl-[60px]">
+        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-sm font-normal">
           Acknowledging the past collaborations that have contributed significantly to our research foundation and academic growth.
         </p>
       </header>
@@ -42,8 +41,7 @@ export default function FormerCollaborators() {
         {/* Theory List */}
         <section>
           <div className="flex items-center gap-4 mb-8">
-            <h2 className="font-sans text-[10px] font-bold text-primary uppercase tracking-[0.2em] whitespace-nowrap">Theory</h2>
-            <div className="h-px w-full bg-slate-200"></div>
+            <h2 className="section-title">Theory</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {theoryList.map((person, i) => (
@@ -54,8 +52,8 @@ export default function FormerCollaborators() {
                 transition={{ delay: i * 0.1 }}
                 className="p-4 bg-white border border-slate-100 hover:border-slate-200 transition-colors"
               >
-                <h3 className="font-sans font-bold text-primary text-sm mb-1">{person.name}</h3>
-                <p className="font-academic text-[11px] text-slate-700 italic">{person.role}</p>
+                <h3 className="font-sans font-bold text-primary text-base mb-1">{person.name}</h3>
+                <p className="font-academic text-xs text-slate-700">{person.role}</p>
               </motion.div>
             ))}
           </div>
@@ -64,8 +62,7 @@ export default function FormerCollaborators() {
         {/* Experiment List */}
         <section>
           <div className="flex items-center gap-4 mb-8">
-            <h2 className="font-sans text-[10px] font-bold text-primary uppercase tracking-[0.2em] whitespace-nowrap">Experiment</h2>
-            <div className="h-px w-full bg-slate-200"></div>
+            <h2 className="section-title">Experiment</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {experimentList.map((person, i) => (
@@ -76,8 +73,8 @@ export default function FormerCollaborators() {
                 transition={{ delay: i * 0.1 }}
                 className="p-4 bg-white border border-slate-100 hover:border-slate-200 transition-colors"
               >
-                <h3 className="font-sans font-bold text-primary text-sm mb-1">{person.name}</h3>
-                <p className="font-academic text-[11px] text-slate-700 italic">{person.role}</p>
+                <h3 className="font-sans font-bold text-primary text-base mb-1">{person.name}</h3>
+                <p className="font-academic text-xs text-slate-700">{person.role}</p>
               </motion.div>
             ))}
           </div>
