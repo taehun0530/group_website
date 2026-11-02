@@ -1,58 +1,31 @@
 import { motion } from 'motion/react';
-import { ReactNode } from 'react';
+import { newsData, type NewsImage } from '../data/news';
+import { formatScientificTitle } from '../components/PublicationText';
 import { Link } from 'react-router-dom';
 import { Calendar, ChevronRight, Tag } from 'lucide-react';
 
-export type NewsCategory = 'Publications' | 'Awards' | 'People' | 'Talks' | 'Visits' | 'Lab Life';
+export { newsData } from '../data/news';
+export type { NewsCategory, NewsEntry as NewsItem } from '../data/news';
 
-export interface NewsItem {
-  id: string;
-  date: string;
-  title: string | ReactNode;
-  category: NewsCategory;
-  summary?: string | ReactNode;
-  hasDetail?: boolean;
+export function renderNewsImage(image: NewsImage) {
+  const isAwardPhoto = image.src === '/images/news/dgist-ai-build-week-2026.jpg';
+  const photo = <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" className={isAwardPhoto ? 'block size-full object-cover object-center' : 'block w-full h-auto'} />;
+
+  return (
+    <figure key={image.src} className="mt-6">
+      {isAwardPhoto ? (
+        <a href={image.src} target="_blank" rel="noopener noreferrer" aria-label="View the original AI Build Week photograph" className="block aspect-square w-40 overflow-hidden">
+          {photo}
+        </a>
+      ) : photo}
+      <figcaption className="mt-2 font-academic text-[13px] leading-relaxed text-slate-600">
+        {image.caption}{' '}
+        <a href={image.sourceUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-primary">{image.credit}</a>
+        {image.license && <>{' '}<a href={image.license.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-primary">{image.license.label}</a></>}
+      </figcaption>
+    </figure>
+  );
 }
-
-export const newsData: NewsItem[] = [
-  {
-    id: 'students-joined-2026',
-    date: '2026.05.01',
-    title: 'Hyunjin Lee and Kyunghun Lee officially joined the team as research interns.',
-    category: 'People',
-    hasDetail: false,
-  },
-  {
-    id: 'pub-mos2-2026',
-    date: '2026.03.18',
-    title: <>New Publication: Mechanistic Origins of Structural Failure in Deeply‐Lithiated Li<sub>x</sub>MoS<sub>2</sub></>,
-    category: 'Publications',
-    summary: <>Published in <i>Energy & Environmental Materials</i> (IF = 15.0). This study explores the structural failure mechanisms in molybdenum disulfide during deep lithiation.</>,
-    hasDetail: true,
-  },
-  {
-    id: 'taehun-lee-joins-dgist',
-    date: '2026.03.01',
-    title: 'Taehun Lee joins DGIST as an Assistant Professor from JBNU.',
-    category: 'People',
-    hasDetail: false,
-  },
-  {
-    id: 'website-live',
-    date: '2026.03.01',
-    title: 'Our group website is now live!',
-    category: 'Lab Life',
-    hasDetail: false,
-  },
-  {
-    id: 'pub-iro2-2026',
-    date: '2026.01.15',
-    title: <>New Publication: Atomistic Insights into the Electrochemical Oxygen Evolution Activity of Hollandite IrO<sub>2</sub> Surfaces</>,
-    category: 'Publications',
-    summary: <>Published in <i>Advanced Science</i> (IF = 15.1). A comprehensive study on the electrochemical activity of IrO<sub>2</sub> surfaces using atomistic simulations.</>,
-    hasDetail: true,
-  },
-];
 
 import PageBanner from '../components/PageBanner';
 
@@ -83,24 +56,24 @@ export default function News() {
             {/* Left side: Date and Tag */}
             <div className="md:w-32 shrink-0 pt-0.5">
               <div className="flex items-center gap-2 text-primary font-sans text-[11px] font-bold uppercase tracking-widest mb-1.5">
-                <Calendar size={12} className="text-tertiary" />
-                {item.date}
+                <Calendar size={12} className="text-tertiary" aria-hidden="true" />
+                {item.date.length > 4 ? <time dateTime={item.date.replace(/\./g, '-')}>{item.date.replace(/-/g, '.')}</time> : item.date}
               </div>
               <div className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-slate-50 text-tertiary rounded-sm text-[9px] font-bold uppercase tracking-widest group-hover:bg-slate-100 transition-colors">
-                <Tag size={10} className="text-tertiary" />
+                <Tag size={10} className="text-tertiary" aria-hidden="true" />
                 {item.category}
               </div>
             </div>
 
             {/* Right side: Content */}
-            <div className="flex-grow">
+            <div className="flex-grow min-w-0">
               <h3 className="font-sans text-sm font-bold text-primary mb-2 leading-tight group-hover:text-tertiary transition-colors">
-                {item.title}
+                {formatScientificTitle(item.title)}
               </h3>
               
                   {item.summary && (
                     <p className="font-academic text-[13px] text-slate-700 leading-relaxed mb-3">
-                      {item.summary}
+                      {formatScientificTitle(item.summary)}
                     </p>
                   )}
 
@@ -109,9 +82,10 @@ export default function News() {
                   to={`/news/${item.id}`}
                   className="inline-flex items-center gap-1 text-primary font-sans text-[9px] font-bold uppercase tracking-widest hover:gap-2 transition-all"
                 >
-                  Read More <ChevronRight size={12} />
+                  Read More <ChevronRight size={12} aria-hidden="true" />
                 </Link>
               )}
+              {item.images?.map(renderNewsImage)}
             </div>
           </motion.article>
         ))}

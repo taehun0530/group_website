@@ -1,0 +1,329 @@
+{
+  "journalArticles": [
+    {
+      "year": "2026",
+      "title": "Spectrally Decoupled, Signal-Boosted Photodetection via Vertical 2D/3D Heterointegration for Non-Invasive Biosignal Monitoring",
+      "authors": "J. H. Kim, S. J. Yoon, S. Y. Lee, C. Cho, D. J. Joe, S. Kim, Y. K. Lee, T. Lee#, and H. Lee#",
+      "journal": "eScience, 100634 (2026)",
+      "doi": "https://doi.org/10.1016/j.esci.2026.100634",
+      "status": "article-in-press"
+    },
+    {
+      "year": "2026",
+      "title": "Self-Powered ZnSnN2/GaN Photodiodes via Fine Stoichiometry Control and Photon Trapping Micropatterned Heterojunctions Under Low-Light Irradiation",
+      "authors": "J. H. Kim, J. C. Hwang, S. J. Yoon, Y. K. Lee, T. Lee, J. Min, J. Kim, K. Park#, and H. Lee#",
+      "journal": "Small Structures 7(8), e70572 (2026)",
+      "doi": "https://doi.org/10.1002/sstr.70572"
+    },
+    {
+      "year": "2026",
+      "title": "Surface Reconstruction Tunes Band Edges and Lattice-Oxygen Reactivity on BiVO4(010) Photoanodes",
+      "authors": "Y. Lee, C. Cho, K.-T. Lee#, and T. Lee#",
+      "journal": "Journal of Materials Chemistry A 14(41), 27568–27576 (2026)",
+      "doi": "https://doi.org/10.1039/D5TA10136K"
+    },
+    {
+      "year": "2026",
+      "title": "Fine-Tuning Bulk-Oriented Universal Interatomic Potentials for Surfaces: Accuracy, Efficiency, and Forgetting Control",
+      "authors": "J. Hwang, T. Lee, Y. Lee, and S.-H. Yoo",
+      "journal": "Computational Materials Science 268, 114666 (2026)",
+      "doi": "https://doi.org/10.1016/j.commatsci.2026.114666"
+    },
+    {
+      "year": "2026",
+      "title": "Mechanistic Origins of Structural Failure in Deeply-Lithiated LixMoS2",
+      "authors": "G. Heo†, G. Lee, K.-T. Lee, A. Soon#, and T. Lee#",
+      "journal": "Energy & Environmental Materials 9(6), e70328 (2026)",
+      "doi": "https://doi.org/10.1002/eem2.70328",
+      "if": "15.0"
+    },
+    {
+      "year": "2026",
+      "title": "Promoter-Free Synthesis of Wafer-Scale Monolayer MoS2 for Visible to Near-Infrared Photodetection",
+      "authors": "K. M. Ponnusamy†, J. Bong†, H. Lee, J.-H. Choi, B. Pandit, S. Ghods, S. Durairaj, J. B. Park, Y. K. Lee, T. Lee, J.-H. Lee, H.-S. Jang#, S. Chandramohan#, and K. Heo#",
+      "journal": "ACS Applied Materials & Interfaces 18(1), 1995–2008 (2026)",
+      "doi": "https://doi.org/10.1021/acsami.5c19820",
+      "if": "9.5"
+    },
+    {
+      "year": "2026",
+      "title": "Selective Charge Injection via Topological van der Waals Contacts for Barrier-Free p-Type TMD Transistors",
+      "authors": "S. Ghods, H.-C. Jang, J.-H. Choi, M. W. Kim, H. Lee, T.-H. Kim, K. Heo, H. J. Kwun, T. Lee, Y. K. Lee, S. H. Lee, S.-I. Kim, W. Baek, S. Bae, J.-Y. Moon#, and J.-H. Lee#",
+      "journal": "Advanced Functional Materials 36(24), e20506 (2026)",
+      "doi": "https://doi.org/10.1002/adfm.202520506",
+      "if": "19.0"
+    },
+    {
+      "year": "2026",
+      "title": "Atomistic Insights into the Electrochemical Oxygen Evolution Activity of Hollandite IrO2 Surfaces",
+      "authors": "S. Lee†, K. Kang, T. Lee#, and A. Soon#",
+      "journal": "Advanced Science 13(6), e14939 (2026)",
+      "doi": "https://doi.org/10.1002/advs.202514939",
+      "if": "15.1"
+    },
+    {
+      "year": "2026",
+      "title": "pH-Dependent Mechanism of Oxygen Evolution in Highly Disordered RuO2 Nanosheets",
+      "authors": "X. Jin†, T. Lee†, J. Park, J. Kim, S. Park, S. Y. Yun, Y.-E. Sung, D. W. Kim, M. G. Kim, A. Soon#, and S.-J. Hwang#",
+      "journal": "Nature Communications 17(1), 672 (2026)",
+      "doi": "https://doi.org/10.1038/s41467-025-67318-y",
+      "if": "16.6"
+    },
+    {
+      "year": "2025",
+      "title": "Defect Formation and Electrical Transformation in SiO2 Thin Films via Ti-Induced Interdiffusion",
+      "authors": "S. J. Yoon†, J. W. Jeon, J. Lee, J. T. Park, C. Lee, K. J. Yu, H. Bae, K. Kim, K. Heo, C. S. Hwang, D.-Y. Cho, T. Lee#, Y. K. Lee#",
+      "journal": "Acta Materialia 296, 121313 (2025)",
+      "doi": "https://doi.org/10.1016/j.actamat.2025.121313",
+      "if": "9.4"
+    },
+    {
+      "year": "2025",
+      "title": "Impact of Humidity on Long-Term Stability of HfS2 Grown on Sapphire Substrate by Chemical Vapor Deposition and Strategies to Prevent Native Oxidation",
+      "authors": "J. Hwang†, J. Mun, K.-T. Lee, T. Lee, J. Kim, J. Min, K. Park#",
+      "journal": "Materials Science in Semiconductor Processing 192, 109471 (2025)",
+      "doi": "https://doi.org/10.1016/j.mssp.2025.109471",
+      "if": "4.1"
+    },
+    {
+      "year": "2025",
+      "title": "Machine-Learning-Accelerated Surface Exploration of Reconstructed BiVO4(010) and Characterization of Their Aqueous Interfaces",
+      "authors": "Y. Lee†, T. Lee#",
+      "journal": "Journal of the American Chemical Society 147(9), 7799–7808 (2025)",
+      "doi": "https://doi.org/10.1021/jacs.4c17739",
+      "if": "15.0"
+    },
+    {
+      "year": "2024",
+      "title": "Topological van der Waals Contact for Two-Dimensional Semiconductors",
+      "authors": "S. Ghods†, H. Lee, J.-H. Choi, J.-Y. Moon, S. Kim, S.-I. Kim, H. J. Kwun, M. J. Josline, C. Y. Kim, S. H. Hyun, S. W. Kim, S.-K. Son, T. Lee, Y. K. Lee, K. Heo#, K. S. Novoselov#, J.-H. Lee#",
+      "journal": "ACS Nano 18(38), 26192–26200 (2024)",
+      "doi": "https://doi.org/10.1021/acsnano.4c07585",
+      "if": "17.1"
+    },
+    {
+      "year": "2024",
+      "title": "Data-Mining Fluoride-Based Solid-State Electrolytes for Monovalent Metal Batteries",
+      "authors": "G. Heo†, A. Soon#, T. Lee#",
+      "journal": "Journal of Materials Chemistry A 12(40), 27409–27420 (2024)",
+      "doi": "https://doi.org/10.1039/D4TA04553J",
+      "if": "11.9"
+    },
+    {
+      "year": "2024",
+      "title": "Vacancy-Assisted Transformation of MoS2 Nanosheets into Defective MoSx Nanoclusters to Regulate Sodium-Ion Electrode Functionality",
+      "authors": "X. Jin†, T. Lee†, A. Soon#, and S.-J. Hwang#",
+      "journal": "Advanced Functional Materials 34(36), 2316446 (2024)",
+      "doi": "https://doi.org/10.1002/adfm.202316446",
+      "if": "19.0"
+    },
+    {
+      "year": "2024",
+      "title": "The Rise of ab initio Surface Thermodynamics",
+      "authors": "T. Lee# and A. Soon#",
+      "journal": "Nature Catalysis 7(1), 4–6 (2024)",
+      "doi": "https://doi.org/10.1038/s41929-023-01088-y",
+      "if": "42.8"
+    },
+    {
+      "year": "2023",
+      "title": "Deep and Shallow Gap States in Reduced and n-Type Doped m-ZrO2",
+      "authors": "T. Lee† and A. Selloni#",
+      "journal": "The Journal of Physical Chemistry C 127(28), 13936–13944 (2023)",
+      "doi": "https://doi.org/10.1021/acs.jpcc.3c02833",
+      "if": "3.7"
+    },
+    {
+      "year": "2023",
+      "title": "Oxidic Structures on Copper–Gold Alloy Nanofacets",
+      "authors": "N. Kumar†, Y. Lee, G. Lee, S. Lee, T. Lee, S.-H. Yoo, C. Stampfl, A. Soon#, W. Jang#",
+      "journal": "Applied Surface Science 613, 155913 (2023)",
+      "doi": "https://doi.org/10.1016/j.apsusc.2022.155913",
+      "if": "6.7"
+    },
+    {
+      "year": "2023",
+      "title": "Structure and Stability of Oxygen Vacancy Aggregates in Reduced Anatase and Rutile TiO2",
+      "authors": "T. Lee† and A. Selloni#",
+      "journal": "The Journal of Physical Chemistry C 127(1), 627–634 (2023)",
+      "doi": "https://doi.org/10.1021/acs.jpcc.2c06806",
+      "if": "3.7"
+    },
+    {
+      "year": "2022",
+      "title": "Theoretical Insights into Photoelectrochemical Water Reduction on Delafossite CuRhO2",
+      "authors": "T. Lee†#, M. Ferri, S. Piccinin, and A. Selloni#",
+      "journal": "ACS Energy Letters 7(4), 1528–1533 (2022)",
+      "doi": "https://doi.org/10.1021/acsenergylett.2c00319",
+      "if": "23.9"
+    },
+    {
+      "year": "2022",
+      "title": "Composition-Controlled Ultrathin Holey TiO1−xNx Nanosheets as Powerful Hybridization Matrices for Highly Mass-Efficient Electrocatalysts",
+      "authors": "X. Jin†, K.-G. Lee†, T. Lee†, G. Lee, S. M. Oh, A. Soon#, and S.-J. Hwang#",
+      "journal": "Chemical Engineering Journal 437, 135415 (2022)",
+      "doi": "https://doi.org/10.1016/j.cej.2022.135415",
+      "if": "16.7"
+    },
+    {
+      "year": "2022",
+      "title": "Structure, Electronic Properties, and Defect Chemistry of Delafossite CuRhO2 Bulk and Surfaces",
+      "authors": "T. Lee†#, M. Ferri, S. Piccinin, and A. Selloni#",
+      "journal": "Chemistry of Materials 34(4), 1567–1577 (2022)",
+      "doi": "https://doi.org/10.1021/acs.chemmater.1c03248",
+      "if": "10.5"
+    },
+    {
+      "year": "2022",
+      "title": "In Situ Defect Engineering Route to Optimize the Cationic Redox Activity of Layered Double Hydroxide Nanosheet via Strong Electronic Coupling with Holey Substrate",
+      "authors": "X. Jin†, T. Lee†, W. Tamakloe†, S. B. Patil, A. Soon#, Y.-M. Kang#, and S.-J. Hwang#",
+      "journal": "Advanced Science 9(1), 2103368 (2022)",
+      "doi": "https://doi.org/10.1002/advs.202103368",
+      "if": "17.5"
+    },
+    {
+      "year": "2021",
+      "title": "Completing the Picture of Initial Oxidation on Copper",
+      "authors": "Y.-J. Lee†, T. T. Ly†, T. Lee, K. Palotás, S.-Y. Jeong#, J. Kim#, and A. Soon#",
+      "journal": "Applied Surface Science 562, 150148 (2021)",
+      "doi": "https://doi.org/10.1016/j.apsusc.2021.150148",
+      "if": "7.4"
+    },
+    {
+      "year": "2021",
+      "title": "Defect-Mediated ab initio Thermodynamics of Metastable γ-MoN(001)",
+      "authors": "G. Lee†, H. Lee, T. Lee#, and A. Soon#",
+      "journal": "The Journal of Chemical Physics 154(6), 064703 (2021)",
+      "doi": "https://doi.org/10.1063/5.0040835",
+      "if": "3.5"
+    },
+    {
+      "year": "2020",
+      "title": "Atomic Structure and Work Function Modulations in Two-Dimensional Ultrathin CuI Films on Cu(111) from First-Principles Calculations",
+      "authors": "G. Lee†, Y.-J. Lee, K. Palotás, T. Lee#, and A. Soon#",
+      "journal": "The Journal of Physical Chemistry C 124(30), 16362–16370 (2020)",
+      "doi": "https://doi.org/10.1021/acs.jpcc.0c02842",
+      "if": "4.1"
+    },
+    {
+      "year": "2019",
+      "title": "Revisiting Polytypism in Hexagonal Ternary Sulfide ZnIn2S4 for Photocatalytic Hydrogen Production Within the Z-Scheme",
+      "authors": "J. Lee†, H. Kim†, T. Lee, W. Jang, K. H. Lee#, and A. Soon#",
+      "journal": "Chemistry of Materials 31(21), 9148–9155 (2019)",
+      "doi": "https://doi.org/10.1021/acs.chemmater.9b03539",
+      "if": "10.2"
+    },
+    {
+      "year": "2019",
+      "title": "Phase Stability Diagrams of Group 6 Magnéli Oxides and Their Implications for Photon-Assisted Applications",
+      "authors": "Y.-J. Lee†, T. Lee, and A. Soon#",
+      "journal": "Chemistry of Materials 31(11), 4282–4290 (2019)",
+      "doi": "https://doi.org/10.1021/acs.chemmater.9b01430",
+      "if": "10.2"
+    },
+    {
+      "year": "2019",
+      "title": "Growing Ultrathin Cu2O Films on Highly Crystalline Cu(111): A Closer Inspection from Microscopy and Theory",
+      "authors": "T. T. Ly†, T. Lee†, S. Kim, Y.-J. Lee, G. Duvjir, K. Jang, K. Palotás, S.-Y. Jeong#, A. Soon#, and J. Kim#",
+      "journal": "The Journal of Physical Chemistry C 123(20), 12716–12721 (2019)",
+      "doi": "https://doi.org/10.1021/acs.jpcc.9b00255",
+      "if": "4.3"
+    },
+    {
+      "year": "2019",
+      "title": "Polymorphic Expressions of Ultrathin Oxidic Layers of Mo on Au(111)",
+      "authors": "T. Lee†, Y.-J. Lee, K. Palotás, G. Lee, C. Stampfl, and A. Soon#",
+      "journal": "Nanoscale 11(13), 6023–6035 (2019)",
+      "doi": "https://doi.org/10.1039/C8NR10278C",
+      "if": "6.9"
+    },
+    {
+      "year": "2018",
+      "title": "Polytypism in Hexagonal Tungsten Trioxide: Insights from ab initio Molecular Dynamics Simulations",
+      "authors": "Y. Lee†, T. Lee†, and A. Soon#",
+      "journal": "The Journal of Physical Chemistry C 122(37), 21644–21650 (2018)",
+      "doi": "https://doi.org/10.1021/acs.jpcc.8b05595",
+      "if": "4.5"
+    },
+    {
+      "year": "2018",
+      "title": "Over-Stoichiometry in Heavy Metal Oxides: The Case of Iono-Covalent Tantalum Trioxides",
+      "authors": "Y.-J. Lee†, T. Lee, and A. Soon#",
+      "journal": "Inorganic Chemistry 57(10), 6057–6064 (2018)",
+      "doi": "https://doi.org/10.1021/acs.inorgchem.8b00578",
+      "if": "4.7"
+    },
+    {
+      "year": "2018",
+      "title": "Disentangling the Effects of Inter- and Intra-Octahedral Distortions on the Electronic Structure in Binary Metal Trioxides",
+      "authors": "W. Jang†, J. Yun†, T. Lee, Y. Lee, and A. Soon#",
+      "journal": "The Journal of Physical Chemistry C 122(6), 3558–3566 (2018)",
+      "doi": "https://doi.org/10.1021/acs.jpcc.7b11295",
+      "if": "4.5"
+    },
+    {
+      "year": "2017",
+      "title": "Ab Initio Surface Phase Diagram of Sn/Cu(001): Reconciling Experiments with Theory",
+      "authors": "J.-H. Lee†, J. Yun†, T. Lee, and A. Soon#",
+      "journal": "Physical Review Applied 8(3), 034010 (2017)",
+      "doi": "https://doi.org/10.1103/PhysRevApplied.8.034010",
+      "if": "4.8"
+    },
+    {
+      "year": "2017",
+      "title": "Aligning the Band Structures of Polymorphic Molybdenum Oxides and Organic Emitters in Light-Emitting Diodes",
+      "authors": "J. Yun†, W. Jang†, T. Lee, Y. Lee, and A. Soon#",
+      "journal": "Physical Review Applied 7(2), 024025 (2017)",
+      "doi": "https://doi.org/10.1103/PhysRevApplied.7.024025",
+      "if": "4.8"
+    },
+    {
+      "year": "2017",
+      "title": "Ab Initio Thermodynamics of Surface Oxide Structures under Controlled Growth Conditions",
+      "authors": "T. Lee†, Y. Lee, S. Piccinin, and A. Soon#",
+      "journal": "The Journal of Physical Chemistry C 121(4), 2228–2233 (2017)",
+      "doi": "https://doi.org/10.1021/acs.jpcc.6b11445",
+      "if": "4.5"
+    },
+    {
+      "year": "2016",
+      "title": "Understanding the Advantage of Hexagonal WO3 as an Efficient Photoanode for Solar Water Splitting: A First-Principles Perspective",
+      "authors": "T. Lee†, Y. Lee†, W. Jang, and A. Soon#",
+      "journal": "Journal of Materials Chemistry A 4(29), 11498–11506 (2016)",
+      "doi": "https://doi.org/10.1039/C6TA03659G",
+      "if": "8.3"
+    },
+    {
+      "year": "2016",
+      "title": "Unraveling the Intercalation Chemistry of Hexagonal Tungsten Bronze and Its Optical Responses",
+      "authors": "Y. Lee†, T. Lee†, W. Jang, and A. Soon#",
+      "journal": "Chemistry of Materials 28(13), 4528–4535 (2016)",
+      "doi": "https://doi.org/10.1021/acs.chemmater.5b03980",
+      "if": "9.4"
+    },
+    {
+      "year": "2016",
+      "title": "In Search of Non-Conventional Surface Oxidic Motifs of Cu on Au(111)",
+      "authors": "T. Lee†, Y. Lee, K. Kang, and A. Soon#",
+      "journal": "Physical Chemistry Chemical Physics 18(10), 7349–7358 (2016)",
+      "doi": "https://doi.org/10.1039/C5CP07932B",
+      "if": "4.4"
+    },
+    {
+      "year": "2012",
+      "title": "The Role of Titanium Nitride Supports for Single-Atom Platinum-Based Catalysts in Fuel Cell Technology",
+      "authors": "R. Q. Zhang†, T. Lee, B.-D. Yu, C. Stampfl, and A. Soon#",
+      "journal": "Physical Chemistry Chemical Physics 14(48), 16552–16557 (2012)",
+      "doi": "https://doi.org/10.1039/C2CP41392B",
+      "if": "3.6"
+    },
+    {
+      "year": "2012",
+      "title": "Environment-Dependent Nanomorphology of TiN: The Influence of Surface Vacancies",
+      "authors": "T. Lee†, B. Delley, C. Stampfl, and A. Soon#",
+      "journal": "Nanoscale 4(16), 5183–5188 (2012)",
+      "doi": "https://doi.org/10.1039/C2NR31266B",
+      "if": "5.9"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+[
+  {
+    "id": "students-joined-2026",
+    "date": "2026-09",
+    "title": "Hyunjin Lee and Kyunghun Lee begin graduate study at DGIST",
+    "category": "People",
+    "summary": "Hyunjin Lee joins the Ph.D. program, and Kyunghun Lee joins the integrated M.S./Ph.D. program.",
+    "hasDetail": false
+  },
+  {
+    "id": "pub-vertical-heterointegration-photodetection-2026",
+    "date": "2026-08-11",
+    "title": "Online publication on vertically integrated 2D/3D photodetectors",
+    "category": "Publications",
+    "summary": "A study of vertically integrated WS₂/MoS₂–Si photodetectors for spectrally decoupled detection and non-invasive biosignal monitoring.",
+    "body": [
+      "This study investigates vertically integrated WS₂/MoS₂–Si photodetectors for spectrally decoupled detection and non-invasive biosignal monitoring.",
+      "The paper was published online in eScience on August 11, 2026. It is currently an Article in Press, ahead of assignment to a final volume and issue."
+    ],
+    "publicationDoi": "https://doi.org/10.1016/j.esci.2026.100634",
+    "hasDetail": true
+  },
+  {
+    "id": "summer-internship-2026",
+    "date": "2026-07-31",
+    "title": "2026 summer research internship concludes",
+    "category": "Lab Life",
+    "summary": "석일현, 김지환, 박민주, 전재영, and 김찬주 participated in the July 6–31 summer research internship. The program included ASE, MLIP-MD, and symbolic regression tutorials, followed by team presentations.",
+    "hasDetail": false
+  },
+  {
+    "id": "dgist-ai-build-week-award-2026",
+    "date": "2026-07-24",
+    "title": "Kyunghun Lee receives an Excellence Award at DGIST AI Build Week",
+    "category": "Awards",
+    "summary": "Kyunghun Lee received an Excellence Award (최우수상) at the 2026 DGIST AI Build Week Hackathon.",
+    "images": [
+      {
+        "src": "/images/news/dgist-ai-build-week-2026.jpg",
+        "alt": "Group photograph of participants at the 2026 DGIST AI Build Week",
+        "width": 2275,
+        "height": 1280,
+        "caption": "Participants at the 2026 DGIST AI Build Week.",
+        "credit": "Photo: Student Organizing Committee, via DGIST DNA.",
+        "sourceUrl": "https://dgistdna.com/1160",
+        "license": {
+          "label": "CC BY-NC-ND 4.0",
+          "url": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+        }
+      }
+    ],
+    "hasDetail": false
+  },
+  {
+    "id": "pub-bivo4-surface-reconstruction-2026",
+    "date": "2026-05-29",
+    "title": "New publication on surface reconstruction of BiVO₄ photoanodes",
+    "category": "Publications",
+    "summary": "A study of band edges and lattice-oxygen reactivity on BiVO₄(010) photoanodes.",
+    "body": [
+      "The study examines how surface reconstruction tunes band edges and lattice-oxygen reactivity on BiVO₄(010) photoanodes."
+    ],
+    "publicationDoi": "https://doi.org/10.1039/D5TA10136K",
+    "hasDetail": true
+  },
+  {
+    "id": "pub-mos2-2026",
+    "date": "2026-03-18",
+    "title": "New Publication: Mechanistic Origins of Structural Failure in Deeply-Lithiated LixMoS2",
+    "category": "Publications",
+    "summary": "Published in Energy & Environmental Materials. This study explores the structural failure mechanisms in molybdenum disulfide during deep lithiation.",
+    "body": [
+      "The study examines the mechanistic origins of structural failure in deeply lithiated LiₓMoS₂."
+    ],
+    "publicationDoi": "https://doi.org/10.1002/eem2.70328",
+    "hasDetail": true
+  },
+  {
+    "id": "taehun-lee-joins-dgist",
+    "date": "2026.03.01",
+    "title": "Taehun Lee joins DGIST as an Assistant Professor from JBNU.",
+    "category": "People",
+    "hasDetail": false
+  },
+  {
+    "id": "website-live",
+    "date": "2026.03.01",
+    "title": "Our group website is now live!",
+    "category": "Lab Life",
+    "hasDetail": false
+  },
+  {
+    "id": "nvidia-academic-grant-2026",
+    "date": "2026",
+    "title": "Selected for the NVIDIA Academic Grant Program",
+    "category": "Grants",
+    "summary": "Selection for the project “Grand-Canonical Agentic AI for Autonomous Discovery of Catalytic Structures.”",
+    "hasDetail": false
+  },
+  {
+    "id": "pub-iro2-2026",
+    "date": "2025-12-29",
+    "title": "New Publication: Atomistic Insights into the Electrochemical Oxygen Evolution Activity of Hollandite IrO2 Surfaces",
+    "category": "Publications",
+    "summary": "Published in Advanced Science. An atomistic study of the electrochemical activity of IrO₂ surfaces.",
+    "body": [
+      "The study examines the electrochemical oxygen evolution activity of hollandite IrO₂ surfaces using atomistic modeling.",
+      "The paper first appeared online on December 29, 2025; its assigned journal issue is dated 2026."
+    ],
+    "publicationDoi": "https://doi.org/10.1002/advs.202514939",
+    "hasDetail": true
+  }
+]

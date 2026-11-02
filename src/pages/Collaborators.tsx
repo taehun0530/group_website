@@ -3,27 +3,10 @@ import { ChevronLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import PageBanner from '../components/PageBanner';
+import collaboratorGroups from '../data/collaborators.json';
 
 export default function Collaborators() {
-  const groups = [
-    {
-      title: 'Theory',
-      members: [
-        { name: 'Prof. Aloysius Soon', role: 'Yonsei University (Materials Science and Engineering), KR' },
-        { name: 'Prof. Yonghyuk Lee', role: 'Dongguk University (Chemical and Biochemical Engineering), KR' },
-        { name: 'Dr. Sungwoo Kang', role: 'Korea Institute of Science and Technology (Computational Science Research Center), KR' },
-        { name: 'Prof. Thomas Purcell', role: 'University of Arizona (Chemistry and Biochemistry), US' },
-      ]
-    },
-    {
-      title: 'Experiment',
-      members: [
-        { name: 'Prof. Tae-Wook Kim', role: 'Jeonbuk National University (Flexible and Printable Electronics), KR' },
-        { name: 'Prof. Haneol Lee', role: 'Gwangju Institute of Science and Technology (Materials Science and Engineering), KR' },
-        { name: 'Prof. Keun Heo', role: 'Jeonbuk National University (Semiconductor Science and Technology), KR' },
-      ]
-    }
-  ];
+  const groups = collaboratorGroups;
 
   return (
     <>

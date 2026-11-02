@@ -1,121 +1,78 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ChevronLeft, Calendar, Tag, ExternalLink } from 'lucide-react';
-import { newsData } from './News';
-
+import { newsData } from '../data/news';
+import { formatScientificTitle, formatAuthors, JournalCitation } from '../components/PublicationText';
+import { renderNewsImage } from './News';
 import PageBanner from '../components/PageBanner';
 
 export default function NewsItem() {
   const { id } = useParams();
-  const item = newsData.find((n) => n.id === id);
+  const item = newsData.find((entry) => entry.id === id && entry.hasDetail);
 
-  if (!item) {
-    return <Navigate to="/news" />;
-  }
-
-  // Define detailed content for specific news items (like publications)
-  const renderDetail = () => {
-    if (item.id === 'pub-mos2-2026') {
-      return (
-        <div className="space-y-8">
-          <div className="p-6 bg-slate-50 border-l-4 border-primary">
-            <h4 className="font-sans text-xs font-bold text-primary uppercase tracking-widest mb-4">Publication Details</h4>
-            <dl className="grid grid-cols-1 sm:grid-cols-[100px_1fr] gap-y-3 font-academic text-sm">
-              <dt className="text-slate-500 font-bold uppercase text-[10px]">Authors</dt>
-              <dd className="text-slate-600">Gunyoung Heo, Giyeok Lee, Ki‐Tae Lee, Aloysius Soon, <strong>Taehun Lee</strong></dd>
-              
-              <dt className="text-slate-500 font-bold uppercase text-[10px]">Journal</dt>
-              <dd className="text-slate-600 italic">Energy & Environmental Materials</dd>
-              
-              <dt className="text-slate-500 font-bold uppercase text-[10px]">Date</dt>
-              <dd className="text-slate-600">2026/03/18</dd>
-              
-              <dt className="text-slate-500 font-bold uppercase text-[10px]">DOI/Link</dt>
-              <dd className="text-slate-600">e70328</dd>
-            </dl>
-          </div>
-          <p className="font-academic text-base leading-relaxed text-slate-600">
-            This research highlights the mechanistic origins of structural degradation in MoS<sub>2</sub> during lithiation. Using atomistic insights, we identify critical pathways that lead to failure, providing a roadmap for designing more resilient electrode materials.
-          </p>
-        </div>
-      );
-    }
-
-    if (item.id === 'pub-iro2-2026') {
-      return (
-        <div className="space-y-8">
-          <div className="p-6 bg-slate-50 border-l-4 border-primary">
-            <h4 className="font-sans text-xs font-bold text-primary uppercase tracking-widest mb-4">Publication Details</h4>
-            <dl className="grid grid-cols-1 sm:grid-cols-[100px_1fr] gap-y-3 font-academic text-sm">
-              <dt className="text-slate-500 font-bold uppercase text-[10px]">Authors</dt>
-              <dd className="text-slate-600">Sangseob Lee, Kisung Kang, <strong>Taehun Lee</strong>, Aloysius Soon</dd>
-              
-              <dt className="text-slate-500 font-bold uppercase text-[10px]">Journal</dt>
-              <dd className="text-slate-600 italic">Advanced Science</dd>
-              
-              <dt className="text-slate-500 font-bold uppercase text-[10px]">Volume/Issue</dt>
-              <dd className="text-slate-600">Vol 13, Issue 6, e14939</dd>
-              
-              <dt className="text-slate-500 font-bold uppercase text-[10px]">Date</dt>
-              <dd className="text-slate-600">2026/01/15</dd>
-            </dl>
-          </div>
-          <p className="font-academic text-base leading-relaxed text-slate-600">
-            Hollandite-type IrO<sub>2</sub> exhibits unique electrochemical properties. Our work provides the first comprehensive atomistic analysis of its surface activity during the oxygen evolution reaction (OER), revealing why certain surfaces out-perform traditional catalysts.
-          </p>
-        </div>
-      );
-    }
-
-    return (
-      <p className="font-academic text-base leading-relaxed text-slate-600">
-        More details about this update will be posted soon.
-      </p>
-    );
-  };
+  if (!item) return <Navigate to="/news" replace />;
 
   return (
     <>
     <PageBanner />
     <div className="pt-12 pb-12 max-w-3xl mx-auto px-8">
-      <Link 
-        to="/news" 
-        className="inline-flex items-center gap-2 text-slate-500 hover:text-primary font-sans text-[10px] font-bold uppercase tracking-widest transition-colors mb-6"
-      >
-        <ChevronLeft size={14} /> Back to News
+      <Link to="/news" className="inline-flex items-center gap-2 text-slate-500 hover:text-primary font-sans text-[10px] font-bold uppercase tracking-widest transition-colors mb-6">
+        <ChevronLeft size={14} aria-hidden="true" /> Back to News
       </Link>
 
-      <motion.article
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
+      <motion.article initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
         <header className="mb-8">
           <div className="flex flex-wrap items-center gap-4 text-[10px] font-bold uppercase tracking-widest mb-3">
             <span className="flex items-center gap-1.5 text-tertiary">
-              <Calendar size={12} /> {item.date}
+              <Calendar size={12} aria-hidden="true" /> {item.date.length > 4 ? <time dateTime={item.date.replace(/\./g, '-')}>{item.date.replace(/-/g, '.')}</time> : item.date}
             </span>
             <span className="flex items-center gap-1.5 text-slate-500">
-              <Tag size={12} /> {item.category}
+              <Tag size={12} aria-hidden="true" /> {item.category}
             </span>
           </div>
           <h1 className="font-sans text-2xl md:text-3xl font-extrabold text-primary tracking-tight leading-tight mb-5">
-            {item.title}
+            {formatScientificTitle(item.title)}
           </h1>
         </header>
 
         <div className="prose prose-slate max-w-none">
-          {renderDetail()}
+          <div className="space-y-8">
+            {item.publication && (
+              <section aria-labelledby="publication-details" className="p-6 bg-slate-50 border-l-4 border-primary">
+                <h4 id="publication-details" className="font-sans text-xs font-bold text-primary uppercase tracking-widest mb-4">Publication Details</h4>
+                <dl className="grid grid-cols-1 sm:grid-cols-[100px_1fr] gap-y-3 font-academic text-sm">
+                  <dt className="text-slate-500 font-bold uppercase text-[10px]">Title</dt>
+                  <dd className="text-slate-600 min-w-0">{formatScientificTitle(item.publication.title)}</dd>
+                  <dt className="text-slate-500 font-bold uppercase text-[10px]">Authors</dt>
+                  <dd className="text-slate-600 min-w-0">{formatAuthors(item.publication.authors)}</dd>
+                  <dt className="text-slate-500 font-bold uppercase text-[10px]">Journal</dt>
+                  <dd className="text-slate-600 min-w-0"><JournalCitation citation={item.publication.journal} /></dd>
+                  {item.publication.status === 'article-in-press' && <><dt className="text-slate-500 font-bold uppercase text-[10px]">Status</dt><dd className="text-slate-600">Article in Press — final volume and issue not yet assigned.</dd></>}
+                  <dt className="text-slate-500 font-bold uppercase text-[10px]">Year</dt>
+                  <dd className="text-slate-600">{item.publication.year}</dd>
+                  <dt className="text-slate-500 font-bold uppercase text-[10px]">DOI/Link</dt>
+                  <dd className="text-slate-600 min-w-0 break-words"><a href={item.publication.doi} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-primary">{item.publication.doi}</a></dd>
+                </dl>
+              </section>
+            )}
+            {item.body?.map((paragraph) => <p key={paragraph} className="font-academic text-base leading-relaxed text-slate-600">{formatScientificTitle(paragraph)}</p>)}
+          </div>
+          {item.images?.map(renderNewsImage)}
+          {item.links && (
+            <div className="mt-8 space-y-3">
+              {item.links.map((link) => <a key={link.url} href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-academic text-sm text-tertiary underline underline-offset-2 hover:text-primary">
+                {link.label} <ExternalLink size={12} aria-hidden="true" />
+              </a>)}
+            </div>
+          )}
         </div>
 
         <div className="mt-12 pt-8 border-t border-slate-100 flex justify-between items-center">
-          <Link 
-            to="/news"
-            className="text-primary font-sans text-[10px] font-bold uppercase tracking-widest hover:text-secondary transition-colors"
-          >
+          <Link to="/news" className="text-primary font-sans text-[10px] font-bold uppercase tracking-widest hover:text-secondary transition-colors">
             ← Previous News
           </Link>
-          <button className="flex items-center gap-2 px-5 py-2 bg-primary text-white font-sans text-[10px] font-bold uppercase tracking-widest hover:bg-tertiary transition-colors">
-            Share <ExternalLink size={12} />
+          <button type="button" className="flex items-center gap-2 px-5 py-2 bg-primary text-white font-sans text-[10px] font-bold uppercase tracking-widest hover:bg-tertiary transition-colors">
+            Share <ExternalLink size={12} aria-hidden="true" />
           </button>
         </div>
       </motion.article>

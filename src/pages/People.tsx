@@ -186,14 +186,12 @@ export default function People() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { 
-              name: 'Taeyoung Kim', 
-              ko: '김태영', 
-              role: '학부생 연구원', 
-              period: 'Since Jan 2026',
-              affiliation: 'Jeonbuk National University',
-              tags: ['Electrocatalysis'],
-              img: 'https://picsum.photos/seed/taeyoung/400/400'
+            {
+              name: '',
+              ko: '박민주',
+              role: '학부생 연구원',
+              affiliation: 'Chung-Ang University',
+              tags: [],
             },
             { 
               name: 'Chanju Kim', 
@@ -203,15 +201,6 @@ export default function People() {
               affiliation: 'Jeonbuk National University',
               tags: ['Grand-canonical MD'],
               img: 'https://picsum.photos/seed/chanju/400/400'
-            },
-            { 
-              name: 'Jongbeom Park', 
-              ko: '박종범', 
-              role: '학부생 연구원', 
-              period: 'Since Jan 2026',
-              affiliation: 'Jeonbuk National University',
-              tags: ['reaction network analysis'],
-              img: 'https://picsum.photos/seed/jongbeom/400/400'
             },
           ].map((student, i) => (
             <motion.article 
@@ -224,7 +213,7 @@ export default function People() {
               </div>
               <div className="p-4 flex flex-col flex-grow">
                 <h3 className="font-sans text-sm font-extrabold text-primary mb-1">
-                  {student.name} <span className="text-[12px] text-slate-600 font-medium ml-1">{student.ko}</span>
+                  {student.name ? <>{student.name} <span className="text-[12px] text-slate-600 font-medium ml-1">{student.ko}</span></> : <span lang="ko">{student.ko}</span>}
                 </h3>
                 <p className="font-sans text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">
                   {student.affiliation}
