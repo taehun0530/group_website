@@ -14,7 +14,7 @@ export default function Collaborators() {
     <div className="py-10 max-w-4xl mx-auto px-8">
       <Link 
         to="/people" 
-        className="text-meta inline-flex items-center gap-2 text-slate-600 hover:text-primary transition-colors mb-6"
+        className="text-meta inline-flex items-center gap-2 text-ink hover:text-ink transition-colors mb-6"
       >
         <ChevronLeft size={14} /> Back to People
       </Link>
@@ -23,7 +23,7 @@ export default function Collaborators() {
         <div className="flex items-center gap-3 mb-6">
           <h1 className="page-title">Current Collaborators</h1>
         </div>
-        <p className="text-body text-slate-700 max-w-2xl">
+        <p className="text-body text-copy max-w-2xl">
           Active partnerships with leading researchers and institutions worldwide, driving multidisciplinary breakthroughs in materials science.
         </p>
       </header>
@@ -46,8 +46,8 @@ export default function Collaborators() {
                   transition={{ delay: (groupIdx * group.members.length + i) * 0.05 }}
                   className="p-4 bg-white border border-slate-100 hover:border-slate-200 hover:shadow-sm transition-all rounded-sm"
                 >
-                  <h3 className="card-title text-primary mb-1">{collab.name}</h3>
-                  <p className="text-meta text-slate-700">{collab.role}</p>
+                  <h3 className="card-title text-ink mb-1">{collab.name}</h3>
+                  <p className="text-meta text-copy">{collab.role}</p>
                 </motion.div>
               ))}
             </div>

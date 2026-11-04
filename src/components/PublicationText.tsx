@@ -50,7 +50,7 @@ export function formatAuthors(authors: string): ReactNode[] {
           const name = isTaehunLee ? part.match(/^(\s*)(T\. Lee)(\s*)$/) : null;
           return name ? (
             <Fragment key={partIndex}>
-              {name[1]}<strong className="text-primary font-bold">{name[2]}</strong>{name[3]}
+              {name[1]}<strong className="text-ink font-bold">{name[2]}</strong>{name[3]}
             </Fragment>
           ) : part;
         })}

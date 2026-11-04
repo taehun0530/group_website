@@ -10,6 +10,9 @@
   --color-secondary: #061a40; /* Midnight Blue */
   --color-tertiary: #006daa; /* Cerulean */
   --color-accent-blue: #b9d6f2; /* Light Blue */
+  --color-ink: #003559;
+  --color-copy: #475569;
+  --color-on-dark: #FFFFFF;
   
   --color-surface: #F8FAFC;
   --color-surface-container-low: #F1F5F9;
@@ -20,12 +23,14 @@
 
 @layer base {
   body {
-    @apply bg-surface text-slate-800 font-academic antialiased text-sm leading-relaxed;
+    @apply bg-surface text-copy font-academic antialiased text-sm leading-relaxed;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans tracking-normal font-semibold leading-[1.4] text-primary;
+    @apply font-sans tracking-normal font-semibold leading-[1.4] text-ink;
   }
+
+  a { @apply text-ink; }
 
   h1 { @apply text-[22px] font-bold leading-[1.3]; }
   h2 { @apply text-lg font-bold leading-[1.35]; }
@@ -39,31 +44,43 @@
   }
 
   .page-title {
-    @apply font-sans text-[22px] font-bold leading-[1.3] tracking-normal text-primary;
+    @apply font-sans text-[22px] font-bold leading-[1.3] tracking-normal text-ink;
   }
 
   .section-title {
-    @apply font-sans text-lg font-bold leading-[1.35] tracking-normal text-primary;
+    @apply font-sans text-lg font-bold leading-[1.35] tracking-normal text-ink;
   }
 
   .subsection-title {
-    @apply font-sans text-base font-semibold leading-[1.4] tracking-normal text-primary;
+    @apply font-sans text-base font-semibold leading-[1.4] tracking-normal text-ink;
   }
 
   .card-title {
-    @apply font-sans text-sm font-semibold leading-[1.4] tracking-normal text-primary;
+    @apply font-sans text-sm font-semibold leading-[1.4] tracking-normal text-ink;
   }
 
   .text-body {
-    @apply font-academic text-sm font-normal leading-relaxed tracking-normal;
+    @apply font-academic text-sm font-normal leading-relaxed tracking-normal text-copy;
   }
 
   .text-meta {
-    @apply font-academic text-xs font-normal leading-normal tracking-normal;
+    @apply font-academic text-xs font-normal leading-normal tracking-normal text-copy;
   }
 
   .nav-link {
-    @apply font-sans text-sm font-semibold leading-[1.4] tracking-normal;
+    @apply font-sans text-sm font-semibold leading-[1.4] tracking-normal text-ink;
+  }
+
+  .bullet-list {
+    @apply font-academic text-sm font-normal leading-relaxed tracking-normal list-disc list-outside pl-5;
+  }
+
+  .bullet-list > li + li {
+    margin-top: 0.375rem;
+  }
+
+  .bullet-list > li::marker {
+    color: currentColor;
   }
 }
 

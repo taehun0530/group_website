@@ -96,14 +96,14 @@ const themes = [
 const getTagColor = (tag: string) => {
   const t = tag.toLowerCase();
   // Variations within blue/indigo/slate family
-  if (t.includes('battery') || t.includes('lithiation') || t.includes('energy')) return 'bg-blue-50 text-blue-700 border-blue-100/50';
-  if (t.includes('mlip') || t.includes('machine learning') || t.includes('ai') || t.includes('data-driven')) return 'bg-sky-50 text-sky-700 border-sky-100/50';
-  if (t.includes('photoelectrochemistry') || t.includes('catalysis') || t.includes('reactivity')) return 'bg-indigo-50 text-indigo-700 border-indigo-100/50';
-  if (t.includes('semiconductor') || t.includes('dft') || t.includes('computation')) return 'bg-slate-50 text-slate-700 border-slate-200/50';
-  if (t.includes('experiment') || t.includes('collaboration')) return 'bg-cyan-50 text-cyan-700 border-cyan-100/50';
-  if (t.includes('optimization') || t.includes('inverse design')) return 'bg-blue-100/30 text-blue-800 border-blue-200/30';
-  if (t.includes('defect') || t.includes('structure') || t.includes('identification') || t.includes('amorphous')) return 'bg-slate-100 text-slate-600 border-slate-200/50';
-  return 'bg-blue-50/50 text-blue-600/80 border-blue-100/30';
+  if (t.includes('battery') || t.includes('lithiation') || t.includes('energy')) return 'bg-blue-50 text-copy border-blue-100/50';
+  if (t.includes('mlip') || t.includes('machine learning') || t.includes('ai') || t.includes('data-driven')) return 'bg-sky-50 text-copy border-sky-100/50';
+  if (t.includes('photoelectrochemistry') || t.includes('catalysis') || t.includes('reactivity')) return 'bg-indigo-50 text-copy border-indigo-100/50';
+  if (t.includes('semiconductor') || t.includes('dft') || t.includes('computation')) return 'bg-slate-50 text-copy border-slate-200/50';
+  if (t.includes('experiment') || t.includes('collaboration')) return 'bg-cyan-50 text-copy border-cyan-100/50';
+  if (t.includes('optimization') || t.includes('inverse design')) return 'bg-blue-100/30 text-copy border-blue-200/30';
+  if (t.includes('defect') || t.includes('structure') || t.includes('identification') || t.includes('amorphous')) return 'bg-slate-100 text-copy border-slate-200/50';
+  return 'bg-blue-50/50 text-copy border-blue-100/30';
 };
 
 import PageBanner from '../components/PageBanner';
@@ -141,11 +141,11 @@ const Research = () => {
   return (
     <>
     <PageBanner hideLine />
-    <div id="research-content" className="subsection-title py-10 max-w-7xl mx-auto px-8 relative overflow-hidden">
+    <div id="research-content" className="subsection-title text-copy py-10 max-w-7xl mx-auto px-8 relative overflow-hidden">
       {/* Header Section */}
       <header className="relative z-10 mb-8">
         <div className="flex items-center gap-3 mb-6">
-          <h1 className="page-title">Research</h1>
+          <h1 className="page-title text-ink">Research</h1>
         </div>
       </header>
 
@@ -153,38 +153,20 @@ const Research = () => {
         <section className="relative z-10">
           {/* Text Content */}
           <div className="w-full space-y-4">
-            <div className="text-body text-slate-700">
+            <div className="text-body text-copy">
               <p className="text-body mb-2">Our research spans three interconnected themes:</p>
-              <ul className="text-body space-y-1.5 pl-2">
-                <li className="text-body flex items-start gap-2">
-                  <span className="text-slate-500">(1)</span>
-                  <span className="flex-1 text-left">identifying active motifs in realistic complex structures,</span>
-                </li>
-                <li className="text-body flex items-start gap-2">
-                  <span className="text-slate-500">(2)</span>
-                  <span className="flex-1 text-left">understanding the stability and reactivity of surfaces and interfaces under operating conditions, and</span>
-                </li>
-                <li className="text-body flex items-start gap-2">
-                  <span className="text-slate-500">(3)</span>
-                  <span className="flex-1 text-left">establishing data-driven design rules for property prediction and inverse design.</span>
-                </li>
+              <ul className="bullet-list text-body text-copy text-left">
+                <li>Identify active motifs in realistic complex structures.</li>
+                <li>Understand the stability and reactivity of surfaces and interfaces under operating conditions.</li>
+                <li>Establish data-driven design rules for property prediction and inverse design.</li>
               </ul>
             </div>
-            <div className="text-body text-slate-600">
-              <p className="text-body mb-1.5">본 연구실은 세 가지 주제를 포괄합니다. 전산재료과학 및 머신러닝 기반 모델링을 통해</p>
-              <ul className="text-body space-y-1.5 pl-2 text-left">
-                <li className="text-body flex items-start gap-2">
-                  <span className="text-slate-400">(1)</span>
-                  <span className="flex-1">실제 조건에서 형성되는 복잡한 구조에서 활성 motif를 규명하고,</span>
-                </li>
-                <li className="text-body flex items-start gap-2">
-                  <span className="text-slate-400">(2)</span>
-                  <span className="flex-1">구동 환경에서 표면과 계면의 안정성 및 반응성을 이해하며,</span>
-                </li>
-                <li className="text-body flex items-start gap-2">
-                  <span className="text-slate-400">(3)</span>
-                  <span className="flex-1">데이터 기반 소재 property 예측과 역설계를 기반으로 소재 설계 규칙을 확립하는 것입니다.</span>
-                </li>
+            <div className="text-body text-copy" lang="ko">
+              <p className="text-body mb-2">전산재료과학 및 머신러닝 기반 모델링을 통해 세 가지 연구 주제를 탐구합니다.</p>
+              <ul className="bullet-list text-body text-copy text-left">
+                <li>실제 조건에서 형성되는 복잡한 구조의 활성 motif를 규명합니다.</li>
+                <li>구동 환경에서 표면과 계면의 안정성 및 반응성을 이해합니다.</li>
+                <li>데이터 기반 물성 예측과 역설계를 위한 소재 설계 규칙을 확립합니다.</li>
               </ul>
             </div>
           </div>
@@ -195,7 +177,7 @@ const Research = () => {
         {/* Sidebar Navigation */}
         <aside className="md:col-span-2 h-fit md:sticky md:top-32">
           <nav className="flex flex-col gap-4">
-            <div className="subsection-title text-slate-900 py-2 border-b border-slate-200">Research Themes</div>
+            <div className="subsection-title text-ink py-2 border-b border-slate-200">Research Themes</div>
             {themes.map((theme) => (
               <button
                 key={theme.id}
@@ -203,7 +185,7 @@ const Research = () => {
                 className={`group flex items-center gap-3 py-1 text-left transition-all ${activeTheme === theme.id ? 'translate-x-2' : 'hover:translate-x-1'}`}
               >
                 <span className={`h-[1px] transition-all ${activeTheme === theme.id ? 'w-8 bg-tertiary' : 'w-5 bg-slate-200 group-hover:bg-tertiary'}`}></span>
-                <span className={`nav-link ${activeTheme === theme.id ? 'text-tertiary' : 'text-primary hover:text-tertiary'}`}>
+                <span className="nav-link text-ink">
                   {theme.title}
                 </span>
               </button>
@@ -224,7 +206,7 @@ const Research = () => {
             >
               {/* 1. Title Section */}
               <div className="flex items-center gap-3 mb-4">
-                <h2 className="section-title">{currentTheme.title}</h2>
+                <h2 className="section-title text-ink">{currentTheme.title}</h2>
               </div>
 
               {/* 2 & 3. Research Questions & Methodologies */}
@@ -232,36 +214,31 @@ const Research = () => {
                 <div className="flex flex-col gap-3">
                   {currentTheme.questions && (
                     <div className="p-4 bg-slate-50 border border-slate-100">
-                      <h4 className="subsection-title text-tertiary mb-3">
+                      <h4 className="subsection-title text-ink mb-3">
                         Research Questions
                       </h4>
-                      <ul className="text-body space-y-2">
-                        {(Array.isArray(currentTheme.questions) ? currentTheme.questions : [currentTheme.questions]).map((q, i) => (
-                          <li key={i} className="text-body flex items-start gap-3">
-                            <span className="text-tertiary mt-[7px] select-none leading-none">•</span>
-                            <p className="text-body text-slate-700 flex-1">
-                              "{q}"
-                            </p>
-                          </li>
+                      <ul className="bullet-list text-body text-copy">
+                        {(Array.isArray(currentTheme.questions) ? currentTheme.questions : [currentTheme.questions]).map((q) => (
+                          <li key={q}>"{q}"</li>
                         ))}
                       </ul>
                     </div>
                   )}
                 </div>
-                <div className="p-4 bg-primary text-white">
-                  <h4 className="subsection-title mb-3 text-accent-blue">
+                <div className="p-4 bg-primary text-on-dark">
+                  <h4 className="subsection-title mb-3 text-on-dark">
                     Methodologies
                   </h4>
-                  <p className="text-body">
-                    {currentTheme.methodology}
-                  </p>
+                  <ul className="bullet-list text-body text-on-dark">
+                    {currentTheme.methodology.split(',').map((method) => <li key={method.trim()}>{method.trim()}</li>)}
+                  </ul>
                 </div>
               </div>
 
               {/* 4. General Description (Bilingual) + Image (7:3 ratio) */}
               <div className="py-6 border-y border-slate-100/50">
-                <h4 className="subsection-title text-slate-900 mb-4 flex items-center gap-1.5">
-                  <FileText size={12} className="text-slate-400" />
+                <h4 className="subsection-title text-ink mb-4 flex items-center gap-1.5">
+                  <FileText size={12} className="text-copy" />
                   Description
                 </h4>
                 <div className="flex flex-col gap-6">
@@ -269,7 +246,7 @@ const Research = () => {
                     <div className="space-y-6">
                       {currentTheme.desc.split('\n\n').map((para, i) => (
                         <div key={i} className="flex flex-col gap-8">
-                          <p className="text-body text-slate-700 text-left">
+                          <p className="text-body text-copy text-left">
                             {para}
                           </p>
                           {i === 0 && (
@@ -285,7 +262,7 @@ const Research = () => {
                                   referrerPolicy="no-referrer"
                                 />
                                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                  <div className="text-meta bg-primary/60 text-white px-3 py-1.5 rounded-full backdrop-blur-sm">
+                                  <div className="text-meta bg-primary/60 text-on-dark px-3 py-1.5 rounded-full backdrop-blur-sm">
                                     Click to Enlarge
                                   </div>
                                 </div>
@@ -297,7 +274,7 @@ const Research = () => {
                     </div>
                     <div className="mt-4 space-y-4">
                       {currentTheme.descKr.split('\n\n').map((para, i) => (
-                        <p key={i} className="text-body text-slate-600 break-keep text-left">
+                        <p key={i} className="text-body text-copy break-keep text-left">
                           {para}
                         </p>
                       ))}
@@ -309,8 +286,8 @@ const Research = () => {
               {/* 5. Related Publications */}
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <h4 className="subsection-title text-slate-900 flex items-center gap-2">
-                    <BookOpen size={12} className="text-tertiary" />
+                  <h4 className="subsection-title text-ink flex items-center gap-2">
+                    <BookOpen size={12} className="text-ink" />
                     Related Lab Publications
                   </h4>
                 </div>
@@ -336,10 +313,10 @@ const Research = () => {
                         >
                           <div className="flex-1 flex flex-col gap-2">
                             {(pub.year || pub.journal || pub.if) && (
-                              <p className="text-body text-slate-700 italic flex items-center gap-2 flex-wrap">
-                                {pub.year && <span className={`font-bold not-italic ${isLink ? 'group-hover:text-tertiary transition-colors' : 'text-slate-800'}`}>{pub.year}</span>}
-                                {pub.journal && <span className={isLink ? 'group-hover:text-slate-900 transition-colors' : ''}>{pub.journal}</span>}
-                                {pub.if && <span className="text-tertiary font-semibold not-italic whitespace-nowrap ml-1">IF: {pub.if}</span>}
+                              <p className="text-body text-copy italic flex items-center gap-2 flex-wrap">
+                                {pub.year && <span className="font-bold not-italic text-ink">{pub.year}</span>}
+                                {pub.journal && <span>{pub.journal}</span>}
+                                {pub.if && <span className="text-ink font-semibold not-italic whitespace-nowrap ml-1">IF: {pub.if}</span>}
                               </p>
                             )}
                             {pub.tags && (
@@ -350,7 +327,7 @@ const Research = () => {
                               </div>
                             )}
                           </div>
-                          {isLink && <ArrowUpRight size={12} className="text-slate-300 group-hover:text-tertiary transition-all shrink-0 mt-1.5" />}
+                          {isLink && <ArrowUpRight size={12} className="text-ink transition-all shrink-0 mt-1.5" />}
                         </PubWrapper>
                       );
                     })}

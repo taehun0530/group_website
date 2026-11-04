@@ -43,13 +43,13 @@ export default function Publications() {
       <div className="py-10 max-w-7xl mx-auto px-8">
         <header className="mb-6">
           <h1 className="page-title mb-4">Publications</h1>
-          <a href="https://scholar.google.com/citations?user=E4QBWfAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-body text-tertiary hover:underline underline-offset-2">
+          <a href="https://scholar.google.com/citations?user=E4QBWfAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-body text-ink hover:underline underline-offset-2">
             Google Scholar <ArrowUpRight size={14} aria-hidden="true" />
           </a>
         </header>
 
         <YearFilter years={years} selectedYear={activeYear} onSelect={(year) => setSearchParams({ year })} label="Filter publications by year" />
-        <div className="flex flex-wrap gap-x-4 gap-y-1 text-slate-500 font-academic text-meta mt-4 mb-6">
+        <div className="flex flex-wrap gap-x-4 gap-y-1 text-copy font-academic text-meta mt-4 mb-6">
           <span># Corresponding author</span>
           <span>† First author</span>
         </div>
@@ -57,8 +57,8 @@ export default function Publications() {
         <div className="space-y-8">
           {Object.keys(groupedPubs).sort((a, b) => b.localeCompare(a)).map((year) => (
             <section key={year} aria-label={`${year} publications`}>
-              <h2 className="section-title mb-3">{year} <span className="text-meta font-normal text-slate-500 ml-1">({groupedPubs[year].length})</span></h2>
-              {year === '2026' && <p className="text-meta text-slate-500 mb-3">IF = Journal Impact Factor. Parentheses indicate the verified metric year; each IF links to its source.</p>}
+              <h2 className="section-title mb-3">{year} <span className="text-meta font-normal text-copy ml-1">({groupedPubs[year].length})</span></h2>
+              {year === '2026' && <p className="text-meta text-copy mb-3">IF = Journal Impact Factor. Parentheses indicate the verified metric year; each IF links to its source.</p>}
               <div className="divide-y divide-slate-100">
                 {groupedPubs[year].map((publication) => {
                   const detailId = detailsByDoi.get(normalizeDoi(publication.doi));
@@ -68,16 +68,16 @@ export default function Publications() {
                       {publication.highlightImage && (
                         <img src={publication.highlightImage.src} alt={publication.highlightImage.alt} loading="lazy" className="w-full sm:w-36 aspect-[4/3] object-contain bg-white shrink-0 self-start" />
                       )}
-                      <div className="min-w-0 text-body text-slate-700">
+                      <div className="min-w-0 text-body text-copy">
                         <h3 className="card-title mb-1">
-                          {detailId ? <Link to={`/news/${detailId}`} className="hover:underline underline-offset-2">{title}</Link> : <a href={publication.doi} target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-2">{title}</a>}
+                          {detailId ? <Link to={`/news/${detailId}`} className="hover:underline underline-offset-2 text-ink">{title}</Link> : <a href={publication.doi} target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-2 text-ink">{title}</a>}
                         </h3>
                         <p className="mb-1">{formatAuthors(publication.authors)}</p>
-                        <p><JournalCitation citation={publication.journal} showIssue={false} emphasizeVolume={false} />{publication.if && (publication.ifSource ? <a href={publication.ifSource} target="_blank" rel="noopener noreferrer" className="inline-block text-meta text-slate-500 ml-2 hover:underline underline-offset-2" aria-label={`Journal Impact Factor ${publication.if}${publication.ifYear ? `, ${publication.ifYear}` : ''}, source`}>IF {publication.if}{publication.ifYear && ` (${publication.ifYear})`}</a> : <span className="inline-block text-meta text-slate-500 ml-2">IF {publication.if}</span>)}</p>
-                        {publication.status === 'article-in-press' && <p className="text-meta text-slate-500 mt-1">Published online · Article in Press</p>}
-                        <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-meta text-tertiary">
-                          {detailId && <Link to={`/news/${detailId}`} className="hover:underline underline-offset-2">Read more →</Link>}
-                          <a href={publication.doi} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:underline underline-offset-2">DOI <ArrowUpRight size={12} aria-hidden="true" /></a>
+                        <p><JournalCitation citation={publication.journal} showIssue={false} emphasizeVolume={false} />{publication.if && (publication.ifSource ? <a href={publication.ifSource} target="_blank" rel="noopener noreferrer" className="inline-block text-meta text-ink ml-2 hover:underline underline-offset-2" aria-label={`Journal Impact Factor ${publication.if}${publication.ifYear ? `, ${publication.ifYear}` : ''}, source`}>IF {publication.if}{publication.ifYear && ` (${publication.ifYear})`}</a> : <span className="inline-block text-meta text-copy ml-2">IF {publication.if}</span>)}</p>
+                        {publication.status === 'article-in-press' && <p className="text-meta text-copy mt-1">Published online · Article in Press</p>}
+                        <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-meta text-ink">
+                          {detailId && <Link to={`/news/${detailId}`} className="hover:underline underline-offset-2 text-ink">Read more →</Link>}
+                          <a href={publication.doi} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:underline underline-offset-2 text-ink">DOI <ArrowUpRight size={12} aria-hidden="true" /></a>
                         </div>
                       </div>
                     </article>

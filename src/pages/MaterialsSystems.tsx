@@ -79,7 +79,7 @@ export default function MaterialsSystems() {
     <div className="py-10 max-w-7xl mx-auto px-8">
       <Link 
         to="/" 
-        className="text-meta inline-flex items-center gap-2 text-slate-600 hover:text-primary transition-colors mb-8"
+        className="text-meta inline-flex items-center gap-2 text-ink hover:text-ink transition-colors mb-8"
       >
         <ChevronLeft size={14} /> Back to Home
       </Link>
@@ -90,7 +90,7 @@ export default function MaterialsSystems() {
             Materials Systems of Interest
           </h1>
         </div>
-        <div className="text-body mt-4 text-slate-700 max-w-3xl">
+        <div className="text-body mt-4 text-copy max-w-3xl">
           Exploring the frontiers of functional materials through advanced atomistic modeling and data-driven insights.
         </div>
       </header>
@@ -108,12 +108,12 @@ export default function MaterialsSystems() {
           >
             <div className={i % 2 === 1 ? 'md:order-2' : ''}>
               <div className="mb-4">
-                <span className="text-meta text-primary">SUB-SYSTEM {String(i + 1).padStart(2, '0')}</span>
+                <span className="text-meta text-ink">SUB-SYSTEM {String(i + 1).padStart(2, '0')}</span>
                 <h2 className="section-title mt-1 mb-4">
                   <FormattedText text={system.title} />
                 </h2>
               </div>
-              <p className="text-body text-slate-700">
+              <p className="text-body text-copy">
                 <FormattedText text={system.content} />
               </p>
             </div>
@@ -129,7 +129,7 @@ export default function MaterialsSystems() {
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/5">
-                  <div className="text-meta bg-primary/60 text-white px-3 py-1.5 rounded-full backdrop-blur-sm">
+                  <div className="text-meta bg-primary/60 text-on-dark px-3 py-1.5 rounded-full backdrop-blur-sm">
                     Click to Enlarge
                   </div>
                 </div>

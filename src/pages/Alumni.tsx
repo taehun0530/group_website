@@ -11,7 +11,7 @@ export default function Alumni() {
     <div className="text-body py-10 max-w-4xl mx-auto px-8">
       <Link 
         to="/people" 
-        className="text-meta inline-flex items-center gap-2 text-slate-600 hover:text-primary transition-colors mb-6"
+        className="text-meta inline-flex items-center gap-2 text-ink hover:text-ink transition-colors mb-6"
       >
         <ChevronLeft size={14} aria-hidden="true" /> Back to People
       </Link>
@@ -20,7 +20,7 @@ export default function Alumni() {
         <div className="flex items-center gap-3 mb-6">
           <h1 className="page-title">Alumni</h1>
         </div>
-        <p className="text-body text-slate-700 max-w-2xl">
+        <p className="text-body text-copy max-w-2xl">
           Former undergraduate researchers and participants in our research internship programs.
         </p>
       </header>
@@ -37,14 +37,14 @@ export default function Alumni() {
               className="p-4 bg-white border border-slate-100 grid grid-cols-1 md:grid-cols-12 gap-2 rounded-sm items-center"
             >
               <div className="md:col-span-7">
-                <h3 className="card-title text-primary mb-1">
+                <h3 className="card-title text-ink mb-1">
                   {alumni.name} <span lang="ko" className="font-normal">({alumni.koreanName})</span>
                 </h3>
-                <p className="text-meta text-slate-600">
+                <p className="text-meta text-copy">
                   <span lang="ko">학부생 연구원</span> (Undergraduate Intern), {alumni.period}
                 </p>
               </div>
-              {alumni.next && <p className="text-meta md:col-span-5 text-slate-700">{alumni.next}</p>}
+              {alumni.next && <p className="text-meta md:col-span-5 text-copy">{alumni.next}</p>}
             </motion.article>
           ))}
         </div>
@@ -55,15 +55,15 @@ export default function Alumni() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {internshipCohorts.map((cohort) => (
             <article key={cohort.id} className="p-5 border border-slate-200 rounded-sm bg-white">
-              <p className="text-meta text-slate-600 mb-2">{cohort.year} · {cohort.term}</p>
-              <h3 className="card-title text-primary mb-2">
-                <Link to={`/people/alumni/internships/${cohort.id}`} className="hover:text-tertiary transition-colors">
+              <p className="text-meta text-copy mb-2">{cohort.year} · {cohort.term}</p>
+              <h3 className="card-title text-ink mb-2">
+                <Link to={`/people/alumni/internships/${cohort.id}`} className="hover:text-ink transition-colors text-ink">
                   {cohort.title}
                 </Link>
               </h3>
-              <p className="text-meta text-slate-600 mb-3">{cohort.period} · {cohort.participants.length} participants</p>
-              <p className="text-body text-slate-700 mb-4">{cohort.description}</p>
-              <Link to={`/people/alumni/internships/${cohort.id}`} className="text-meta text-primary hover:text-tertiary transition-colors">
+              <p className="text-meta text-copy mb-3">{cohort.period} · {cohort.participants.length} participants</p>
+              <p className="text-body text-copy mb-4">{cohort.description}</p>
+              <Link to={`/people/alumni/internships/${cohort.id}`} className="text-meta text-ink hover:text-ink transition-colors">
                 View participants →
               </Link>
             </article>

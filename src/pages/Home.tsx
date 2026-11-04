@@ -33,25 +33,25 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="max-w-2xl space-y-3"
           >
-            <h1 className="hero-title text-white">
-              Materials Modeling and Machine Learning for <br className="hidden md:block" /><span className="text-accent-blue">Structure–Property Relationships</span>
+            <h1 className="hero-title text-on-dark">
+              Materials Modeling and Machine Learning for <br className="hidden md:block" /><span className="text-on-dark">Structure–Property Relationships</span>
             </h1>
             <div className="flex flex-wrap items-center gap-2 md:gap-3 pt-4">
-              <div className="flex items-center gap-2 text-white">
-                <Server size={14} className="text-accent-blue" />
-                <span className="text-meta pt-0.5">Computation</span>
+              <div className="flex items-center gap-2 text-on-dark">
+                <Server size={14} className="text-on-dark" />
+                <span className="text-meta text-on-dark pt-0.5">Computation</span>
               </div>
-              <div className="flex items-center gap-2 text-white">
-                <Atom size={14} className="text-accent-blue" />
-                <span className="text-meta pt-0.5">Materials Modeling</span>
+              <div className="flex items-center gap-2 text-on-dark">
+                <Atom size={14} className="text-on-dark" />
+                <span className="text-meta text-on-dark pt-0.5">Materials Modeling</span>
               </div>
-              <div className="flex items-center gap-2 text-white">
-                <Brain size={14} className="text-accent-blue" />
-                <span className="text-meta pt-0.5">Machine Learning</span>
+              <div className="flex items-center gap-2 text-on-dark">
+                <Brain size={14} className="text-on-dark" />
+                <span className="text-meta text-on-dark pt-0.5">Machine Learning</span>
               </div>
-              <div className="flex items-center gap-2 text-white">
-                <Activity size={14} className="text-accent-blue" />
-                <span className="text-meta pt-0.5">Structure–Property<br/>Relationships</span>
+              <div className="flex items-center gap-2 text-on-dark">
+                <Activity size={14} className="text-on-dark" />
+                <span className="text-meta text-on-dark pt-0.5">Structure–Property<br/>Relationships</span>
               </div>
             </div>
           </motion.div>
@@ -77,12 +77,12 @@ export default function Home() {
               {/* Left Section: English Text (ratio 4/10) */}
               <div className="lg:col-span-5 space-y-4">
                 <div className="relative">
-                  <p className="text-body text-slate-800 text-left">
-                    <Link to="/profile/taehun-lee" className="font-bold text-primary hover:underline underline-offset-2">Professor Taehun Lee</Link> leads our group in the <a href="https://www.dgist.ac.kr/energy/" target="_blank" rel="noopener noreferrer" className="font-bold text-primary hover:underline underline-offset-2">Department of Energy Science and Engineering</a> at Daegu Gyeongbuk Institute of Science & Technology (DGIST), with a joint appointment in the <a href="https://www.dgist.ac.kr/semi/index.do" target="_blank" rel="noopener noreferrer" className="font-bold text-primary hover:underline underline-offset-2">Department of Semiconductor Engineering</a>. We combine computational materials science, quantum-mechanical simulations, and machine learning to understand and design functional materials.
+                  <p className="text-body text-copy text-left">
+                    <Link to="/profile/taehun-lee" className="font-bold text-ink hover:underline underline-offset-2">Professor Taehun Lee</Link> leads our group in the <a href="https://www.dgist.ac.kr/energy/" target="_blank" rel="noopener noreferrer" className="font-bold text-ink hover:underline underline-offset-2">Department of Energy Science and Engineering</a> at Daegu Gyeongbuk Institute of Science & Technology (DGIST), with a joint appointment in the <a href="https://www.dgist.ac.kr/semi/index.do" target="_blank" rel="noopener noreferrer" className="font-bold text-ink hover:underline underline-offset-2">Department of Semiconductor Engineering</a>. We combine computational materials science, quantum-mechanical simulations, and machine learning to understand and design functional materials.
                   </p>
                 </div>
                 <div>
-                  <p className="text-body text-slate-600 text-left">
+                  <p className="text-body text-copy text-left">
                     We focus on how atomic-scale structures, defects, interfaces, and chemical environments govern materials properties under realistic operating conditions. By integrating density functional theory (DFT), molecular dynamics, machine-learned interatomic potentials, and automated workflows, we aim to establish design principles for advanced energy and electronic materials.
                   </p>
                 </div>
@@ -105,7 +105,7 @@ export default function Home() {
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div className="text-meta bg-primary/60 text-white px-3 py-1.5 rounded-full backdrop-blur-sm">
+                    <div className="text-meta bg-primary/60 text-on-dark px-3 py-1.5 rounded-full backdrop-blur-sm">
                       Click to Enlarge
                     </div>
                   </div>
@@ -115,10 +115,10 @@ export default function Home() {
 
             {/* Bottom Section: Full Width Korean Text (Matching Research Overview format) */}
             <div className="mt-6 space-y-3" lang="ko">
-              <p className="text-body text-slate-600 text-left break-keep">
+              <p className="text-body text-copy text-left break-keep">
                 본 연구실은 DGIST 에너지공학과 이태훈 교수가 이끌며, 이 교수는 반도체공학과 겸임교수로도 재직하고 있습니다. 계산재료과학, 양자역학 기반 시뮬레이션, 머신러닝을 결합하여 기능성 소재를 이해하고 설계하며, 원자 수준의 구조, 결함, 계면이 소재 물성에 어떻게 영향을 주는지 연구합니다.
               </p>
-              <p className="text-body text-slate-600 text-left break-keep">
+              <p className="text-body text-copy text-left break-keep">
                 DFT, 분자동역학, MLIP, 자동화 계산 워크플로우를 통합하여 차세대 에너지 및 전자 소재의 설계 원리를 확립하는 것을 목표로 합니다.
               </p>
             </div>
@@ -140,7 +140,7 @@ export default function Home() {
           
           <div className="flex flex-col gap-8">
             <div className="space-y-4">
-              <p className="text-body text-slate-700 text-left">
+              <p className="text-body text-copy text-left">
                 We combine computational materials science and machine learning to understand, predict, and design the structure, stability, reactivity, and performance of functional materials at the atomic scale under realistic operating conditions.
               </p>
             </div>
@@ -158,7 +158,7 @@ export default function Home() {
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="text-meta bg-primary/60 text-white px-3 py-1.5 rounded-full backdrop-blur-sm">
+                  <div className="text-meta bg-primary/60 text-on-dark px-3 py-1.5 rounded-full backdrop-blur-sm">
                     Click to Enlarge
                   </div>
                 </div>
@@ -166,21 +166,18 @@ export default function Home() {
             </div>
             
             <div className="space-y-6">
-              <div className="space-y-4">
-                <p className="text-body text-slate-700 text-left">
-                  Building on physics-based modeling with density functional theory (DFT), we integrate machine-learned interatomic potentials (MLIPs), automated computational workflows, data-driven screening, and generative models to investigate complex surfaces, interfaces, defects, amorphous structures, and their structure–property relationships.
-                </p>
-                <p className="text-body text-slate-700 text-left">
-                  Our primary materials of interest include photoelectrochemical and electrocatalytic oxides, high-k dielectric oxides, and their nanostructured and disordered forms.
-                </p>
-              </div>
-              <div className="space-y-4" lang="ko">
-                <p className="text-body text-slate-600 text-left break-keep">
-                  우리는 계산재료과학과 머신러닝을 결합하여, 실제 환경에서 기능성 재료의 구조, 안정성, 반응성, 성능을 원자 수준에서 이해하고 예측하며 설계합니다. 밀도범함수이론(DFT)에 기반한 물리 모델링을 바탕으로, 우리는 machine-learned interatomic potentials (MLIPs), 자동화 계산 워크플로, 데이터 기반 스크리닝, 생성 모델을 통합하여 복잡한 표면, 계면, 결함, 비정질 구조를 탐구하고, 그 구조–물성 관계를 연구합니다.
-                </p>
-                <p className="text-body text-slate-600 text-left break-keep">
-                  주요 관심 소재는 광전기화학 및 전기촉매 산화물, high-k 유전체 산화물, 그리고 이들의 나노구조 및 무질서 구조체입니다.
-                </p>
+              <ul className="bullet-list text-copy">
+                <li><strong className="font-semibold text-ink">Modeling methods:</strong> We integrate physics-based density functional theory (DFT), machine-learned interatomic potentials (MLIPs), automated computational workflows, data-driven screening, and generative models.</li>
+                <li><strong className="font-semibold text-ink">Structure–property relationships:</strong> We investigate complex surfaces, interfaces, defects, and amorphous structures.</li>
+                <li><strong className="font-semibold text-ink">Materials of interest:</strong> Photoelectrochemical and electrocatalytic oxides, high-k dielectric oxides, and their nanostructured and disordered forms.</li>
+              </ul>
+              <div className="space-y-3" lang="ko">
+                <p className="text-body text-copy text-left break-keep">계산재료과학과 머신러닝을 결합하여 실제 구동 환경에서 기능성 재료의 구조, 안정성, 반응성, 성능을 원자 수준에서 이해하고 예측하며 설계합니다.</p>
+                <ul className="bullet-list text-copy break-keep">
+                  <li><strong className="font-semibold text-ink">Modeling methods:</strong> 밀도범함수이론(DFT) 기반 물리 모델링에 machine-learned interatomic potentials (MLIPs), 자동화 계산 워크플로, 데이터 기반 스크리닝, 생성 모델을 통합합니다.</li>
+                  <li><strong className="font-semibold text-ink">Structure–property relationships:</strong> 복잡한 표면, 계면, 결함, 비정질 구조와 구조–물성 관계를 탐구합니다.</li>
+                  <li><strong className="font-semibold text-ink">Materials of interest:</strong> 광전기화학 및 전기촉매 산화물, high-k 유전체 산화물, 그리고 이들의 나노구조 및 무질서 구조체를 연구합니다.</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -200,39 +197,21 @@ export default function Home() {
               <h2 className="section-title">Research Themes</h2>
             </div>
             <div className="w-full space-y-3">
-              <div className="text-body text-slate-700 text-left">
+              <div className="text-body text-copy text-left">
                 <p className="text-body mb-2">Our research spans three interconnected themes:</p>
-                <ul className="text-body space-y-1.5 pl-2">
-                  <li className="text-body flex items-start gap-2">
-                    <span className="text-slate-500 font-medium">(1)</span>
-                    <span className="flex-1">identifying active motifs in realistic complex structures,</span>
-                  </li>
-                  <li className="text-body flex items-start gap-2">
-                    <span className="text-slate-500 font-medium">(2)</span>
-                    <span className="flex-1">understanding the stability and reactivity of surfaces and interfaces under operating conditions, and</span>
-                  </li>
-                  <li className="text-body flex items-start gap-2">
-                    <span className="text-slate-500 font-medium">(3)</span>
-                    <span className="flex-1">establishing data-driven design rules for property prediction and inverse design.</span>
-                  </li>
+                <ul className="bullet-list">
+                  <li>Identify active motifs in realistic complex structures.</li>
+                  <li>Understand the stability and reactivity of surfaces and interfaces under operating conditions.</li>
+                  <li>Establish data-driven design rules for property prediction and inverse design.</li>
                 </ul>
               </div>
               <div lang="ko">
-                <div className="text-body text-slate-600 text-left break-keep">
-                  <p className="text-body mb-1.5">본 연구실은 세 가지 주제를 포괄합니다. 전산재료과학 및 머신러닝 기반 모델링을 통해</p>
-                  <ul className="text-body space-y-1.5 pl-2">
-                    <li className="text-body flex items-start gap-2">
-                      <span className="text-slate-400">(1)</span>
-                      <span className="flex-1">실제 조건에서 형성되는 복잡한 구조에서 활성 motif를 규명하고,</span>
-                    </li>
-                    <li className="text-body flex items-start gap-2">
-                      <span className="text-slate-400">(2)</span>
-                      <span className="flex-1">구동 환경에서 표면과 계면의 안정성 및 반응성을 이해하며,</span>
-                    </li>
-                    <li className="text-body flex items-start gap-2">
-                      <span className="text-slate-400">(3)</span>
-                      <span className="flex-1">데이터 기반 소재 property 예측과 역설계를 기반으로 소재 설계 규칙을 확립하는 것입니다.</span>
-                    </li>
+                <div className="text-body text-copy text-left break-keep">
+                  <p className="text-body mb-2">전산재료과학 및 머신러닝 기반 모델링을 통해 세 가지 연구 주제를 탐구합니다.</p>
+                  <ul className="bullet-list">
+                    <li>실제 조건에서 형성되는 복잡한 구조의 활성 motif를 규명합니다.</li>
+                    <li>구동 환경에서 표면과 계면의 안정성 및 반응성을 이해합니다.</li>
+                    <li>데이터 기반 물성 예측과 역설계를 위한 소재 설계 규칙을 확립합니다.</li>
                   </ul>
                 </div>
               </div>
@@ -265,18 +244,18 @@ export default function Home() {
                     
                     {/* Hover Overlay */}
                     <div className="absolute top-0 left-0 w-full p-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-y-1 group-hover:translate-y-0 flex items-center justify-between z-10">
-                      <span className="text-meta text-primary bg-white/70 backdrop-blur-sm px-2 py-1 rounded-sm">Explore Theme</span>
+                      <span className="text-meta text-ink bg-white/70 backdrop-blur-sm px-2 py-1 rounded-sm">Explore Theme</span>
                       <div className="bg-white/70 backdrop-blur-sm p-1.5 rounded-sm">
-                        <ArrowRight size={10} className="text-primary" />
+                        <ArrowRight size={10} className="text-ink" />
                       </div>
                     </div>
                   </div>
                   <div className="p-3 flex flex-col justify-center flex-auto">
                     <div className="flex items-center gap-2.5 w-full">
-                      <div className="w-7 h-7 shrink-0 bg-primary/5 flex items-center justify-center text-primary rounded-full group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                      <div className="w-7 h-7 shrink-0 bg-primary/5 flex items-center justify-center text-ink rounded-full group-hover:bg-primary group-hover:text-on-dark transition-colors duration-300">
                         {theme.icon}
                       </div>
-                      <h3 className="card-title text-primary text-left">
+                      <h3 className="card-title text-ink text-left">
                         {theme.title}
                       </h3>
                     </div>
@@ -302,7 +281,7 @@ export default function Home() {
             </div>
             <Link 
               to="/materials-systems" 
-              className="text-meta text-primary hover:text-tertiary transition-all border-b-2 border-primary/20 pb-0.5"
+              className="text-meta text-ink hover:text-ink transition-all border-b-2 border-primary/20 pb-0.5"
             >
               Explore All →
             </Link>
@@ -347,14 +326,14 @@ export default function Home() {
                 className="bg-white p-5 lg:p-6 border border-slate-100 hover:shadow-md transition-all text-left group rounded-sm flex flex-col h-full"
               >
                 <div className="flex items-start gap-2.5 mb-2.5">
-                  <div className="text-primary mt-0.5 flex-shrink-0 scale-100 group-hover:scale-110 transition-transform">
+                  <div className="text-ink mt-0.5 flex-shrink-0 scale-100 group-hover:scale-110 transition-transform">
                     {item.icon}
                   </div>
-                  <h4 className="card-title text-primary group-hover:text-tertiary transition-colors">
+                  <h4 className="card-title text-ink group-hover:text-ink transition-colors">
                     {item.title}
                   </h4>
                 </div>
-                <p className="text-body text-slate-700">
+                <p className="text-body text-copy">
                   {item.desc}
                 </p>
               </Link>
@@ -376,13 +355,15 @@ export default function Home() {
               <h2 className="section-title">Method</h2>
             </div>
             <div className="w-full space-y-3">
-              <p className="text-body text-slate-700 text-left">
-                We combine automated DFT-based workflows, data-driven machine learning, and machine-learned interatomic potentials to analyze materials across multiple scales. We further employ advanced sampling, global optimization, and realistic interface modeling under constant-potential conditions, explicit electrolytes, and electric-field effects to predict structure formation and understand materials properties under operating environments.
-              </p>
+              <ul className="bullet-list text-copy">
+                <li><strong className="font-semibold text-ink">Multiscale modeling:</strong> We combine automated DFT-based workflows, data-driven machine learning, and machine-learned interatomic potentials to analyze materials across multiple scales.</li>
+                <li><strong className="font-semibold text-ink">Operating environments:</strong> We use advanced sampling, global optimization, and realistic interface modeling with constant-potential conditions, explicit electrolytes, and electric-field effects to predict structure formation and understand materials properties.</li>
+              </ul>
               <div lang="ko">
-                <p className="text-body text-slate-600 text-left break-keep">
-                  우리 연구실은 DFT 기반의 자동화 계산, 데이터 기반 머신러닝, 그리고 machine-learned interatomic potentials를 결합하여 다양한 스케일에서 소재의 구조와 물성을 분석합니다. 나아가 고도화된 샘플링 및 전역 최적화 기법과 함께 constant-potential, explicit electrolyte, electric-field effects를 반영한 현실적 계면 모델링을 통해 실제 환경에서 소재의 구조 형성, 안정성, 반응성을 연구합니다.
-                </p>
+                <ul className="bullet-list text-copy break-keep">
+                  <li><strong className="font-semibold text-ink">Multiscale modeling:</strong> DFT 기반 자동화 계산, 데이터 기반 머신러닝, machine-learned interatomic potentials를 결합하여 다양한 스케일에서 소재의 구조와 물성을 분석합니다.</li>
+                  <li><strong className="font-semibold text-ink">Operating environments:</strong> 고도화된 샘플링과 전역 최적화, constant-potential, explicit electrolyte, electric-field effects를 반영한 계면 모델링으로 실제 구동 환경에서 소재의 구조 형성, 안정성, 반응성을 연구합니다.</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -402,19 +383,16 @@ export default function Home() {
                    ].map((method, i) => (
                      <div key={i} className="bg-white p-4 border border-slate-100 hover:border-sky-200 hover:shadow-md transition-all rounded-sm flex flex-col shadow-[0_1px_4px_rgba(0,0,0,0.02)] h-full">
                         <div className="flex items-start gap-2 mb-2 min-h-[36px]">
-                          <div className="text-sky-500 mt-0.5 shrink-0 bg-sky-50/50 p-1 rounded-sm">
+                          <div className="text-ink mt-0.5 shrink-0 bg-sky-50/50 p-1 rounded-sm">
                             {method.icon}
                           </div>
-                          <h4 className="card-title text-primary pt-0.5">
+                          <h4 className="card-title text-ink pt-0.5">
                             {method.title}
                           </h4>
                         </div>
-                        <ul className="text-body space-y-1 pl-6">
+                        <ul className="bullet-list text-copy">
                           {method.bullets.map((b, idx) => (
-                            <li key={idx} className="text-body flex items-start gap-2 text-slate-700 text-left">
-                              <div className="w-[3px] h-[3px] rounded-full bg-sky-200 mt-[7px] shrink-0"></div>
-                              <span>{b}</span>
-                            </li>
+                            <li key={idx}>{b}</li>
                           ))}
                         </ul>
                       </div>
@@ -427,18 +405,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative z-10 py-12 bg-primary text-white">
+      <section className="relative z-10 py-12 bg-primary text-on-dark">
         <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="max-w-2xl text-center md:text-left space-y-1">
-            <h2 className="section-title text-white">Join our research team.</h2>
-            <p className="text-body text-slate-200">
+            <h2 className="section-title text-on-dark">Join our research team.</h2>
+            <p className="text-body text-on-dark">
               We are looking for motivated graduate students and postdocs interested in machine learning and materials modeling. Reach out to discuss potential projects.
             </p>
           </div>
           <div className="shrink-0">
             <Link 
               to="/open-positions" 
-              className="text-meta inline-block bg-white text-primary px-8 py-3 hover:bg-tertiary hover:text-white transition-all shadow-lg"
+              className="text-meta inline-block bg-white text-ink px-8 py-3 hover:bg-tertiary hover:text-on-dark transition-all shadow-lg"
             >
               Contact Us
             </Link>

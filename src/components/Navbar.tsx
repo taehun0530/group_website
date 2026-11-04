@@ -19,7 +19,7 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 w-full z-50 glass-nav border-b border-slate-200/50">
       <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-        <Link to="/" className="section-title text-primary shrink-0">
+        <Link to="/" className="section-title text-ink shrink-0">
           Lee Group @ DGIST ESE
         </Link>
 
@@ -31,8 +31,8 @@ export default function Navbar() {
               to={link.path}
               className={`nav-link transition-colors pb-1 border-b-2 ${
                 location.pathname === link.path
-                  ? 'text-primary border-primary'
-                  : 'text-slate-700 border-transparent hover:text-primary'
+                  ? 'text-ink border-primary'
+                  : 'text-copy border-transparent hover:text-ink'
               }`}
             >
               {link.name}
@@ -41,7 +41,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Toggle */}
-        <button type="button" aria-label={isOpen ? 'Close navigation' : 'Open navigation'} aria-expanded={isOpen} aria-controls="mobile-navigation" className="lg:hidden text-primary" onClick={() => setIsOpen(!isOpen)}>
+        <button type="button" aria-label={isOpen ? 'Close navigation' : 'Open navigation'} aria-expanded={isOpen} aria-controls="mobile-navigation" className="lg:hidden text-ink" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -62,7 +62,7 @@ export default function Navbar() {
                 to={link.path}
                 onClick={() => setIsOpen(false)}
                 className={`nav-link block ${
-                  location.pathname === link.path ? 'text-primary' : 'text-slate-700'
+                  location.pathname === link.path ? 'text-ink' : 'text-copy'
                 }`}
               >
                 {link.name}

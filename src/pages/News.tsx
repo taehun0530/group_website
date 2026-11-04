@@ -14,14 +14,14 @@ export function renderNewsImage(image: NewsImage) {
   return (
     <figure key={image.src} className="mt-6">
       {isAwardPhoto ? (
-        <a href={image.src} target="_blank" rel="noopener noreferrer" aria-label="View the original AI Build Week photograph" className="block aspect-square w-40 overflow-hidden">
+        <a href={image.src} target="_blank" rel="noopener noreferrer" aria-label="View the original AI Build Week photograph" className="block aspect-square w-40 overflow-hidden text-ink">
           {photo}
         </a>
       ) : photo}
-      <figcaption className="text-meta mt-2 text-slate-600">
+      <figcaption className="text-meta mt-2 text-copy">
         {image.caption}{' '}
-        <a href={image.sourceUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-primary">{image.credit}</a>
-        {image.license && <>{' '}<a href={image.license.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-primary">{image.license.label}</a></>}
+        <a href={image.sourceUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-ink text-ink">{image.credit}</a>
+        {image.license && <>{' '}<a href={image.license.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-ink text-ink">{image.license.label}</a></>}
       </figcaption>
     </figure>
   );
@@ -47,7 +47,7 @@ export default function News() {
         <div className="flex items-center gap-3 mb-6">
           <h1 className="page-title">News</h1>
         </div>
-        <p className="text-body text-slate-700 max-w-2xl">
+        <p className="text-body text-copy max-w-2xl">
           Recent updates from our lab, including publications, awards, and team activities.
         </p>
       </header>
@@ -65,24 +65,24 @@ export default function News() {
           >
             {/* Left side: Date and Tag */}
             <div className="md:w-32 shrink-0 pt-0.5">
-              <div className="text-meta flex items-center gap-2 text-primary mb-1.5">
-                <Calendar size={12} className="text-tertiary" aria-hidden="true" />
+              <div className="text-meta flex items-center gap-2 text-ink mb-1.5">
+                <Calendar size={12} className="text-ink" aria-hidden="true" />
                 {item.date.length > 4 ? <time dateTime={item.date.replace(/\./g, '-')}>{item.date.replace(/-/g, '.')}</time> : item.date}
               </div>
-              <div className="text-meta inline-flex items-center gap-1.5 px-2 py-0.5 bg-slate-50 text-tertiary rounded-sm group-hover:bg-slate-100 transition-colors">
-                <Tag size={10} className="text-tertiary" aria-hidden="true" />
+              <div className="text-meta inline-flex items-center gap-1.5 px-2 py-0.5 bg-slate-50 text-ink rounded-sm group-hover:bg-slate-100 transition-colors">
+                <Tag size={10} className="text-ink" aria-hidden="true" />
                 {item.category}
               </div>
             </div>
 
             {/* Right side: Content */}
             <div className="flex-grow min-w-0">
-              <h3 className="card-title text-primary mb-2 group-hover:text-tertiary transition-colors">
-                {item.hasDetail ? <Link to={`/news/${item.id}?year=${activeYear}`} className="hover:underline underline-offset-2">{formatScientificTitle(item.title)}</Link> : formatScientificTitle(item.title)}
+              <h3 className="card-title text-ink mb-2 group-hover:text-ink transition-colors">
+                {item.hasDetail ? <Link to={`/news/${item.id}?year=${activeYear}`} className="hover:underline underline-offset-2 text-ink">{formatScientificTitle(item.title)}</Link> : formatScientificTitle(item.title)}
               </h3>
               
                   {item.summary && (
-                    <p className="text-body text-slate-700 mb-3">
+                    <p className="text-body text-copy mb-3">
                       {formatScientificTitle(item.summary)}
                     </p>
                   )}
@@ -90,7 +90,7 @@ export default function News() {
               {item.hasDetail && (
                 <Link 
                   to={`/news/${item.id}?year=${activeYear}`}
-                  className="text-meta inline-flex items-center gap-1 text-primary hover:gap-2 transition-all"
+                  className="text-meta inline-flex items-center gap-1 text-ink hover:gap-2 transition-all"
                 >
                   Read More <ChevronRight size={12} aria-hidden="true" />
                 </Link>

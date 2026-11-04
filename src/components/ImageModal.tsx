@@ -31,7 +31,7 @@ const ImageModal: React.FC<ImageModalProps> = ({ isOpen, onClose, imageSrc, imag
           >
             <button
               onClick={onClose}
-              className="absolute -top-12 right-0 p-2 text-white hover:text-accent-blue transition-colors outline-none"
+              className="absolute -top-12 right-0 p-2 text-on-dark hover:text-on-dark transition-colors outline-none"
               aria-label="Close modal"
             >
               <X size={32} />

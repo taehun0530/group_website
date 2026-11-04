@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowUpRight, CheckCircle2, Mail } from 'lucide-react';
+import { ArrowUpRight, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageBanner from '../components/PageBanner';
 import { applicationStatus, graduateApplications, recruitmentSources, winterInternship, type ApplicationWindow } from '../data/recruitment';
@@ -151,7 +151,7 @@ export default function OpenPositions() {
   return (
     <>
       <PageBanner hideLine />
-      <div className="py-10 max-w-7xl mx-auto px-8" lang={language}>
+      <div className="py-10 max-w-7xl mx-auto px-8 text-copy" lang={language}>
         <header className="mb-8 pb-6 border-b border-slate-200">
           <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
             <h1 className="page-title">Open Positions</h1>
@@ -163,28 +163,28 @@ export default function OpenPositions() {
                   lang={option}
                   aria-pressed={language === option}
                   onClick={() => setLanguage(option)}
-                  className={`text-meta px-2.5 py-1.5 rounded-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tertiary ${language === option ? 'bg-primary text-white' : 'text-slate-600 hover:bg-slate-50'}`}
+                  className={`text-meta px-2.5 py-1.5 rounded-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tertiary ${language === option ? 'bg-primary text-on-dark' : 'text-copy hover:bg-slate-50'}`}
                 >
                   {option === 'en' ? 'English' : '한국어'}
                 </button>
               ))}
             </div>
           </div>
-          <p className="text-body text-slate-700">{text.introduction}</p>
+          <p className="text-body text-copy">{text.introduction}</p>
         </header>
 
         <section aria-labelledby="positions-heading" className="mb-8">
           <h2 id="positions-heading" className="section-title mb-4">Positions</h2>
-          <ul className="text-body list-disc pl-5 space-y-3 text-slate-700">
+          <ul className="bullet-list">
             {text.positions.map((position) => (
               <li key={position.title}>
-                <h3 className="card-title inline text-primary">{position.title}</h3>
+                <h3 className="card-title inline text-ink">{position.title}</h3>
                 <p className="text-body mt-0.5">{position.description}</p>
               </li>
             ))}
           </ul>
-          <p className="text-body mt-4 text-slate-700">{text.applicantBackground}</p>
-          <p className="text-meta mt-2 text-slate-600">{text.positionsNote}</p>
+          <p className="text-body mt-4 text-copy">{text.applicantBackground}</p>
+          <p className="text-meta mt-2 text-copy">{text.positionsNote}</p>
         </section>
 
         <section aria-labelledby="projects-heading" className="mb-8">
@@ -192,88 +192,88 @@ export default function OpenPositions() {
           <div className="grid gap-3 md:grid-cols-2">
             {text.projects.map((project) => (
               <div key={project.title} className="bg-white border border-slate-100 p-4 rounded-sm">
-                <h3 className="card-title text-primary mb-2">{project.title}</h3>
-                <p className="text-body text-slate-700">{project.description}</p>
+                <h3 className="card-title text-ink mb-2">{project.title}</h3>
+                <p className="text-body text-copy">{project.description}</p>
               </div>
             ))}
           </div>
-          <Link to="/research" className="text-meta inline-flex items-center gap-1 mt-3 text-tertiary hover:underline underline-offset-4">{text.researchLink}<ArrowUpRight size={13} aria-hidden="true" /></Link>
+          <Link to="/research" className="text-meta inline-flex items-center gap-1 mt-3 text-ink hover:underline underline-offset-4">{text.researchLink}<ArrowUpRight size={13} aria-hidden="true" /></Link>
         </section>
 
         <section aria-labelledby="programs-heading" className="mb-8">
           <h2 id="programs-heading" className="section-title mb-3">Programs &amp; Application Dates</h2>
-          <p className="text-body text-slate-700 mb-5">{text.programsIntroduction}</p>
+          <p className="text-body text-copy mb-5">{text.programsIntroduction}</p>
 
           <section aria-labelledby="admissions-heading" className="mb-6">
-            <h3 id="admissions-heading" className="subsection-title text-primary mb-3">{text.graduateHeading}</h3>
+            <h3 id="admissions-heading" className="subsection-title text-ink mb-3">{text.graduateHeading}</h3>
             <ul className="text-body divide-y divide-slate-100 border-y border-slate-100" aria-label={text.graduateScheduleLabel}>
               {graduateApplications.map((application) => (
                 <li key={application.id} className="text-body grid grid-cols-[minmax(0,1fr)_auto] md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)_auto] gap-x-4 gap-y-1 py-3">
-                  <h4 className="card-title text-primary">
+                  <h4 className="card-title text-ink">
                     {language === 'ko' ? application.title : application.titleEn ?? application.title}
                   </h4>
-                  <p className="text-body col-span-2 row-start-2 md:col-span-1 md:col-start-2 md:row-start-1 text-slate-700">{period(application)}</p>
-                  <span className="text-meta col-start-2 row-start-1 md:col-start-3 self-start text-tertiary bg-slate-50 px-2 py-1 rounded-sm whitespace-nowrap">{status(application)}</span>
+                  <p className="text-body col-span-2 row-start-2 md:col-span-1 md:col-start-2 md:row-start-1 text-copy">{period(application)}</p>
+                  <span className="text-meta col-start-2 row-start-1 md:col-start-3 self-start text-ink bg-slate-50 px-2 py-1 rounded-sm whitespace-nowrap">{status(application)}</span>
                 </li>
               ))}
             </ul>
             <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2">
-              <a href={recruitmentSources.admissions} target="_blank" rel="noopener noreferrer" className="text-meta inline-flex items-center gap-1 text-tertiary hover:underline underline-offset-4">{text.admissionsLink}<ArrowUpRight size={13} aria-hidden="true" /></a>
-              <p className="text-meta text-slate-600">{text.admissionsNote}</p>
+              <a href={recruitmentSources.admissions} target="_blank" rel="noopener noreferrer" className="text-meta inline-flex items-center gap-1 text-ink hover:underline underline-offset-4">{text.admissionsLink}<ArrowUpRight size={13} aria-hidden="true" /></a>
+              <p className="text-meta text-copy">{text.admissionsNote}</p>
             </div>
           </section>
 
           <section aria-labelledby="internship-heading" className="border-t border-slate-100 pt-5">
             <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
               <div>
-                <h3 id="internship-heading" className="subsection-title text-primary">{text.internshipHeading}</h3>
-                <p className="text-meta text-slate-600 mt-1">{text.internshipDuration}</p>
+                <h3 id="internship-heading" className="subsection-title text-ink">{text.internshipHeading}</h3>
+                <p className="text-meta text-copy mt-1">{text.internshipDuration}</p>
               </div>
-              <span className="text-meta text-tertiary bg-slate-50 px-2 py-1 rounded-sm">{text.officialApplication}: {status(winterInternship)}</span>
+              <span className="text-meta text-ink bg-slate-50 px-2 py-1 rounded-sm">{text.officialApplication}: {status(winterInternship)}</span>
             </div>
-            <div className="text-body space-y-4 text-slate-700">
+            <div className="text-body space-y-4 text-copy">
               <p>{text.internshipIntroduction}</p>
               <dl className="text-body space-y-2">
                 {internshipDetails.map(([label, value]) => (
                   <div key={label} className="grid grid-cols-1 sm:grid-cols-[8rem_minmax(0,1fr)] gap-x-4">
-                    <dt className="text-meta text-primary">{label}</dt>
+                    <dt className="text-meta text-ink">{label}</dt>
                     <dd>{value}</dd>
                   </div>
                 ))}
               </dl>
               <div>
-                <h4 className="card-title text-primary mb-2">{text.internProjectsHeading}</h4>
-                <ul className="text-body list-disc pl-4 space-y-1">{text.internProjects.map((project) => <li key={project}>{project}</li>)}</ul>
+                <h4 className="card-title text-ink mb-2">{text.internProjectsHeading}</h4>
+                <ul className="bullet-list">{text.internProjects.map((project) => <li key={project}>{project}</li>)}</ul>
               </div>
               <p>{text.internshipNote}</p>
               <div className="flex flex-wrap gap-x-5 gap-y-2">
-                <a href={recruitmentSources.internshipApplication} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 font-bold text-tertiary hover:underline underline-offset-4">{text.internshipApply}<ArrowUpRight size={13} aria-hidden="true" /></a>
-                <a href={recruitmentSources.internshipNotice} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-tertiary hover:underline underline-offset-4">{text.internshipNotice}<ArrowUpRight size={13} aria-hidden="true" /></a>
+                <a href={recruitmentSources.internshipApplication} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 font-bold text-ink hover:underline underline-offset-4">{text.internshipApply}<ArrowUpRight size={13} aria-hidden="true" /></a>
+                <a href={recruitmentSources.internshipNotice} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-ink hover:underline underline-offset-4">{text.internshipNotice}<ArrowUpRight size={13} aria-hidden="true" /></a>
               </div>
             </div>
           </section>
         </section>
 
-        <section aria-labelledby="apply-heading" className="bg-primary text-white p-6 md:p-8 rounded-sm">
-          <h2 id="apply-heading" className="section-title mb-2 text-white">Contact</h2>
-          <p className="text-body text-slate-100 mb-5">{text.contactIntroduction}</p>
+        <section aria-labelledby="apply-heading" className="bg-primary text-on-dark p-6 md:p-8 rounded-sm">
+          <h2 id="apply-heading" className="section-title mb-2 text-on-dark">Contact</h2>
+          <p className="text-body text-on-dark mb-5">{text.contactIntroduction}</p>
           <div className="grid md:grid-cols-2 gap-5 md:gap-8 border-t border-white/20 pt-5">
             <div>
-              <h3 className="subsection-title text-accent-blue mb-3">{text.materialsHeading}</h3>
-              <ul className="text-body space-y-2">
+              <h3 className="subsection-title text-on-dark mb-3">{text.materialsHeading}</h3>
+              <ul className="bullet-list">
                 {text.materials.map((item) => (
-                  <li key={item} className="text-body flex items-center gap-2.5 text-slate-100"><CheckCircle2 size={15} className="text-accent-blue shrink-0" aria-hidden="true" />{item}</li>
+                  <li key={item}>{item}</li>
                 ))}
               </ul>
             </div>
             <div className="min-w-0">
-              <h3 className="text-body text-accent-blue mb-1">{text.contactName}</h3>
-              <p className="text-meta text-slate-100 mb-3">{text.jointAppointment}</p>
-              <a href="mailto:taehun.lee@dgist.ac.kr" className="text-body text-white hover:text-accent-blue transition-colors inline-flex items-center gap-2"><Mail size={18} className="shrink-0" aria-hidden="true" /><span className="min-w-0 break-all">taehun.lee@dgist.ac.kr</span></a>
+              <h3 className="text-body text-on-dark mb-1">{text.contactName}</h3>
+              <p className="text-meta text-on-dark mb-3">{text.jointAppointment}</p>
+              <a href="mailto:taehun.lee@dgist.ac.kr" className="text-body text-on-dark hover:underline underline-offset-4 inline-flex items-center gap-2"><Mail size={18} className="shrink-0" aria-hidden="true" /><span className="min-w-0 break-all">taehun.lee@dgist.ac.kr</span></a>
             </div>
           </div>
         </section>
-        <p className="text-meta mt-4 text-slate-500">{text.verifiedOn}: {recruitmentSources.verifiedOn} · {text.verificationNote}</p>
+        <p className="text-meta mt-4 text-copy">{text.verifiedOn}: {recruitmentSources.verifiedOn} · {text.verificationNote}</p>
       </div>
     </>
   );

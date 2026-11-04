@@ -46,7 +46,7 @@ export default function Profile() {
     <div className="text-body py-10 max-w-4xl mx-auto px-8">
       <button 
         onClick={() => navigate(-1)}
-        className="flex items-center gap-2 text-slate-500 hover:text-primary transition-colors mb-6 group"
+        className="flex items-center gap-2 text-copy hover:text-ink transition-colors mb-6 group"
       >
         <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
         <span className="text-meta">Back to People</span>
@@ -59,22 +59,22 @@ export default function Profile() {
         <div className="flex flex-col md:flex-row gap-6 items-start pb-4 relative">
           <div className="flex-grow">
             <div className="flex flex-wrap items-baseline gap-3 mb-2">
-              <h2 className="section-title text-primary">Taehun Lee</h2>
-              <span lang="ko" className="section-title text-slate-600">이태훈</span>
+              <h2 className="section-title text-ink">Taehun Lee</h2>
+              <span lang="ko" className="section-title text-ink">이태훈</span>
             </div>
-            <div className="text-body text-slate-700 mb-3">
+            <div className="text-body text-copy mb-3">
               <p>Assistant Professor</p>
               <p>Department of Energy Science and Engineering, DGIST</p>
               <p>Department of Semiconductor Engineering, DGIST (joint appointment)</p>
             </div>
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-slate-500">
-              <a href="mailto:taehun.lee@dgist.ac.kr" className="flex items-center gap-1.5 hover:text-primary transition-colors">
-                <Mail size={12} className="text-primary" />
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-copy">
+              <a href="mailto:taehun.lee@dgist.ac.kr" className="flex items-center gap-1.5 hover:text-ink transition-colors text-ink">
+                <Mail size={12} className="text-ink" />
                 <span className="text-meta">taehun.lee@dgist.ac.kr</span>
               </a>
-              <span className="text-meta hidden md:inline text-slate-300 text-center">|</span>
-              <a href="https://scholar.google.com/citations?user=E4QBWfAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-primary transition-colors">
-                <GraduationCap size={12} className="text-primary" />
+              <span className="text-meta hidden md:inline text-copy text-center">|</span>
+              <a href="https://scholar.google.com/citations?user=E4QBWfAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-ink transition-colors text-ink">
+                <GraduationCap size={12} className="text-ink" />
                 <span className="text-meta">Google Scholar</span>
               </a>
             </div>
@@ -97,10 +97,10 @@ export default function Profile() {
               {section.items.map((item, i) => (
                 <div key={i} className="relative">
                   <div className="absolute -left-[25px] top-1.5 w-1 h-1 rounded-full bg-tertiary border-2 border-white shadow-sm" />
-                  <p className="text-meta text-tertiary mb-0.5">{item.date}</p>
-                  <h3 className="text-body text-slate-800">{item.content}</h3>
+                  <p className="text-meta text-ink mb-0.5">{item.date}</p>
+                  <h3 className="text-body text-copy">{item.content}</h3>
                   {item.detail && (
-                    <p className="text-body text-slate-700 mt-0.5">{item.detail}</p>
+                    <p className="text-body text-copy mt-0.5">{item.detail}</p>
                   )}
                 </div>
               ))}
