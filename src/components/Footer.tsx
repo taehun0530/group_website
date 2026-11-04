@@ -10,10 +10,11 @@ export default function Footer() {
             <h4 className="font-sans font-semibold text-meta text-slate-600">
               Lee Group @DGIST
             </h4>
-            <div className="font-academic text-xs text-slate-600 leading-relaxed space-y-1">
+            <div className="font-academic text-meta text-slate-600 space-y-1">
               <p>Data-driven Materials Modeling Group</p>
-              <p>Department of Energy Science and Engineering,<br/>Daegu Gyeongbuk Institute of Science & Technology (DGIST)</p>
-              <p className="font-medium text-primary">PI joint appointment: Department of Semiconductor Engineering, DGIST</p>
+              <p>Department of Energy Science and Engineering</p>
+              <p>Department of Semiconductor Engineering</p>
+              <p>Daegu Gyeongbuk Institute of Science & Technology (DGIST)</p>
             </div>
           </div>
 
@@ -30,7 +31,7 @@ export default function Footer() {
           {/* Location */}
           <div className="md:col-span-3 space-y-2">
             <h5 className="font-sans font-semibold text-meta text-slate-600">Location</h5>
-            <address className="not-italic font-academic text-xs text-slate-600 leading-relaxed">
+            <address className="not-italic font-academic text-meta text-slate-600">
               E6-414<br />
               333, Techno Jungang-daero,<br />
               Daegu, South Korea

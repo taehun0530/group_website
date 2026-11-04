@@ -41,7 +41,7 @@ export interface ResolvedNewsEntry extends NewsEntry {
   publication?: NewsPublication;
 }
 
-const normalizeDoi = (doi: string) => doi.replace(/^https?:\/\/(?:dx\.)?doi\.org\//i, '').toLowerCase();
+export const normalizeDoi = (doi: string) => doi.replace(/^https?:\/\/(?:dx\.)?doi\.org\//i, '').toLowerCase();
 const publicationsByDoi = new Map(publicationData.journalArticles.map((publication) => [normalizeDoi(publication.doi), publication]));
 
 /** Short editorial headlines stay separate from the authoritative citation. */

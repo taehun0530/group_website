@@ -141,7 +141,7 @@ const Research = () => {
   return (
     <>
     <PageBanner hideLine />
-    <div id="research-content" className="py-10 max-w-7xl mx-auto px-8 relative overflow-hidden">
+    <div id="research-content" className="subsection-title py-10 max-w-7xl mx-auto px-8 relative overflow-hidden">
       {/* Header Section */}
       <header className="relative z-10 mb-8">
         <div className="flex items-center gap-3 mb-6">
@@ -153,36 +153,36 @@ const Research = () => {
         <section className="relative z-10">
           {/* Text Content */}
           <div className="w-full space-y-4">
-            <div className="font-academic text-sm font-normal text-slate-700 leading-relaxed">
-              <p className="mb-2">Our research spans three interconnected themes:</p>
-              <ul className="space-y-1.5 pl-2">
-                <li className="flex items-start gap-2">
+            <div className="text-body text-slate-700">
+              <p className="text-body mb-2">Our research spans three interconnected themes:</p>
+              <ul className="text-body space-y-1.5 pl-2">
+                <li className="text-body flex items-start gap-2">
                   <span className="text-slate-500">(1)</span>
                   <span className="flex-1 text-left">identifying active motifs in realistic complex structures,</span>
                 </li>
-                <li className="flex items-start gap-2">
+                <li className="text-body flex items-start gap-2">
                   <span className="text-slate-500">(2)</span>
                   <span className="flex-1 text-left">understanding the stability and reactivity of surfaces and interfaces under operating conditions, and</span>
                 </li>
-                <li className="flex items-start gap-2">
+                <li className="text-body flex items-start gap-2">
                   <span className="text-slate-500">(3)</span>
                   <span className="flex-1 text-left">establishing data-driven design rules for property prediction and inverse design.</span>
                 </li>
               </ul>
             </div>
-            <div className="font-academic text-sm text-slate-600 leading-relaxed">
-              <p className="mb-1.5">본 연구실은 세 가지 주제를 포괄합니다. 전산재료과학 및 머신러닝 기반 모델링을 통해</p>
-              <ul className="space-y-1.5 pl-2 text-left">
-                <li className="flex items-start gap-2">
-                  <span className="text-slate-400 font-sans">(1)</span>
+            <div className="text-body text-slate-600">
+              <p className="text-body mb-1.5">본 연구실은 세 가지 주제를 포괄합니다. 전산재료과학 및 머신러닝 기반 모델링을 통해</p>
+              <ul className="text-body space-y-1.5 pl-2 text-left">
+                <li className="text-body flex items-start gap-2">
+                  <span className="text-slate-400">(1)</span>
                   <span className="flex-1">실제 조건에서 형성되는 복잡한 구조에서 활성 motif를 규명하고,</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-slate-400 font-sans">(2)</span>
+                <li className="text-body flex items-start gap-2">
+                  <span className="text-slate-400">(2)</span>
                   <span className="flex-1">구동 환경에서 표면과 계면의 안정성 및 반응성을 이해하며,</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-slate-400 font-sans font-sans">(3)</span>
+                <li className="text-body flex items-start gap-2">
+                  <span className="text-slate-400">(3)</span>
                   <span className="flex-1">데이터 기반 소재 property 예측과 역설계를 기반으로 소재 설계 규칙을 확립하는 것입니다.</span>
                 </li>
               </ul>
@@ -191,11 +191,11 @@ const Research = () => {
           <div className="mt-8 h-[1px] bg-slate-200" />
         </section>
 
-      <div id="research-themes" className="relative z-10 grid grid-cols-1 md:grid-cols-10 gap-10 py-10">
+      <div id="research-themes" className="subsection-title relative z-10 grid grid-cols-1 md:grid-cols-10 gap-10 py-10">
         {/* Sidebar Navigation */}
         <aside className="md:col-span-2 h-fit md:sticky md:top-32">
           <nav className="flex flex-col gap-4">
-            <div className="font-sans text-xs font-bold uppercase tracking-normal text-slate-900 py-2 border-b border-slate-200">Research Themes</div>
+            <div className="subsection-title text-slate-900 py-2 border-b border-slate-200">Research Themes</div>
             {themes.map((theme) => (
               <button
                 key={theme.id}
@@ -203,7 +203,7 @@ const Research = () => {
                 className={`group flex items-center gap-3 py-1 text-left transition-all ${activeTheme === theme.id ? 'translate-x-2' : 'hover:translate-x-1'}`}
               >
                 <span className={`h-[1px] transition-all ${activeTheme === theme.id ? 'w-8 bg-tertiary' : 'w-5 bg-slate-200 group-hover:bg-tertiary'}`}></span>
-                <span className={`font-sans font-bold text-xs uppercase tracking-normal ${activeTheme === theme.id ? 'text-tertiary' : 'text-primary hover:text-tertiary'}`}>
+                <span className={`nav-link ${activeTheme === theme.id ? 'text-tertiary' : 'text-primary hover:text-tertiary'}`}>
                   {theme.title}
                 </span>
               </button>
@@ -232,14 +232,14 @@ const Research = () => {
                 <div className="flex flex-col gap-3">
                   {currentTheme.questions && (
                     <div className="p-4 bg-slate-50 border border-slate-100">
-                      <h4 className="font-sans font-bold text-base tracking-normal text-tertiary mb-3">
+                      <h4 className="subsection-title text-tertiary mb-3">
                         Research Questions
                       </h4>
-                      <ul className="space-y-2">
+                      <ul className="text-body space-y-2">
                         {(Array.isArray(currentTheme.questions) ? currentTheme.questions : [currentTheme.questions]).map((q, i) => (
-                          <li key={i} className="flex items-start gap-3">
+                          <li key={i} className="text-body flex items-start gap-3">
                             <span className="text-tertiary mt-[7px] select-none leading-none">•</span>
-                            <p className="font-academic text-sm text-slate-700 leading-relaxed font-normal flex-1">
+                            <p className="text-body text-slate-700 flex-1">
                               "{q}"
                             </p>
                           </li>
@@ -249,10 +249,10 @@ const Research = () => {
                   )}
                 </div>
                 <div className="p-4 bg-primary text-white">
-                  <h4 className="font-sans font-bold text-base tracking-normal mb-3 text-accent-blue">
+                  <h4 className="subsection-title mb-3 text-accent-blue">
                     Methodologies
                   </h4>
-                  <p className="font-academic text-sm leading-relaxed tracking-normal font-normal">
+                  <p className="text-body">
                     {currentTheme.methodology}
                   </p>
                 </div>
@@ -260,7 +260,7 @@ const Research = () => {
 
               {/* 4. General Description (Bilingual) + Image (7:3 ratio) */}
               <div className="py-6 border-y border-slate-100/50">
-                <h4 className="font-sans font-bold text-base tracking-normal text-slate-900 mb-4 flex items-center gap-1.5">
+                <h4 className="subsection-title text-slate-900 mb-4 flex items-center gap-1.5">
                   <FileText size={12} className="text-slate-400" />
                   Description
                 </h4>
@@ -269,7 +269,7 @@ const Research = () => {
                     <div className="space-y-6">
                       {currentTheme.desc.split('\n\n').map((para, i) => (
                         <div key={i} className="flex flex-col gap-8">
-                          <p className="font-academic text-sm font-normal text-slate-700 leading-relaxed text-left">
+                          <p className="text-body text-slate-700 text-left">
                             {para}
                           </p>
                           {i === 0 && (
@@ -285,7 +285,7 @@ const Research = () => {
                                   referrerPolicy="no-referrer"
                                 />
                                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                  <div className="bg-primary/60 text-white px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-normal backdrop-blur-sm">
+                                  <div className="text-meta bg-primary/60 text-white px-3 py-1.5 rounded-full backdrop-blur-sm">
                                     Click to Enlarge
                                   </div>
                                 </div>
@@ -297,7 +297,7 @@ const Research = () => {
                     </div>
                     <div className="mt-4 space-y-4">
                       {currentTheme.descKr.split('\n\n').map((para, i) => (
-                        <p key={i} className="font-academic text-sm text-slate-600 leading-relaxed break-keep text-left">
+                        <p key={i} className="text-body text-slate-600 break-keep text-left">
                           {para}
                         </p>
                       ))}
@@ -309,7 +309,7 @@ const Research = () => {
               {/* 5. Related Publications */}
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <h4 className="font-sans font-bold text-base tracking-normal text-slate-900 flex items-center gap-2">
+                  <h4 className="subsection-title text-slate-900 flex items-center gap-2">
                     <BookOpen size={12} className="text-tertiary" />
                     Related Lab Publications
                   </h4>
@@ -336,7 +336,7 @@ const Research = () => {
                         >
                           <div className="flex-1 flex flex-col gap-2">
                             {(pub.year || pub.journal || pub.if) && (
-                              <p className="font-academic text-sm text-slate-700 italic flex items-center gap-2 flex-wrap">
+                              <p className="text-body text-slate-700 italic flex items-center gap-2 flex-wrap">
                                 {pub.year && <span className={`font-bold not-italic ${isLink ? 'group-hover:text-tertiary transition-colors' : 'text-slate-800'}`}>{pub.year}</span>}
                                 {pub.journal && <span className={isLink ? 'group-hover:text-slate-900 transition-colors' : ''}>{pub.journal}</span>}
                                 {pub.if && <span className="text-tertiary font-semibold not-italic whitespace-nowrap ml-1">IF: {pub.if}</span>}
@@ -345,7 +345,7 @@ const Research = () => {
                             {pub.tags && (
                               <div className="flex flex-wrap gap-1.5 mt-0.5">
                                 {pub.tags.map((tag: string) => (
-                                  <span key={tag} className={`px-1.5 py-0.5 rounded-sm text-xs font-bold uppercase tracking-normal transition-colors border ${getTagColor(tag)}`}>{tag}</span>
+                                  <span key={tag} className={`text-meta px-1.5 py-0.5 rounded-sm transition-colors border ${getTagColor(tag)}`}>{tag}</span>
                                 ))}
                               </div>
                             )}

@@ -8,6 +8,7 @@ export const recruitmentSources = {
 export interface ApplicationWindow {
   id: string;
   title: string;
+  titleEn?: string;
   startsOn: string;
   endsOn: string;
   period: string;
@@ -16,13 +17,14 @@ export interface ApplicationWindow {
 }
 
 export const graduateApplications: ApplicationWindow[] = [
-  { id: 'spring-2027-third', title: '2027학년도 봄학기 3차', startsOn: '2026-11-05', endsOn: '2026-11-19', period: '2026. 11. 5.(목) – 11. 19.(목)' },
-  { id: 'fall-2027', title: '2027학년도 가을학기', startsOn: '2027-04-08', endsOn: '2027-04-22', period: '2027. 4. 8.(목) – 4. 22.(목)' },
+  { id: 'spring-2027-third', title: '2027학년도 봄학기 3차', titleEn: 'Spring 2027 · Third Round', startsOn: '2026-11-05', endsOn: '2026-11-19', period: '2026. 11. 5.(목) – 11. 19.(목)' },
+  { id: 'fall-2027', title: '2027학년도 가을학기', titleEn: 'Fall 2027', startsOn: '2027-04-08', endsOn: '2027-04-22', period: '2027. 4. 8.(목) – 4. 22.(목)' },
 ];
 
 export const winterInternship: ApplicationWindow = {
   id: 'winter-2027',
   title: '2027년 DGIST 대학원 동계 인턴 프로그램',
+  titleEn: '2027 DGIST Graduate Winter Internship',
   startsOn: '2026-11-04',
   endsOn: '2026-11-13',
   opensAt: '2026-11-04T09:00:00+09:00',

@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { newsData, type NewsImage } from '../data/news';
 import { formatScientificTitle } from '../components/PublicationText';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Calendar, ChevronRight, Tag } from 'lucide-react';
 
 export { newsData } from '../data/news';
@@ -18,7 +18,7 @@ export function renderNewsImage(image: NewsImage) {
           {photo}
         </a>
       ) : photo}
-      <figcaption className="mt-2 font-academic text-xs leading-relaxed text-slate-600">
+      <figcaption className="text-meta mt-2 text-slate-600">
         {image.caption}{' '}
         <a href={image.sourceUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-primary">{image.credit}</a>
         {image.license && <>{' '}<a href={image.license.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-primary">{image.license.label}</a></>}
@@ -28,23 +28,34 @@ export function renderNewsImage(image: NewsImage) {
 }
 
 import PageBanner from '../components/PageBanner';
+import YearFilter from '../components/YearFilter';
+
+const newsYears = [...new Set(newsData.map((entry) => entry.date.slice(0, 4)))].sort((a, b) => b.localeCompare(a));
+const years = [...newsYears, 'All'];
 
 export default function News() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const requestedYear = searchParams.get('year');
+  const activeYear = requestedYear && years.includes(requestedYear) ? requestedYear : newsYears[0] ?? 'All';
+  const filteredNews = activeYear === 'All' ? newsData : newsData.filter((entry) => entry.date.startsWith(activeYear));
+
   return (
     <>
     <PageBanner hideLine />
     <div className="py-10 max-w-7xl mx-auto px-8">
-      <header className="mb-10 pb-8 border-b border-slate-200">
+      <header className="mb-6">
         <div className="flex items-center gap-3 mb-6">
           <h1 className="page-title">News</h1>
         </div>
-        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-sm font-normal">
+        <p className="text-body text-slate-700 max-w-2xl">
           Recent updates from our lab, including publications, awards, and team activities.
         </p>
       </header>
 
+      <YearFilter years={years} selectedYear={activeYear} onSelect={(year) => setSearchParams({ year })} label="Filter news by year" />
+      <h2 className="section-title mt-6 mb-5">{activeYear === 'All' ? 'All News' : `${activeYear} News`}</h2>
       <div className="space-y-6">
-        {newsData.map((item, i) => (
+        {filteredNews.map((item, i) => (
           <motion.article 
             key={item.id}
             initial={{ opacity: 0, y: 20 }}
@@ -54,11 +65,11 @@ export default function News() {
           >
             {/* Left side: Date and Tag */}
             <div className="md:w-32 shrink-0 pt-0.5">
-              <div className="flex items-center gap-2 text-primary font-sans text-xs font-bold uppercase tracking-normal mb-1.5">
+              <div className="text-meta flex items-center gap-2 text-primary mb-1.5">
                 <Calendar size={12} className="text-tertiary" aria-hidden="true" />
                 {item.date.length > 4 ? <time dateTime={item.date.replace(/\./g, '-')}>{item.date.replace(/-/g, '.')}</time> : item.date}
               </div>
-              <div className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-slate-50 text-tertiary rounded-sm text-xs font-bold uppercase tracking-normal group-hover:bg-slate-100 transition-colors">
+              <div className="text-meta inline-flex items-center gap-1.5 px-2 py-0.5 bg-slate-50 text-tertiary rounded-sm group-hover:bg-slate-100 transition-colors">
                 <Tag size={10} className="text-tertiary" aria-hidden="true" />
                 {item.category}
               </div>
@@ -66,20 +77,20 @@ export default function News() {
 
             {/* Right side: Content */}
             <div className="flex-grow min-w-0">
-              <h3 className="font-sans text-base font-bold text-primary mb-2 leading-tight group-hover:text-tertiary transition-colors">
-                {formatScientificTitle(item.title)}
+              <h3 className="card-title text-primary mb-2 group-hover:text-tertiary transition-colors">
+                {item.hasDetail ? <Link to={`/news/${item.id}?year=${activeYear}`} className="hover:underline underline-offset-2">{formatScientificTitle(item.title)}</Link> : formatScientificTitle(item.title)}
               </h3>
               
                   {item.summary && (
-                    <p className="font-academic text-sm text-slate-700 leading-relaxed mb-3">
+                    <p className="text-body text-slate-700 mb-3">
                       {formatScientificTitle(item.summary)}
                     </p>
                   )}
 
               {item.hasDetail && (
                 <Link 
-                  to={`/news/${item.id}`}
-                  className="inline-flex items-center gap-1 text-primary font-sans text-xs font-bold uppercase tracking-normal hover:gap-2 transition-all"
+                  to={`/news/${item.id}?year=${activeYear}`}
+                  className="text-meta inline-flex items-center gap-1 text-primary hover:gap-2 transition-all"
                 >
                   Read More <ChevronRight size={12} aria-hidden="true" />
                 </Link>

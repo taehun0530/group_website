@@ -23,7 +23,7 @@ export default function FormerCollaborators() {
     <div className="py-10 max-w-4xl mx-auto px-8">
       <Link 
         to="/people" 
-        className="inline-flex items-center gap-2 text-slate-600 hover:text-primary font-sans text-xs font-bold uppercase tracking-normal transition-colors mb-8"
+        className="text-meta inline-flex items-center gap-2 text-slate-600 hover:text-primary transition-colors mb-8"
       >
         <ChevronLeft size={14} /> Back to People
       </Link>
@@ -32,7 +32,7 @@ export default function FormerCollaborators() {
         <div className="flex items-center gap-3 mb-6">
           <h1 className="page-title">Former Collaborators</h1>
         </div>
-        <p className="font-academic text-slate-700 max-w-2xl leading-relaxed text-sm font-normal">
+        <p className="text-body text-slate-700 max-w-2xl">
           Acknowledging the past collaborations that have contributed significantly to our research foundation and academic growth.
         </p>
       </header>
@@ -52,8 +52,8 @@ export default function FormerCollaborators() {
                 transition={{ delay: i * 0.1 }}
                 className="p-4 bg-white border border-slate-100 hover:border-slate-200 transition-colors"
               >
-                <h3 className="font-sans font-bold text-primary text-base mb-1">{person.name}</h3>
-                <p className="font-academic text-xs text-slate-700">{person.role}</p>
+                <h3 className="card-title text-primary mb-1">{person.name}</h3>
+                <p className="text-meta text-slate-700">{person.role}</p>
               </motion.div>
             ))}
           </div>
@@ -73,8 +73,8 @@ export default function FormerCollaborators() {
                 transition={{ delay: i * 0.1 }}
                 className="p-4 bg-white border border-slate-100 hover:border-slate-200 transition-colors"
               >
-                <h3 className="font-sans font-bold text-primary text-base mb-1">{person.name}</h3>
-                <p className="font-academic text-xs text-slate-700">{person.role}</p>
+                <h3 className="card-title text-primary mb-1">{person.name}</h3>
+                <p className="text-meta text-slate-700">{person.role}</p>
               </motion.div>
             ))}
           </div>

@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Mail, Globe, GraduationCap, UserPlus, User } from 'lucide-react';
+import { Mail, GraduationCap, UserPlus, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const getTagColor = (tag: string) => {
@@ -23,15 +23,8 @@ export default function People() {
     <PageBanner hideLine />
     <div className="py-10 max-w-7xl mx-auto px-8">
       {/* Header Section */}
-      <header className="mb-10 pb-8 border-b border-slate-200">
-        <div className="flex items-center gap-3 mb-6">
-          <h1 className="page-title">
-            People
-          </h1>
-        </div>
-        <p className="font-academic text-slate-700 leading-relaxed text-sm font-normal">
-          Our group consists of motivated researchers dedicated to understanding and designing functional materials at the atomic scale.
-        </p>
+      <header className="mb-8 pb-5 border-b border-slate-200">
+        <h1 className="page-title">People</h1>
       </header>
 
       {/* PI Section */}
@@ -55,49 +48,36 @@ export default function People() {
             </motion.div>
           </div>
           
-          <div className="w-full md:flex-1">
+          <div className="text-body w-full md:flex-1">
             <header className="mb-4">
-              <p className="font-sans text-xs font-bold text-tertiary tracking-normal mb-1">Assistant Professor</p>
-              <h3 className="font-sans text-xl font-extrabold text-primary tracking-tighter mb-1">
-                Taehun Lee <span className="text-base text-slate-500 font-medium ml-2">이태훈</span>
+              <h3 className="section-title text-primary mb-1">
+                Taehun Lee <span lang="ko" className="text-slate-600 ml-2">이태훈</span>
               </h3>
-              <p className="font-academic text-sm text-slate-700 leading-relaxed">Department of Energy Science and Engineering, DGIST</p>
-              <p className="font-academic text-sm font-semibold text-primary leading-relaxed mt-1 mb-3">
-                Joint appointment · Department of Semiconductor Engineering, DGIST
-                <span lang="ko" className="block text-xs font-medium text-slate-600">반도체공학과 겸임교수</span>
-              </p>
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-slate-600">
+              <p className="text-body text-slate-700 mb-3">Assistant Professor</p>
+              <div className="text-body text-slate-700 mb-3">
+                <p>Department of Energy Science and Engineering, DGIST</p>
+                <p>Department of Semiconductor Engineering, DGIST (joint appointment)</p>
+              </div>
+              <div className="text-meta flex flex-wrap items-center gap-x-3 gap-y-2 text-slate-600">
                 <a href="mailto:taehun.lee@dgist.ac.kr" className="flex items-center gap-1.5 hover:text-tertiary transition-colors">
                   <Mail size={12} className="text-primary" />
-                  <span className="font-academic text-sm">taehun.lee@dgist.ac.kr</span>
+                  <span>taehun.lee@dgist.ac.kr</span>
                 </a>
-                <span className="hidden sm:inline text-slate-500 text-xs" aria-hidden="true">|</span>
-                <a href="https://scholar.google.com/citations?user=E4QBWfAAAAAJ&hl=en" target="_blank" className="flex items-center gap-1.5 hover:text-tertiary transition-colors">
+                <span className="text-meta hidden sm:inline text-slate-500" aria-hidden="true">|</span>
+                <a href="https://scholar.google.com/citations?user=E4QBWfAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-tertiary transition-colors">
                   <GraduationCap size={12} className="text-primary" />
-                  <span className="font-academic text-sm">Google Scholar</span>
+                  <span>Google Scholar</span>
                 </a>
               </div>
             </header>
             
-            <div className="space-y-5">
-              <p className="font-academic text-sm leading-relaxed text-slate-600 font-normal">
-                Taehun Lee is an Assistant Professor in the Department of Energy Science and Engineering at DGIST, with a joint appointment in the Department of Semiconductor Engineering. His group develops machine-learning-guided atomistic modeling tools to understand and design functional materials under realistic conditions, with interests spanning interfaces, defects, transport, and data-driven materials design.
+            <div className="space-y-4">
+              <p className="text-body text-slate-600">
+                Taehun Lee is an Assistant Professor at DGIST. His group develops machine-learning-guided atomistic modeling tools to understand and design functional materials under realistic conditions, with interests spanning interfaces, defects, transport, and data-driven materials design.
               </p>
-              
-              <div>
-                <h4 className="font-sans text-sm font-semibold text-primary tracking-normal mb-2">Research Interests</h4>
-                <div className="flex flex-wrap gap-1.5">
-                  {['DFT & ab initio MD', 'Machine-learning Potentials', 'Materials-Property Prediction', 'Electrochemical Interfaces'].map((tag) => (
-                    <span key={tag} className={`px-2 py-0.5 border rounded-full text-xs font-bold tracking-normal ${getTagColor(tag)}`}>
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              
               <Link 
                 to="/profile/taehun-lee"
-                className="inline-flex items-center gap-3 text-primary font-sans text-xs font-bold tracking-normal hover:text-tertiary transition-all border-b-2 border-primary/20 pb-0.5"
+                className="text-meta inline-flex items-center gap-2 text-primary hover:text-tertiary transition-colors"
               >
                 Open Profile →
               </Link>
@@ -114,7 +94,7 @@ export default function People() {
           <h2 className="section-title">Researchers</h2>
         </div>
         <div className="py-6 px-6 bg-surface-container-low rounded-sm text-center border-2 border-dashed border-slate-200">
-          <p className="font-academic text-slate-500 text-sm">
+          <p className="text-body text-slate-500">
             Positions are available now. 
             Please check our <Link to="/open-positions" className="text-primary font-bold hover:text-tertiary transition-colors underline underline-offset-4">Open Positions</Link> page for more details.
           </p>
@@ -156,21 +136,21 @@ export default function People() {
                 <User size={80} strokeWidth={1.5} className="group-hover:text-slate-400 transition-colors duration-300" />
               </div>
               <div className="p-4 flex flex-col flex-grow">
-                <h3 className="font-sans text-base font-bold text-primary mb-2">
-                  {student.name} <span className="text-[12px] text-slate-600 font-medium ml-1">{student.ko}</span>
+                <h3 className="card-title text-primary mb-2">
+                  {student.name} <span className="card-title text-slate-600 ml-1">{student.ko}</span>
                 </h3>
                 <div className="mb-3 flex flex-col gap-0.5">
-                  <span className="font-sans text-xs font-bold text-tertiary">{student.role}</span>
-                  {(student as any).period && <span className="font-sans text-xs font-medium text-slate-400">{ (student as any).period }</span>}
+                  <span className="text-meta text-tertiary">{student.role}</span>
+                  {(student as any).period && <span className="text-meta text-slate-400">{ (student as any).period }</span>}
                 </div>
                 <div className="flex flex-wrap gap-1 mb-4">
                   {student.tags.map(tag => (
-                    <span key={tag} className={`px-1.5 py-0.5 border rounded-full text-xs font-bold tracking-normal ${getTagColor(tag)}`}>
+                    <span key={tag} className={`text-meta px-1.5 py-0.5 border rounded-full ${getTagColor(tag)}`}>
                       {tag}
                     </span>
                   ))}
                 </div>
-                <button className="mt-auto flex items-center gap-2 text-primary font-sans text-xs font-bold tracking-normal hover:text-tertiary transition-all">
+                <button className="text-meta mt-auto flex items-center gap-2 text-primary hover:text-tertiary transition-all">
                   Open profile →
                 </button>
               </div>
@@ -190,6 +170,7 @@ export default function People() {
               name: '',
               ko: '박민주',
               role: '학부생 연구원',
+              period: 'Since Jul 2026',
               affiliation: 'Chung-Ang University',
               tags: [],
             },
@@ -212,19 +193,19 @@ export default function People() {
                 <User size={80} strokeWidth={1.5} className="group-hover:text-slate-400 transition-colors duration-300" />
               </div>
               <div className="p-4 flex flex-col flex-grow">
-                <h3 className="font-sans text-base font-bold text-primary mb-1">
-                  {student.name ? <>{student.name} <span className="text-[12px] text-slate-600 font-medium ml-1">{student.ko}</span></> : <span lang="ko">{student.ko}</span>}
+                <h3 className="card-title text-primary mb-1">
+                  {student.name ? <>{student.name} <span className="card-title text-slate-600 ml-1">{student.ko}</span></> : <span lang="ko">{student.ko}</span>}
                 </h3>
-                <p className="font-sans text-xs font-bold text-slate-500 tracking-normal mb-2">
+                <p className="text-meta text-slate-500 mb-2">
                   {student.affiliation}
                 </p>
                 <div className="flex flex-wrap items-baseline gap-1.5 mb-3">
-                  <span className="font-sans text-xs font-bold text-tertiary">{student.role}</span>
-                  {(student as any).period && <span className="font-sans text-xs font-medium text-slate-400">{ (student as any).period }</span>}
+                  <span className="text-meta text-tertiary">{student.role}</span>
+                  {(student as any).period && <span className="text-meta text-slate-400">{ (student as any).period }</span>}
                 </div>
                 <div className="flex flex-wrap gap-1">
                   {student.tags.map(tag => (
-                    <span key={tag} className={`px-1.5 py-0.5 border rounded-full text-xs font-bold tracking-normal ${getTagColor(tag)}`}>
+                    <span key={tag} className={`text-meta px-1.5 py-0.5 border rounded-full ${getTagColor(tag)}`}>
                       {tag}
                     </span>
                   ))}
@@ -238,9 +219,9 @@ export default function People() {
             <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center mb-2.5 shadow-sm group-hover:scale-110 transition-transform">
               <UserPlus size={16} className="text-tertiary" />
             </div>
-            <h3 className="font-sans text-sm font-extrabold text-primary mb-1">Join Our Team</h3>
-            <p className="font-academic text-sm text-slate-700 mb-3 leading-relaxed">We are looking for motivated students interested in atomistic modeling.</p>
-            <Link to="/open-positions" className="px-4 py-1.5 bg-primary text-white font-sans text-xs font-bold tracking-normal hover:bg-tertiary transition-colors">Apply Now</Link>
+            <h3 className="card-title text-primary mb-1">Join Our Team</h3>
+            <p className="text-body text-slate-700 mb-3">We are looking for motivated students interested in atomistic modeling.</p>
+            <Link to="/open-positions" className="text-meta px-4 py-1.5 bg-primary text-white hover:bg-tertiary transition-colors">Apply Now</Link>
           </article>
         </div>
       </section>
@@ -249,7 +230,7 @@ export default function People() {
       <section className="mb-10 border-t border-slate-200 pt-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { title: 'Alumni', path: '/people/alumni', desc: 'Former group members and their career trajectories.' },
+            { title: 'Alumni', path: '/people/alumni', desc: 'Former researchers and research internship programs.' },
             { title: 'Collaborators', path: '/people/collaborators', desc: 'Active research partnerships worldwide.' },
             { title: 'Former Collaborators', path: '/people/former-collaborators', desc: 'Past collaborations that shaped our foundation.' },
           ].map((link, i) => (
@@ -258,13 +239,13 @@ export default function People() {
               to={link.path}
               className="group p-5 bg-slate-50 border border-transparent hover:border-slate-200 hover:bg-white transition-all flex flex-col rounded-sm"
             >
-              <h3 className="font-sans text-base font-bold text-tertiary tracking-normal mb-2.5 transition-colors">
+              <h3 className="card-title text-tertiary mb-2.5 transition-colors">
                 {link.title}
               </h3>
-              <p className="font-academic text-sm text-slate-700 leading-relaxed mb-3">
+              <p className="text-body text-slate-700 mb-3">
                 {link.desc}
               </p>
-              <span className="mt-auto font-sans text-xs font-bold tracking-normal text-slate-500 group-hover:text-primary transition-colors">
+              <span className="text-meta mt-auto text-slate-500 group-hover:text-primary transition-colors">
                 View List →
               </span>
             </Link>

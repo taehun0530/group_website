@@ -1,9 +1,10 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Link as LinkIcon, ArrowUpRight } from 'lucide-react';
+import { Link, useSearchParams } from 'react-router-dom';
+import { ArrowUpRight } from 'lucide-react';
 import publicationData from '../data/publications.json';
+import { newsData, normalizeDoi } from '../data/news';
 import { formatScientificTitle as formatTitle, formatAuthors, JournalCitation } from '../components/PublicationText';
 import PageBanner from '../components/PageBanner';
+import YearFilter from '../components/YearFilter';
 
 type PublicationRecord = {
   year: string;
@@ -13,133 +14,80 @@ type PublicationRecord = {
   doi: string;
   status?: string;
   if?: string;
+  ifYear?: string;
+  ifSource?: string;
+  highlightImage?: { src: string; alt: string };
 };
 
 export const publications: PublicationRecord[] = publicationData.journalArticles;
 
-const years = ['All', '2026', '2025', '2024', '2023', '2022', '2021', '2020 & Earlier'];
+const yearBucket = (year: string) => Number(year) <= 2020 ? '2020 & Earlier' : year;
+const publicationYears = [...new Set(publications.map((publication) => yearBucket(publication.year)))].sort((a, b) => b.localeCompare(a));
+const years = [...publicationYears, 'All'];
+const detailsByDoi = new Map(newsData.filter((entry) => entry.hasDetail && entry.publicationDoi).map((entry) => [normalizeDoi(entry.publicationDoi!), entry.id]));
 
 export default function Publications() {
-  const [activeYear, setActiveYear] = useState('All');
-
-  const filteredPubs = activeYear === 'All' 
-    ? publications 
-    : activeYear === '2020 & Earlier'
-      ? publications.filter(p => parseInt(p.year) <= 2020)
-      : publications.filter(p => p.year === activeYear);
-
-  const groupedPubs = filteredPubs.reduce((acc, pub) => {
-    const yearKey = parseInt(pub.year) <= 2020 ? '2020 & Earlier' : pub.year;
-    if (!acc[yearKey]) acc[yearKey] = [];
-    acc[yearKey].push(pub);
-    return acc;
-  }, {} as Record<string, typeof publications>);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const requestedYear = searchParams.get('year');
+  const activeYear = requestedYear && years.includes(requestedYear) ? requestedYear : publicationYears[0] ?? 'All';
+  const filteredPubs = activeYear === 'All' ? publications : publications.filter((publication) => yearBucket(publication.year) === activeYear);
+  const groupedPubs = filteredPubs.reduce((groups, publication) => {
+    const year = yearBucket(publication.year);
+    (groups[year] ??= []).push(publication);
+    return groups;
+  }, {} as Record<string, PublicationRecord[]>);
 
   return (
     <>
-    <PageBanner hideLine />
-    <div className="py-10 max-w-7xl mx-auto px-8">
-      <header className="mb-10">
-        <div className="flex items-center gap-3 mb-6">
-          <h1 className="page-title">Publications</h1>
-        </div>
-        <div className="flex flex-col gap-2 mt-4">
-          <a 
-            href="https://scholar.google.com/citations?user=E4QBWfAAAAAJ&hl=en" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-tertiary font-sans text-xs font-bold uppercase tracking-normal hover:text-primary transition-colors border-b border-tertiary/20 pb-0.5 w-fit"
-          >
-            Google Scholar Profile <ArrowUpRight size={12} />
+      <PageBanner hideLine />
+      <div className="py-10 max-w-7xl mx-auto px-8">
+        <header className="mb-6">
+          <h1 className="page-title mb-4">Publications</h1>
+          <a href="https://scholar.google.com/citations?user=E4QBWfAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-body text-tertiary hover:underline underline-offset-2">
+            Google Scholar <ArrowUpRight size={14} aria-hidden="true" />
           </a>
-        </div>
-      </header>
+        </header>
 
-      {/* Filter */}
-      <section className="sticky top-16 z-40 bg-white/80 backdrop-blur-md mb-10 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-8 py-2.5">
-          <div className="flex items-center gap-5 overflow-x-auto no-scrollbar">
-            <div className="flex gap-1.5">
-              {years.map(year => (
-                <button
-                  key={year}
-                  type="button"
-                  aria-pressed={activeYear === year}
-                  onClick={() => setActiveYear(year)}
-                  className={`font-sans text-xs font-bold px-4 py-1.5 rounded-full transition-all tracking-normal uppercase ${ activeYear === year ? 'bg-primary text-white shadow-md' : 'text-slate-700 hover:bg-slate-50' }`}
-                >
-                  {year}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="max-w-7xl mx-auto px-8 mb-4">
-        <div className="flex items-center justify-start gap-4 text-slate-500 font-academic text-xs whitespace-nowrap">
+        <YearFilter years={years} selectedYear={activeYear} onSelect={(year) => setSearchParams({ year })} label="Filter publications by year" />
+        <div className="flex flex-wrap gap-x-4 gap-y-1 text-slate-500 font-academic text-meta mt-4 mb-6">
           <span># Corresponding author</span>
           <span>† First author</span>
         </div>
-      </div>
 
-      <div className="max-w-7xl mx-auto px-8 space-y-6">
-        <AnimatePresence mode="wait">
-          <motion.div 
-            key={activeYear}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="space-y-10"
-          >
-            {Object.keys(groupedPubs).sort((a, b) => b.localeCompare(a)).map(year => (
-              <section key={year} className="relative">
-                <div className="flex items-baseline gap-4 mb-5">
-                  <h2 className="section-title">
-                    {year} <span className="text-xs font-normal text-slate-500 ml-1">({groupedPubs[year].length})</span>
-                  </h2>
-                </div>
-                
-                <div className="space-y-2">
-                  {groupedPubs[year].map(pub => (
-                    <motion.div 
-                      key={pub.doi}
-                      whileHover={{ x: 5 }}
-                      className="group py-3 border-b border-slate-50 hover:bg-slate-50/50 px-5 -mx-5 transition-all"
-                    >
-                      <h3 className="text-primary font-sans font-bold text-base mb-1 leading-snug group-hover:text-tertiary transition-colors">
-                        {formatTitle(pub.title)}
-                      </h3>
-                      <p className="text-slate-600 font-academic text-sm mb-1 leading-relaxed">
-                        {formatAuthors(pub.authors)}
-                      </p>
-                      <div className="flex flex-wrap items-center gap-5">
-                        <p className="text-slate-700 font-academic text-sm italic">
-                          <JournalCitation citation={pub.journal} />
-                          {pub.if ? <>{' '}<strong>IF = {pub.if}</strong></> : null}
-                        </p>
-                        <a 
-                          href={pub.doi} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-tertiary text-xs font-bold uppercase tracking-normal hover:underline flex items-center gap-1.5"
-                        >
-                          <LinkIcon size={12} />
-                          DOI Link
-                        </a>
+        <div className="space-y-8">
+          {Object.keys(groupedPubs).sort((a, b) => b.localeCompare(a)).map((year) => (
+            <section key={year} aria-label={`${year} publications`}>
+              <h2 className="section-title mb-3">{year} <span className="text-meta font-normal text-slate-500 ml-1">({groupedPubs[year].length})</span></h2>
+              {year === '2026' && <p className="text-meta text-slate-500 mb-3">IF = Journal Impact Factor. Parentheses indicate the verified metric year; each IF links to its source.</p>}
+              <div className="divide-y divide-slate-100">
+                {groupedPubs[year].map((publication) => {
+                  const detailId = detailsByDoi.get(normalizeDoi(publication.doi));
+                  const title = formatTitle(publication.title);
+                  return (
+                    <article key={publication.doi} className={`py-4 ${publication.highlightImage ? 'flex flex-col sm:flex-row gap-4' : ''}`}>
+                      {publication.highlightImage && (
+                        <img src={publication.highlightImage.src} alt={publication.highlightImage.alt} loading="lazy" className="w-full sm:w-36 aspect-[4/3] object-contain bg-white shrink-0 self-start" />
+                      )}
+                      <div className="min-w-0 text-body text-slate-700">
+                        <h3 className="card-title mb-1">
+                          {detailId ? <Link to={`/news/${detailId}`} className="hover:underline underline-offset-2">{title}</Link> : <a href={publication.doi} target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-2">{title}</a>}
+                        </h3>
+                        <p className="mb-1">{formatAuthors(publication.authors)}</p>
+                        <p><JournalCitation citation={publication.journal} showIssue={false} emphasizeVolume={false} />{publication.if && (publication.ifSource ? <a href={publication.ifSource} target="_blank" rel="noopener noreferrer" className="inline-block text-meta text-slate-500 ml-2 hover:underline underline-offset-2" aria-label={`Journal Impact Factor ${publication.if}${publication.ifYear ? `, ${publication.ifYear}` : ''}, source`}>IF {publication.if}{publication.ifYear && ` (${publication.ifYear})`}</a> : <span className="inline-block text-meta text-slate-500 ml-2">IF {publication.if}</span>)}</p>
+                        {publication.status === 'article-in-press' && <p className="text-meta text-slate-500 mt-1">Published online · Article in Press</p>}
+                        <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-meta text-tertiary">
+                          {detailId && <Link to={`/news/${detailId}`} className="hover:underline underline-offset-2">Read more →</Link>}
+                          <a href={publication.doi} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:underline underline-offset-2">DOI <ArrowUpRight size={12} aria-hidden="true" /></a>
+                        </div>
                       </div>
-                      {pub.status === 'article-in-press' ? (
-                        <p className="text-slate-500 font-academic text-xs mt-1 leading-relaxed">Published online · Article in Press · Volume and issue pending</p>
-                      ) : null}
-                    </motion.div>
-                  ))}
-                </div>
-              </section>
-            ))}
-          </motion.div>
-        </AnimatePresence>
+                    </article>
+                  );
+                })}
+              </div>
+            </section>
+          ))}
+        </div>
       </div>
-    </div>
     </>
   );
 }

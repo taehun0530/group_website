@@ -19,7 +19,7 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 w-full z-50 glass-nav border-b border-slate-200/50">
       <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-        <Link to="/" className="font-sans font-extrabold text-lg text-primary shrink-0">
+        <Link to="/" className="section-title text-primary shrink-0">
           Lee Group @ DGIST ESE
         </Link>
 
@@ -29,7 +29,7 @@ export default function Navbar() {
             <Link
               key={link.path}
               to={link.path}
-              className={`font-sans text-[13px] font-semibold tracking-normal transition-colors pb-1 border-b-2 ${
+              className={`nav-link transition-colors pb-1 border-b-2 ${
                 location.pathname === link.path
                   ? 'text-primary border-primary'
                   : 'text-slate-700 border-transparent hover:text-primary'
@@ -61,7 +61,7 @@ export default function Navbar() {
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className={`block font-sans text-sm font-semibold tracking-normal ${
+                className={`nav-link block ${
                   location.pathname === link.path ? 'text-primary' : 'text-slate-700'
                 }`}
               >

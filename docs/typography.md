@@ -1,23 +1,32 @@
 # Typography and text decoration
 
 The existing Manrope heading/navigation font and Public Sans body font remain in use.
-Korean text uses the system sans-serif fallback. No separate language version is introduced.
+Korean text uses the system sans-serif fallback. Open Positions has a page-local
+English/Korean translation control; it does not change the rest of the site.
 
-| Role | Size | Weight | Style |
+| Role | Size | Weight | Line height |
 | --- | --- | --- | --- |
-| Hero | 24px mobile / 30px desktop | 800 | Sentence case |
-| Page title (`.page-title`) | 22px | 700 | Normal letter spacing |
-| Section title (`.section-title`) | 18px | 700 | Normal letter spacing |
-| Card title | 14–16px | 600–800 | Allow natural wrapping |
-| Body | 14px | 400 | Line height 1.65 |
-| Navigation | 13px desktop / 14px mobile | 600 | Normal letter spacing |
-| Metadata, dates, captions, secondary links (`.text-meta` or `text-xs`) | 12px | 400–700 | Normal letter spacing |
+| Home hero (`.hero-title`) | 24px mobile / 30px desktop | 800 | 1.3 |
+| Page title (`.page-title`) | 22px | 700 | 1.3 |
+| Section title (`.section-title`) | 18px | 700 | 1.35 |
+| Subsection title (`.subsection-title`) | 16px | 600 | 1.4 |
+| Card or list-item title (`.card-title`) | 14px | 600 | 1.4 |
+| Body, paragraphs, lists (`.text-body`) | 14px | 400 | 1.65 |
+| Navigation and year controls (`.nav-link`) | 14px | 600 | 1.4 |
+| Metadata, dates, captions, secondary links (`.text-meta`) | 12px | 400 | 1.5 |
+
+All roles use normal letter spacing. Font sizes are the same on mobile and desktop
+except for the Home hero. Keep headings, paragraphs, and lists on these shared roles
+instead of adding local font-size or line-height utilities. Color and layout utilities
+may be combined with the roles; selected navigation controls may use a stronger weight.
 
 - Use size and weight to express hierarchy. Do not add leading decorative rules, mandatory uppercase, or wide letter spacing to section headings.
 - Keep structural dividers and table borders where they separate content.
 - Use upright, full-opacity text for Korean and ordinary explanatory prose. Preserve scientific subscripts/superscripts and journal-name conventions.
 - Use the existing navy palette for emphasis. Do not stack underline, italic, shadow, and background treatments on one phrase.
 - Keep illustrations and image controls distinct from text styling. Existing research figures are unchanged.
-- Show the PI's primary affiliation and joint appointment separately. Use **Joint appointment · Department of Semiconductor Engineering, DGIST** and **반도체공학과 겸임교수**. Do not invent an appointment start date.
+- Keep the footer's department affiliations as ordinary 12px metadata with the same weight and color. The PI's semiconductor joint appointment should be stated as a plain affiliation, without a badge or a separate promotional emphasis. Do not invent an appointment start date.
 
-Shared heading styles and the relaxed body line height are defined in `src/index.css`.
+Shared roles and the inherited 14px / 1.65 body style are defined in `src/index.css`.
+Scientific subscripts and superscripts retain their relative sizing; research figure
+labels belong to the image and are not resized by these page typography rules.

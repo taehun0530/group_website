@@ -6,28 +6,39 @@
       "authors": "J. H. Kim, S. J. Yoon, S. Y. Lee, C. Cho, D. J. Joe, S. Kim, Y. K. Lee, T. Lee#, and H. Lee#",
       "journal": "eScience, 100634 (2026)",
       "doi": "https://doi.org/10.1016/j.esci.2026.100634",
-      "status": "article-in-press"
+      "status": "article-in-press",
+      "if": "52.9",
+      "ifYear": "2025",
+      "ifSource": "https://www.keaipublishing.com/en/journals/escience/"
     },
     {
       "year": "2026",
       "title": "Self-Powered ZnSnN2/GaN Photodiodes via Fine Stoichiometry Control and Photon Trapping Micropatterned Heterojunctions Under Low-Light Irradiation",
       "authors": "J. H. Kim, J. C. Hwang, S. J. Yoon, Y. K. Lee, T. Lee, J. Min, J. Kim, K. Park#, and H. Lee#",
       "journal": "Small Structures 7(8), e70572 (2026)",
-      "doi": "https://doi.org/10.1002/sstr.70572"
+      "doi": "https://doi.org/10.1002/sstr.70572",
+      "if": "8.9",
+      "ifYear": "2025",
+      "ifSource": "https://onlinelibrary.wiley.com/journal/26884062/journal-metrics"
     },
     {
       "year": "2026",
       "title": "Surface Reconstruction Tunes Band Edges and Lattice-Oxygen Reactivity on BiVO4(010) Photoanodes",
       "authors": "Y. Lee, C. Cho, K.-T. Lee#, and T. Lee#",
       "journal": "Journal of Materials Chemistry A 14(41), 27568–27576 (2026)",
-      "doi": "https://doi.org/10.1039/D5TA10136K"
+      "doi": "https://doi.org/10.1039/D5TA10136K",
+      "if": "9.2",
+      "ifYear": "2025",
+      "ifSource": "https://www.rsc.org/publishing/journals/journal-of-materials-chemistry-a"
     },
     {
       "year": "2026",
       "title": "Fine-Tuning Bulk-Oriented Universal Interatomic Potentials for Surfaces: Accuracy, Efficiency, and Forgetting Control",
       "authors": "J. Hwang, T. Lee, Y. Lee, and S.-H. Yoo",
       "journal": "Computational Materials Science 268, 114666 (2026)",
-      "doi": "https://doi.org/10.1016/j.commatsci.2026.114666"
+      "doi": "https://doi.org/10.1016/j.commatsci.2026.114666",
+      "if": "3.7",
+      "ifSource": "https://www.linkedin.com/posts/computational-materials-science_we-are-pleased-to-share-that-computational-activity-7473197088344911872-OzfZ"
     },
     {
       "year": "2026",
@@ -35,7 +46,9 @@
       "authors": "G. Heo†, G. Lee, K.-T. Lee, A. Soon#, and T. Lee#",
       "journal": "Energy & Environmental Materials 9(6), e70328 (2026)",
       "doi": "https://doi.org/10.1002/eem2.70328",
-      "if": "15.0"
+      "if": "13.8",
+      "ifYear": "2025",
+      "ifSource": "https://onlinelibrary.wiley.com/journal/25750356/journal-metrics"
     },
     {
       "year": "2026",
@@ -43,7 +56,9 @@
       "authors": "K. M. Ponnusamy†, J. Bong†, H. Lee, J.-H. Choi, B. Pandit, S. Ghods, S. Durairaj, J. B. Park, Y. K. Lee, T. Lee, J.-H. Lee, H.-S. Jang#, S. Chandramohan#, and K. Heo#",
       "journal": "ACS Applied Materials & Interfaces 18(1), 1995–2008 (2026)",
       "doi": "https://doi.org/10.1021/acsami.5c19820",
-      "if": "9.5"
+      "if": "7.9",
+      "ifYear": "2025",
+      "ifSource": "https://pubs.acs.org/page/aamick/about.html"
     },
     {
       "year": "2026",
@@ -51,7 +66,9 @@
       "authors": "S. Ghods, H.-C. Jang, J.-H. Choi, M. W. Kim, H. Lee, T.-H. Kim, K. Heo, H. J. Kwun, T. Lee, Y. K. Lee, S. H. Lee, S.-I. Kim, W. Baek, S. Bae, J.-Y. Moon#, and J.-H. Lee#",
       "journal": "Advanced Functional Materials 36(24), e20506 (2026)",
       "doi": "https://doi.org/10.1002/adfm.202520506",
-      "if": "19.0"
+      "if": "19.9",
+      "ifYear": "2025",
+      "ifSource": "https://advanced.onlinelibrary.wiley.com/journal/16163028/journal-metrics"
     },
     {
       "year": "2026",
@@ -59,7 +76,9 @@
       "authors": "S. Lee†, K. Kang, T. Lee#, and A. Soon#",
       "journal": "Advanced Science 13(6), e14939 (2026)",
       "doi": "https://doi.org/10.1002/advs.202514939",
-      "if": "15.1"
+      "if": "14.1",
+      "ifYear": "2025",
+      "ifSource": "https://advanced.onlinelibrary.wiley.com/journal/21983844/journal-metrics"
     },
     {
       "year": "2026",
@@ -67,7 +86,9 @@
       "authors": "X. Jin†, T. Lee†, J. Park, J. Kim, S. Park, S. Y. Yun, Y.-E. Sung, D. W. Kim, M. G. Kim, A. Soon#, and S.-J. Hwang#",
       "journal": "Nature Communications 17(1), 672 (2026)",
       "doi": "https://doi.org/10.1038/s41467-025-67318-y",
-      "if": "16.6"
+      "if": "18.1",
+      "ifYear": "2025",
+      "ifSource": "https://www.nature.com/ncomms/journal-impact"
     },
     {
       "year": "2025",

@@ -7,6 +7,7 @@ import Publications from './pages/Publications';
 import OpenPositions from './pages/OpenPositions';
 import Profile from './pages/Profile';
 import Alumni from './pages/Alumni';
+import InternshipProgram from './pages/InternshipProgram';
 import Collaborators from './pages/Collaborators';
 import FormerCollaborators from './pages/FormerCollaborators';
 import News from './pages/News';
@@ -26,6 +27,7 @@ function App() {
               <Route path="/research" element={<Research />} />
               <Route path="/people" element={<People />} />
               <Route path="/people/alumni" element={<Alumni />} />
+              <Route path="/people/alumni/internships/:cohortId" element={<InternshipProgram />} />
               <Route path="/people/collaborators" element={<Collaborators />} />
               <Route path="/people/former-collaborators" element={<FormerCollaborators />} />
               <Route path="/publications" element={<Publications />} />

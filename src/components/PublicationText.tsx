@@ -60,7 +60,7 @@ export function formatAuthors(authors: string): ReactNode[] {
 }
 
 /** Journal volume(issue), pages/article number (year), with a single final period. */
-export function JournalCitation({ citation }: { citation: string }) {
+export function JournalCitation({ citation, showIssue = true, emphasizeVolume = true }: { citation: string; showIssue?: boolean; emphasizeVolume?: boolean }) {
   const normalized = citation.trim().replace(/\.$/, '');
   const match = normalized.match(/^(.+?)\s+(\d+)\s*(\([^()]+\))?,\s+(.+?)\s+\((\d{4})\)$/);
   if (!match) {
@@ -74,8 +74,8 @@ export function JournalCitation({ citation }: { citation: string }) {
   const [, journal, volume, issue = '', pages, year] = match;
   return (
     <span className="not-italic">
-      <em className="italic">{journal}</em>{' '}<strong className="font-bold">{volume}</strong>
-      <span className="not-italic">{issue}, {pages} ({year}).</span>
+      <em className="italic">{journal}</em>{' '}{emphasizeVolume ? <strong className="font-bold">{volume}</strong> : volume}
+      <span className="not-italic">{showIssue ? issue : ''}, {pages} ({year}).</span>
     </span>
   );
 }

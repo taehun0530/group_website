@@ -20,29 +20,50 @@
 
 @layer base {
   body {
-    @apply bg-surface text-slate-800 font-academic antialiased text-sm;
+    @apply bg-surface text-slate-800 font-academic antialiased text-sm leading-relaxed;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans tracking-tight font-extrabold text-primary;
+    @apply font-sans tracking-normal font-semibold leading-[1.4] text-primary;
   }
 
-  h1 { @apply text-2xl md:text-3xl; }
-  h2 { @apply text-xl; }
-  h3 { @apply text-lg; }
+  h1 { @apply text-[22px] font-bold leading-[1.3]; }
+  h2 { @apply text-lg font-bold leading-[1.35]; }
+  h3 { @apply text-base; }
+  h4, h5, h6 { @apply text-sm; }
 }
 
 @layer components {
+  .hero-title {
+    @apply font-sans text-2xl md:text-3xl font-extrabold leading-[1.3] tracking-normal;
+  }
+
   .page-title {
     @apply font-sans text-[22px] font-bold leading-[1.3] tracking-normal text-primary;
   }
 
   .section-title {
-    @apply font-sans text-lg font-bold leading-snug tracking-normal text-primary;
+    @apply font-sans text-lg font-bold leading-[1.35] tracking-normal text-primary;
+  }
+
+  .subsection-title {
+    @apply font-sans text-base font-semibold leading-[1.4] tracking-normal text-primary;
+  }
+
+  .card-title {
+    @apply font-sans text-sm font-semibold leading-[1.4] tracking-normal text-primary;
+  }
+
+  .text-body {
+    @apply font-academic text-sm font-normal leading-relaxed tracking-normal;
   }
 
   .text-meta {
-    @apply text-xs leading-normal tracking-normal;
+    @apply font-academic text-xs font-normal leading-normal tracking-normal;
+  }
+
+  .nav-link {
+    @apply font-sans text-sm font-semibold leading-[1.4] tracking-normal;
   }
 }
 
