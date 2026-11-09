@@ -287,7 +287,7 @@ export default function Home() {
             </Link>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="square-card-grid square-card-grid--three">
             {[
               { 
                 title: 'High-k Dielectrics & Oxide Interfaces', 
@@ -323,7 +323,7 @@ export default function Home() {
               <Link 
                 key={i} 
                 to="/materials-systems"
-                className="bg-white p-5 lg:p-6 border border-slate-100 hover:shadow-md transition-all text-left group rounded-sm flex flex-col h-full"
+                className="square-card bg-white border border-slate-100 hover:shadow-md transition-all text-left group flex flex-col"
               >
                 <div className="flex items-start gap-2.5 mb-2.5">
                   <div className="text-ink mt-0.5 flex-shrink-0 scale-100 group-hover:scale-110 transition-transform">

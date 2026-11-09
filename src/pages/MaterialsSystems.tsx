@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ChevronLeft, ExternalLink } from 'lucide-react';
+import { ChevronLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import ImageModal from '../components/ImageModal';
@@ -7,9 +7,15 @@ import ImageModal from '../components/ImageModal';
 const systems = [
   {
     id: 'high-k',
-    title: 'Defect-Rich High-k Dielectrics and Oxide Interfaces',
-    content: 'SiO2, HfO2, ZrO2, and Hf1−xZrxO2 (HZO), with a focus on defects, trap states, ferroelectricity, and surface or interfaces. We combine DFT, beyond-DFT electronic-structure methods, machine-learned interatomic potentials (MLIPs), and data-driven analysis to understand how defect chemistry governs phase stability and electrical behavior in high-k oxide systems.',
+    title: 'High-k Dielectric Oxides and Oxide Interfaces',
+    content: 'HfO2, ZrO2, and Hf1−xZrxO2 (HZO) are our principal High-k dielectric oxides, with a focus on defects, trap states, ferroelectricity, and oxide interfaces. SiO2 serves as a reference oxide for comparison. We combine DFT, beyond-DFT electronic-structure methods, machine-learned interatomic potentials (MLIPs), and data-driven analysis to understand how local structure and defect chemistry govern phase stability and electrical properties.',
     img: '/images/materials1.png'
+  },
+  {
+    id: 'semiconductor-process',
+    title: 'Semiconductor Process Modeling and Optimization',
+    content: 'We aim to connect semiconductor growth and process environments with structural motifs, defects, phases, and materials properties. DFT and MLIP-based simulations are combined with experimental measurements to explore process-condition predictions, assess thermodynamic and kinetic constraints on synthesizability, and interpret characterization signals. Our goal is to guide process optimization for target properties with uncertainty-aware models.',
+    img: '/images/research-refresh/advanced-modeling-methods.png'
   },
   {
     id: 'photoelectrochemical',
@@ -27,13 +33,11 @@ const systems = [
     id: 'halide',
     title: 'Halide Ionic Conductors',
     content: 'Halide solid electrolytes for Li/Na-ion transport, with an emphasis on composition design, structural disorder, and ML-assisted transport prediction. By integrating DFT, MLIPs, large-scale atomistic simulations, and data-science-guided screening, we explore how local structure and disorder influence ionic mobility and identify promising candidates for solid-state battery applications.',
-    img: 'https://picsum.photos/seed/battery/1200/800'
   },
   {
     id: '2d-semiconductors',
     title: '2D Semiconductor Heterojunctions, Contacts, and High-k Interfaces',
     content: 'MoS2/metal contacts, van der Waals heterojunctions, and high-k/2D interfaces. We combine DFT, beyond-DFT electronic-structure calculations, global optimization, and data-driven descriptor analysis to understand contact resistance, Fermi-level pinning, interfacial dipoles, and scalable dielectric integration in 2D electronic materials.',
-    img: 'https://picsum.photos/seed/semiconductor/1200/800'
   },
   {
     id: 'interpretation',
@@ -50,8 +54,8 @@ const FormattedText = ({ text }: { text: string }) => {
   // Regex to identify parts that should be subscripts:
   // 1. Digits following a letter (e.g., the '2' in SiO2)
   // 2. Specific alloy variables like '1-x' following 'Hf' or 'x' following 'Zr'
-  const parts = text.split(/((?<=[A-Za-z])\d+|(?<=Hf)1−x|(?<=Zr)x)/g);
-  
+  const parts = text.split(/((?<=Hf)1−x|(?<=Zr)x|(?<=[A-Za-z])\d+)/g);
+
   return (
     <>
       {parts.map((part, i) => {
@@ -77,8 +81,8 @@ export default function MaterialsSystems() {
     <>
     <PageBanner hideLine />
     <div className="py-10 max-w-7xl mx-auto px-8">
-      <Link 
-        to="/" 
+      <Link
+        to="/"
         className="text-meta inline-flex items-center gap-2 text-ink hover:text-ink transition-colors mb-8"
       >
         <ChevronLeft size={14} /> Back to Home
@@ -91,22 +95,22 @@ export default function MaterialsSystems() {
           </h1>
         </div>
         <div className="text-body mt-4 text-copy max-w-3xl">
-          Exploring the frontiers of functional materials through advanced atomistic modeling and data-driven insights.
+          Computational materials science and machine learning connect materials structure, properties, and applications, with an emphasis on High-k dielectric oxides and semiconductor process modeling and optimization.
         </div>
       </header>
 
       <div className="space-y-24">
         {systems.map((system, i) => (
-          <motion.section 
+          <motion.section
             key={system.id}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className={`grid grid-cols-1 gap-12 md:gap-24 items-center ${i % 2 === 0 ? 'md:grid-cols-[6.5fr_3.5fr]' : 'md:grid-cols-[3.5fr_6.5fr]'}`}
+            className={`grid grid-cols-1 gap-12 md:gap-24 items-center ${system.img ? i % 2 === 0 ? 'md:grid-cols-[6.5fr_3.5fr]' : 'md:grid-cols-[3.5fr_6.5fr]' : ''}`}
             id={system.id}
           >
-            <div className={i % 2 === 1 ? 'md:order-2' : ''}>
+            <div className={system.img && i % 2 === 1 ? 'md:order-2' : ''}>
               <div className="mb-4">
                 <span className="text-meta text-ink">SUB-SYSTEM {String(i + 1).padStart(2, '0')}</span>
                 <h2 className="section-title mt-1 mb-4">
@@ -117,33 +121,37 @@ export default function MaterialsSystems() {
                 <FormattedText text={system.content} />
               </p>
             </div>
+            {system.img && (
             <div className={`flex ${i % 2 === 1 ? 'md:order-1 md:justify-start' : 'md:justify-end'}`}>
-              <div 
-                className="w-full max-w-[450px] overflow-hidden bg-slate-50 rounded-sm border border-slate-100 group relative cursor-pointer"
-                onClick={() => openModal(system.img, system.title)}
+              <button
+                type="button"
+                aria-label={`Enlarge ${system.title} illustration`}
+                className="w-full max-w-[450px] overflow-hidden bg-slate-50 rounded-sm border border-slate-100 group relative cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+                onClick={() => { if (system.img) openModal(system.img, system.title); }}
               >
-                <img 
-                  src={system.img} 
-                  alt={system.title} 
+                <img
+                  src={system.img}
+                  alt={system.title}
                   className="w-full h-auto block"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/5">
-                  <div className="text-meta bg-primary/60 text-on-dark px-3 py-1.5 rounded-full backdrop-blur-sm">
+                <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/5">
+                  <span className="text-meta bg-primary/60 text-on-dark px-3 py-1.5 rounded-full backdrop-blur-sm">
                     Click to Enlarge
-                  </div>
-                </div>
-              </div>
+                  </span>
+                </span>
+              </button>
             </div>
+            )}
           </motion.section>
         ))}
       </div>
     </div>
-    <ImageModal 
-      isOpen={modalOpen} 
-      onClose={() => setModalOpen(false)} 
-      imageSrc={selectedImage.src} 
-      imageAlt={selectedImage.alt} 
+    <ImageModal
+      isOpen={modalOpen}
+      onClose={() => setModalOpen(false)}
+      imageSrc={selectedImage.src}
+      imageAlt={selectedImage.alt}
     />
     </>
   );

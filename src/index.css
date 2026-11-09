@@ -82,6 +82,43 @@
   .bullet-list > li::marker {
     color: currentColor;
   }
+
+  .square-card-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 15rem);
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .square-card {
+    @apply flex min-h-0 min-w-0 w-full flex-col justify-center p-3;
+    aspect-ratio: 1;
+    border-radius: 0;
+  }
+
+  @media (min-width: 640px) {
+    .square-card-grid {
+      grid-template-columns: repeat(2, minmax(0, 15rem));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .square-card-grid--three {
+      grid-template-columns: repeat(3, minmax(0, 15rem));
+    }
+  }
+
+  .square-card-grid.square-card-grid--compact {
+    grid-template-columns: repeat(auto-fit, minmax(0, 11.25rem));
+  }
+
+  .square-card-grid--compact .square-card {
+    padding: 0.5rem;
+  }
+
+  .square-card-grid--compact .card-title {
+    overflow-wrap: anywhere;
+  }
 }
 
 .glass-nav {

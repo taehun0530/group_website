@@ -15,6 +15,7 @@ const navLinks = [
 export default function Navbar() {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const isActive = (path: string) => location.pathname === path || (path === '/open-positions' && location.pathname.startsWith(`${path}/`));
 
   return (
     <nav className="sticky top-0 w-full z-50 glass-nav border-b border-slate-200/50">
@@ -30,7 +31,7 @@ export default function Navbar() {
               key={link.path}
               to={link.path}
               className={`nav-link transition-colors pb-1 border-b-2 ${
-                location.pathname === link.path
+                isActive(link.path)
                   ? 'text-ink border-primary'
                   : 'text-copy border-transparent hover:text-ink'
               }`}
@@ -62,7 +63,7 @@ export default function Navbar() {
                 to={link.path}
                 onClick={() => setIsOpen(false)}
                 className={`nav-link block ${
-                  location.pathname === link.path ? 'text-ink' : 'text-copy'
+                  isActive(link.path) ? 'text-ink' : 'text-copy'
                 }`}
               >
                 {link.name}

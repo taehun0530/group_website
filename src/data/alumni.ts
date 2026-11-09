@@ -67,10 +67,10 @@ export const internshipCohorts: InternshipCohort[] = [
       'Team presentations',
     ],
     participants: [
-      { id: '2026-summer-01', name: '석일현' },
-      { id: '2026-summer-02', name: '김지환' },
+      { id: '2026-summer-01', name: '석일현', affiliation: 'Pukyong National University' },
+      { id: '2026-summer-02', name: '김지환', affiliation: 'Dankook University' },
       { id: '2026-summer-03', name: '박민주', affiliation: 'Chung-Ang University' },
-      { id: '2026-summer-04', name: '전재영' },
+      { id: '2026-summer-04', name: '전재영', affiliation: 'Pusan National University' },
       { id: '2026-summer-05', name: '김찬주', affiliation: 'Jeonbuk National University' },
     ],
   },

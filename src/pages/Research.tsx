@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Shield, Microscope, Database, BookOpen, ArrowUpRight, Zap, Waves, Activity, Battery, Layers, Search, Hexagon, RefreshCcw, FileText, HelpCircle, Cpu } from 'lucide-react';
+import { Database, BookOpen, ArrowUpRight, Waves, Search, FileText, Cpu } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import { publications as globalPublications } from './Publications';
 import ImageModal from '../components/ImageModal';
@@ -38,7 +38,7 @@ const themes = [
   },
   {
     id: 'operando-reactivity',
-    title: 'Electrochemical Interfacial Reactivity',
+    title: 'Electrochemical Interface Reactivity',
     icon: <Waves size={24} />,
     desc: 'We investigate how the stability and reactivity of surfaces and interfaces evolve with changes in potential, electrolyte, pH, composition, and defects. By combining ab initio surface thermodynamics, grand-canonical approaches, charge-aware MLIP-MD, and explicit/implicit aqueous-interface modeling, we track structural evolution under realistic operating conditions. A major focus of this theme is to understand how surface reconstruction, hydration, defect chemistry, and electron/hole localization govern charge-carrier dynamics, catalytic reactivity, properties, and stability in photoelectrochemical and electrocatalytic systems.\n\nWe also investigate kinetic reaction pathways to understand how surface and interfacial structures evolve during catalytic processes under realistic environments. Beyond reactivity, we use atomistic modeling to identify degradation mechanisms in catalytic systems, revealing how structural transformation, defect formation, and environmental effects influence electrochemical stability.',
     descKr: '우리는 전위, 전해질, pH, 조성, 결함 변화에 따라 표면과 계면의 안정성 및 반응성이 어떻게 변화하는지를 연구합니다. 이를 위해 ab initio surface thermodynamics, grand-canonical 접근, charge-aware MLIP-MD, 그리고 explicit/implicit aqueous-interface modeling을 결합하여, 실제 구동 환경에서의 구조 변화를 추적합니다. 표면 재구성, 수화, 결함 공학, 그리고 전자/정공 국소화가 광전기화학 및 전기촉매 시스템에서 전하 운반자 동역학, 촉매 반응성, 물성, 안정성에 어떻게 영향을 주는지를 이해하는 것 입니다.\n\n또한 우리는 현실적인 환경에서 촉매 과정이 진행되는 동안 표면 및 계면 구조가 어떻게 진화하는지를 이해하기 위해 반응의 속도론적 경로도 함께 연구합니다. 더 나아가 반응성 분석을 넘어, 촉매 시스템에서 열화 메커니즘을 규명하기 위해 원자 수준 모델링을 활용하며, 이를 통해 구조 변화, 결함 형성, 환경 효과가 전기화학적 안정성에 어떤 영향을 미치는지를 밝히고자 합니다.',
@@ -90,6 +90,21 @@ const themes = [
         methods: 'Data Mining, Graph Representations, Transformers, Symbolic Regression, Generative Models, Uncertainty Quantification'
       }
     ]
+  },
+  {
+    id: 'semiconductor-process',
+    title: 'Semiconductor Process & Characterization',
+    icon: <Cpu size={24} />,
+    desc: 'We aim to model semiconductor growth and process environments at the atomic scale and connect process conditions with structural motifs, defects, phase selection, and materials properties. DFT and MLIP-based simulations provide complementary views of the thermodynamic and kinetic constraints that shape material formation.\n\nBy integrating experimental measurements with simulation data, we seek to interpret characterization signals, predict candidate process conditions, assess synthesizability, and guide process optimization for target properties. These goals connect atomistic modeling with experimental process design while accounting for model uncertainty.',
+    descKr: '반도체 성장 및 공정 환경을 원자 수준에서 모델링하고, 공정 조건과 structural motifs, 결함, 상 선택 및 소재 물성의 관계를 이해하는 것을 목표로 합니다. DFT와 MLIP 기반 시뮬레이션을 상호 보완적으로 활용하여 소재 형성에 작용하는 열역학적·동역학적 제약을 탐구합니다.\n\n실험 측정 데이터와 시뮬레이션 데이터를 통합하여 특성 분석 신호를 해석하고, 후보 공정 조건 예측, 합성 가능성 평가 및 목표 물성을 위한 공정 최적화를 지원하고자 합니다. 모델의 불확실성을 함께 고려하며 원자 수준 모델링과 실험 공정 설계를 연결합니다.',
+    image: '/images/research-refresh/research-scheme.png',
+    methodology: 'DFT, MLIP-Based Growth Simulations, Experimental–Simulation Data Integration, Process–Property Modeling, Uncertainty-Aware Optimization',
+    questions: [
+      'How can MLIP simulations connect growth conditions with structural motifs, defects, and phase selection?',
+      'How can experimental and simulation data be integrated to predict process conditions and interpret characterization measurements?',
+      'How can uncertainty-aware models assess synthesizability and guide process optimization for target materials properties?'
+    ],
+    publications: []
   }
 ];
 
@@ -141,7 +156,7 @@ const Research = () => {
   return (
     <>
     <PageBanner hideLine />
-    <div id="research-content" className="subsection-title text-copy py-10 max-w-7xl mx-auto px-8 relative overflow-hidden">
+    <div id="research-content" className="text-body text-copy py-10 max-w-7xl mx-auto px-8 relative overflow-hidden">
       {/* Header Section */}
       <header className="relative z-10 mb-8">
         <div className="flex items-center gap-3 mb-6">
@@ -149,31 +164,29 @@ const Research = () => {
         </div>
       </header>
 
-        {/* Intro Text */}
-        <section className="relative z-10">
-          {/* Text Content */}
-          <div className="w-full space-y-4">
-            <div className="text-body text-copy">
-              <p className="text-body mb-2">Our research spans three interconnected themes:</p>
-              <ul className="bullet-list text-body text-copy text-left">
-                <li>Identify active motifs in realistic complex structures.</li>
-                <li>Understand the stability and reactivity of surfaces and interfaces under operating conditions.</li>
-                <li>Establish data-driven design rules for property prediction and inverse design.</li>
-              </ul>
-            </div>
-            <div className="text-body text-copy" lang="ko">
-              <p className="text-body mb-2">전산재료과학 및 머신러닝 기반 모델링을 통해 세 가지 연구 주제를 탐구합니다.</p>
-              <ul className="bullet-list text-body text-copy text-left">
-                <li>실제 조건에서 형성되는 복잡한 구조의 활성 motif를 규명합니다.</li>
-                <li>구동 환경에서 표면과 계면의 안정성 및 반응성을 이해합니다.</li>
-                <li>데이터 기반 물성 예측과 역설계를 위한 소재 설계 규칙을 확립합니다.</li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-8 h-[1px] bg-slate-200" />
-        </section>
+      <section aria-labelledby="research-scheme-heading" className="relative z-10">
+        <h2 id="research-scheme-heading" className="section-title mb-4">Research Scheme</h2>
+        <p className="text-body text-copy mb-4">
+          <strong className="font-semibold text-ink">Computational materials science</strong> and <strong className="font-semibold text-ink">machine learning</strong> connect realistic structures, materials behavior, and semiconductor process design.
+        </p>
+        <div className="grid gap-5 md:grid-cols-2">
+          <ul className="bullet-list text-copy">
+            <li>Identify structural motifs in realistic complex structures.</li>
+            <li>Understand the stability and reactivity of surfaces and phases under operating and growth conditions.</li>
+            <li>Establish data-driven design rules for property prediction and inverse design.</li>
+            <li>Connect semiconductor process modeling and characterization through experimental–simulation data integration.</li>
+          </ul>
+          <ul lang="ko" className="bullet-list text-copy break-keep">
+            <li>실제 조건에서 형성되는 복잡한 구조의 structural motifs를 규명합니다.</li>
+            <li>구동 및 성장 조건에서 표면과 상의 안정성 및 반응성을 이해합니다.</li>
+            <li>데이터 기반 물성 예측과 역설계를 위한 소재 설계 규칙을 확립합니다.</li>
+            <li>실험·시뮬레이션 데이터 통합으로 반도체 공정 모델링과 특성 분석을 연결합니다.</li>
+          </ul>
+        </div>
+        <div className="mt-8 h-px bg-slate-200" />
+      </section>
 
-      <div id="research-themes" className="subsection-title relative z-10 grid grid-cols-1 md:grid-cols-10 gap-10 py-10">
+      <div id="research-themes" className="relative z-10 grid grid-cols-1 md:grid-cols-10 gap-10 py-10">
         {/* Sidebar Navigation */}
         <aside className="md:col-span-2 h-fit md:sticky md:top-32">
           <nav className="flex flex-col gap-4">
@@ -181,6 +194,8 @@ const Research = () => {
             {themes.map((theme) => (
               <button
                 key={theme.id}
+                type="button"
+                aria-pressed={activeTheme === theme.id}
                 onClick={() => setActiveTheme(theme.id)}
                 className={`group flex items-center gap-3 py-1 text-left transition-all ${activeTheme === theme.id ? 'translate-x-2' : 'hover:translate-x-1'}`}
               >
@@ -251,22 +266,24 @@ const Research = () => {
                           </p>
                           {i === 0 && (
                             <div className="w-full flex justify-center py-2">
-                              <div 
-                                className="w-full max-w-[563px] bg-slate-50 border border-slate-100 flex items-center justify-center overflow-hidden shadow-sm rounded-sm cursor-pointer group relative"
+                              <button
+                                type="button"
+                                aria-label={`Enlarge ${currentTheme.title} illustration`}
+                                className="w-full max-w-[563px] bg-slate-50 border border-slate-100 flex items-center justify-center overflow-hidden shadow-sm rounded-sm cursor-pointer group relative focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
                                 onClick={() => openModal(currentTheme.image, currentTheme.title)}
                               >
-                                <img 
-                                  src={currentTheme.image} 
-                                  alt={currentTheme.title} 
+                                <img
+                                  src={currentTheme.image}
+                                  alt={currentTheme.title}
                                   className="w-full h-auto group-hover:opacity-90 transition-opacity"
                                   referrerPolicy="no-referrer"
                                 />
-                                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                  <div className="text-meta bg-primary/60 text-on-dark px-3 py-1.5 rounded-full backdrop-blur-sm">
+                                <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                  <span className="text-meta bg-primary/60 text-on-dark px-3 py-1.5 rounded-full backdrop-blur-sm">
                                     Click to Enlarge
-                                  </div>
-                                </div>
-                              </div>
+                                  </span>
+                                </span>
+                              </button>
                             </div>
                           )}
                         </div>
@@ -284,40 +301,41 @@ const Research = () => {
               </div>
 
               {/* 5. Related Publications */}
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <h4 className="subsection-title text-ink flex items-center gap-2">
-                    <BookOpen size={12} className="text-ink" />
-                    Related Lab Publications
-                  </h4>
-                </div>
-                <div className="flex flex-col">
-                  {[...currentTheme.publications]
-                    .map(pubRef => {
-                      const globalPub = globalPublications.find(p => p.doi === pubRef.doi);
-                      return { ...globalPub, ...pubRef }; // Merge, but pubRef (tags) should take precedence if needed
-                    })
-                    .sort((a, b) => {
-                      const yearA = parseInt(a.year) || 0;
-                      const yearB = parseInt(b.year) || 0;
-                      return yearB - yearA;
-                    })
-                    .map((pub: any, idx: number) => {
-                      const isLink = !!pub.doi;
-                      const PubWrapper = isLink ? 'a' : 'div';
-                      return (
-                        <PubWrapper 
-                          key={idx}
-                          {...(isLink ? { href: pub.doi, target: '_blank', rel: 'noopener noreferrer' } : {})}
-                          className={`py-3 border-b border-slate-100 last:border-0 group flex items-start justify-between gap-4 px-2 -mx-2 rounded-sm ${isLink ? 'hover:bg-slate-50/50 transition-colors cursor-pointer' : ''}`}
-                        >
-                          <div className="flex-1 flex flex-col gap-2">
-                            {(pub.year || pub.journal || pub.if) && (
-                              <p className="text-body text-copy italic flex items-center gap-2 flex-wrap">
-                                {pub.year && <span className="font-bold not-italic text-ink">{pub.year}</span>}
-                                {pub.journal && <span>{pub.journal}</span>}
-                                {pub.if && <span className="text-ink font-semibold not-italic whitespace-nowrap ml-1">IF: {pub.if}</span>}
-                              </p>
+              {currentTheme.publications.length > 0 && (
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <h4 className="subsection-title text-ink flex items-center gap-2">
+                      <BookOpen size={12} className="text-ink" />
+                      Related Lab Publications
+                    </h4>
+                  </div>
+                  <div className="flex flex-col">
+                    {[...currentTheme.publications]
+                      .map(pubRef => {
+                        const globalPub = globalPublications.find(p => p.doi === pubRef.doi);
+                        return { ...globalPub, ...pubRef }; // Merge, but pubRef (tags) should take precedence if needed
+                      })
+                      .sort((a, b) => {
+                        const yearA = parseInt(a.year) || 0;
+                        const yearB = parseInt(b.year) || 0;
+                        return yearB - yearA;
+                      })
+                      .map((pub: any, idx: number) => {
+                        const isLink = !!pub.doi;
+                        const PubWrapper = isLink ? 'a' : 'div';
+                        return (
+                          <PubWrapper
+                            key={idx}
+                            {...(isLink ? { href: pub.doi, target: '_blank', rel: 'noopener noreferrer' } : {})}
+                            className={`py-3 border-b border-slate-100 last:border-0 group flex items-start justify-between gap-4 px-2 -mx-2 rounded-sm ${isLink ? 'hover:bg-slate-50/50 transition-colors cursor-pointer' : ''}`}
+                          >
+                            <div className="flex-1 flex flex-col gap-2">
+                              {(pub.year || pub.journal || pub.if) && (
+                                <p className="text-body text-copy italic flex items-center gap-2 flex-wrap">
+                                  {pub.year && <span className="font-bold not-italic text-ink">{pub.year}</span>}
+                                  {pub.journal && <span>{pub.journal}</span>}
+                                  {pub.if && <span className="text-ink font-semibold not-italic whitespace-nowrap ml-1">IF: {pub.if}</span>}
+                                </p>
                             )}
                             {pub.tags && (
                               <div className="flex flex-wrap gap-1.5 mt-0.5">
@@ -333,16 +351,17 @@ const Research = () => {
                     })}
                 </div>
               </div>
+              )}
             </motion.div>
           </AnimatePresence>
         </div>
       </div>
     </div>
-    <ImageModal 
-      isOpen={modalOpen} 
-      onClose={() => setModalOpen(false)} 
-      imageSrc={selectedImage.src} 
-      imageAlt={selectedImage.alt} 
+    <ImageModal
+      isOpen={modalOpen}
+      onClose={() => setModalOpen(false)}
+      imageSrc={selectedImage.src}
+      imageAlt={selectedImage.alt}
     />
     </>
   );

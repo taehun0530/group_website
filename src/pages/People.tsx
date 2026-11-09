@@ -73,7 +73,7 @@ export default function People() {
             
             <div className="space-y-4">
               <p className="text-body text-copy">
-                Taehun Lee is an Assistant Professor at DGIST. His group develops machine-learning-guided atomistic modeling tools to understand and design functional materials under realistic conditions, with interests spanning interfaces, defects, transport, and data-driven materials design.
+                Taehun Lee is an Assistant Professor at DGIST. His group develops and applies machine-learning-guided atomistic modeling tools to understand and design functional materials under realistic conditions, with interests spanning interfaces, defects, transport, and data-driven materials design.
               </p>
               <Link 
                 to="/profile/taehun-lee"

@@ -2,8 +2,9 @@
 
 Publisher and journal sources checked on 4 November 2026. These are journal-level
 Impact Factors, not citation counts or scores for an individual article. The year
-in parentheses on the website is the JIF metric year, not the paper's publication
-year or the JCR release year. Historical publication records are unchanged.
+in the source data is the JIF metric year, not the paper's publication year or the
+JCR release year. The website shows `IF = value` with a source link and omits the
+metric year and explanatory legend. Historical publication records are unchanged.
 
 | Journal | IF | Metric year | Source |
 | --- | --- | --- | --- |

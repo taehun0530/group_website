@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import People from './pages/People';
 import Publications from './pages/Publications';
 import OpenPositions from './pages/OpenPositions';
+import OpenPositionProgram from './pages/OpenPositionProgram';
+import RecruitmentTopics from './pages/RecruitmentTopics';
 import Profile from './pages/Profile';
 import Alumni from './pages/Alumni';
 import InternshipProgram from './pages/InternshipProgram';
@@ -35,6 +37,9 @@ function App() {
               <Route path="/news/:id" element={<NewsItem />} />
               <Route path="/materials-systems" element={<MaterialsSystems />} />
               <Route path="/open-positions" element={<OpenPositions />} />
+              <Route path="/open-positions/graduate-admissions" element={<OpenPositionProgram kind="graduate" />} />
+              <Route path="/open-positions/winter-internship-2027" element={<OpenPositionProgram kind="internship" />} />
+              <Route path="/open-positions/research-topics" element={<RecruitmentTopics />} />
               <Route path="/profile/taehun-lee" element={<Profile />} />
             </Routes>
           </main>
